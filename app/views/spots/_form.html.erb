@@ -7,9 +7,11 @@
                 required: true, wrapper_html: {class: "around"}, label: "Longitude of the spot:" %>
     <%= f.input :description,
                   required: true, label: "Describe the spot in detail:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
-    <%= f.input :optimal_wave_condition,
-                required: true, wrapper_html: {class: "around"}, label: "Optimal waves at this spot are:" %>
-    <br>
+    <%= f.label "Optimal wave condition at this spot is:" %>
+      <br>
+      <%= f.select :optimal_wave_condition, %w(Choppy Flat Waves) %>
+      <br>
+      <br>
     <%= f.submit ">>" %>
   </div>
 <% end %>
