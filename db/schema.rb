@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_152121) do
+ActiveRecord::Schema.define(version: 2019_03_12_135635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "advices", force: :cascade do |t|
+    t.text "description"
+    t.boolean "kind"
+    t.bigint "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_advices_on_spot_id"
+  end
+
+  create_table "difficulty_levels", force: :cascade do |t|
+    t.string "optimal_wind_direction"
+    t.integer "minimum_level"
+    t.bigint "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_difficulty_levels_on_spot_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "url"
+    t.bigint "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_photos_on_spot_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "desription"
+    t.date "date"
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_reviews_on_spot_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "spots", force: :cascade do |t|
+    t.text "description"
+    t.string "optimal_wave_condition"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_spots_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +76,22 @@ ActiveRecord::Schema.define(version: 2019_03_11_152121) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weather_conditions", force: :cascade do |t|
+    t.string "wind_direction"
+    t.string "wind_speed"
+    t.string "wave_condition"
+    t.date "date"
+    t.bigint "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_weather_conditions_on_spot_id"
+  end
+
+  add_foreign_key "advices", "spots"
+  add_foreign_key "difficulty_levels", "spots"
+  add_foreign_key "photos", "spots"
+  add_foreign_key "reviews", "spots"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "spots", "users"
+  add_foreign_key "weather_conditions", "spots"
 end
