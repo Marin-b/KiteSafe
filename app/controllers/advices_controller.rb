@@ -6,7 +6,13 @@ class AdvicesController < ApplicationController
   end
 
   def create
-    @advice = Advice.new(advice_params)
+    advice = Advice.new(advice_params)
+    spot = Spot.find(params[:spot_id])
+    if advice.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
