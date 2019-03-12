@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :spots do
+    resources :advices
+    resources :photos, only: [:new, :create, :destroy]
+    resources :difficulty_levels, only: [:new, :create]
+    resources :reviews, only: [:new, :create]
+  end
 end
+
