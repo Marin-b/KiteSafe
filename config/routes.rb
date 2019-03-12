@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :advices
     resources :photos, only: [:new, :create, :destroy]
     resources :difficulty_levels, only: [:new, :create]
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :delete]
   end
 end
 
