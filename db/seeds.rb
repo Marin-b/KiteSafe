@@ -17,12 +17,12 @@
 puts "Running seed .. "
 
 puts "Destroying all users"
-User.destroy_all
-Spot.destroy_all
 Advice.destroy_all
 Photo.destroy_all
 Review.destroy_all
 WeatherCondition.destroy_all
+Spot.destroy_all
+User.destroy_all
 
 #New User
 user = User.create(email: "chris@chris.com", password: "123456")
@@ -46,6 +46,7 @@ puts "Users created"
 #Spots New
 spot = Spot.create(
   description: "Awesome spot",
+  name: "Rodrigues Island",
   spot_type: "wavey",
   latitude: 46.227638,
   longitude: 2.213749,
@@ -53,6 +54,7 @@ spot = Spot.create(
 
 spot_two = Spot.create(
   description: "Cool spot",
+  name: "Tarifa, Spain",
   spot_type: "wavey",
   latitude: 52.373169,
   longitude: 4.890660,
@@ -60,6 +62,7 @@ spot_two = Spot.create(
 
 spot_three = Spot.create(
   description: "Nice spot",
+  name: "Combuco, Brazil",
   spot_type: "medium",
   latitude: 37.774929,
   longitude: -122.419418,
@@ -67,6 +70,7 @@ spot_three = Spot.create(
 
 spot_four = Spot.create(
   description: "Its an ok spot",
+  name: "Taveuni Island",
   spot_type: "flat",
   latitude: 51.165691,
   longitude: 10.451526,
@@ -80,6 +84,21 @@ spot_four = Spot.create(
 advice = Advice.create(
   description: "Cool spot go here when its not raining",
   kind: true,
+  spot: spot)
+
+advice = Advice.create(
+  description: "Don't setup your kite too close to the water",
+  kind: false,
+  spot: spot)
+
+advice = Advice.create(
+  description: "Go here when its very windy",
+  kind: true,
+  spot: spot)
+
+advice = Advice.create(
+  description: "Don't go here when the waves are high",
+  kind: false,
   spot: spot)
 
 advice_two = Advice.create(
