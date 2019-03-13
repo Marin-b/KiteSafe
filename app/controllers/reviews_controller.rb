@@ -8,13 +8,13 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.spot = Spot.find(params[:spot_id])
     @review.save
-    redirect_to spot_path(@spot.id)
+    redirect_to spot_path(@review.spot)
   end
 
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to spot_path(@spot.id)
+    redirect_to spot_path(@spot)
   end
 
   private
