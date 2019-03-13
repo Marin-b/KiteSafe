@@ -3,6 +3,19 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
 
+  def index
+    @spots = Spot.all
+    @markers = @spots.map do |spot|
+      {
+        lng: spot.longitude,
+        lat: spot.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { spot: spot }),
+        image_url: helpers.asset_url(spot.photos.first.url)
+
+      }
+    end
+  end
+
   def create
     @spot = Spot.new(spot_params)
     @spot.user_id = current_user.id
