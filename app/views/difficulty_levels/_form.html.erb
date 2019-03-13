@@ -1,0 +1,10 @@
+
+<%= simple_form_for [@spot, @difficulty_level] do |f| %>
+<%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :optimal_wind_direction %>
+    <%= f.input :minimum_level %>
+    <%= f.button :submit %>
+  </div>
+<% end %>
+

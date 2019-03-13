@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_135635) do
+ActiveRecord::Schema.define(version: 2019_03_13_155027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,33 +34,34 @@ ActiveRecord::Schema.define(version: 2019_03_12_135635) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.string "url"
     t.bigint "spot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["spot_id"], name: "index_photos_on_spot_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
-    t.text "desription"
     t.date "date"
     t.bigint "user_id"
     t.bigint "spot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
     t.index ["spot_id"], name: "index_reviews_on_spot_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "spots", force: :cascade do |t|
     t.text "description"
-    t.string "optimal_wave_condition"
+    t.string "spot_type"
     t.float "latitude"
     t.float "longitude"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
@@ -72,6 +73,10 @@ ActiveRecord::Schema.define(version: 2019_03_12_135635) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.integer "level"
+    t.string "description"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
