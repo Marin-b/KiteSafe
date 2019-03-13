@@ -1,0 +1,16 @@
+<h2><%= @kind %></h2>
+<% if @kind == true %>
+  <% status = "pros" %>
+<% else %>
+  <% status = "cons" %>
+<% end %>
+<h3>Please enter a <%= status %>!</h3>
+<%= simple_form_for [@spot, @advice] do |f| %>
+  <%= f.input :description %>
+  <%= f.hidden_field :kind, as: :hidden, value: @kind %>
+  <%= f.submit "Move to cons", class: "btn btn-primary" %>
+  <%= f.submit  "add another pros", class: "btn btn-primary" %>
+<% end %>
+
+
+<!-- Should be set as a string -->
