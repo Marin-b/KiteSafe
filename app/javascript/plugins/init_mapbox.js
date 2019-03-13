@@ -10,6 +10,7 @@ const updateInput = (marker) => {
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
+  const mapIndex = document.getElementById('mapIndex')
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     let marker
@@ -27,7 +28,24 @@ const initMapbox = () => {
     })
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
   }
-
+  if (mapIndex) {
+    mapboxgl.accessToken = mapIndex.dataset.mapboxApiKey;
+    const map = new mapboxgl.Map({
+      container: 'mapIndex',
+      style: 'mapbox://styles/mapbox/streets-v10'
+    });
+    const markers = JSON.parse(mapIndex.dataset.markers);
+    markers.forEach((marker) => {
+      const popup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML(`<h2>${marker.description}</h2>
+          <a href="/spots/${marker.spot_id}">See spot</a>
+          `)
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
+        .addTo(map)
+    });
+  }
 };
 
 export { initMapbox };

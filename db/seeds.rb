@@ -76,7 +76,10 @@ spot_four = Spot.create(
   longitude: 10.451526,
   user: user_four)
 
+#photos
+  photo_one = Photo.create(
 
+    )
 #Advice
 advice = Advice.create(
   description: "Cool spot go here when its not raining",
