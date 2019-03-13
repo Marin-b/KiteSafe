@@ -5,11 +5,11 @@ class DifficultyLevelsController < ApplicationController
   end
 
   def create
-    difficulty_level = DifficultyLevel.new(review_params)
-    difficulty.spot = Spot.find(params[:spot_id])
+    difficulty_level = DifficultyLevel.new(difficulty_params)
+    difficulty_level.spot = Spot.find(params[:spot_id])
 
     if difficulty_level.save
-      redirect_to new_spot_photo_path(@spot.id)
+      redirect_to new_spot_photo_path(params[:spot_id])
     else
       render :new
     end
@@ -17,7 +17,7 @@ class DifficultyLevelsController < ApplicationController
 
   private
 
-  def review_params
-    params.require(:review).permit(:optimal_wind_direction, :minimum_level)
+  def difficulty_params
+    params.require(:difficulty_level).permit(:optimal_wind_direction, :minimum_level)
   end
 end
