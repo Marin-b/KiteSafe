@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   def new
     @photo = Photo.new
-    @spot = Spot.find(params[:id])
+    @spot = Spot.find(params[:spot_id])
   end
 
   def create
