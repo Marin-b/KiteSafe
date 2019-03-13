@@ -36,19 +36,14 @@ const initMapbox = () => {
     });
     const markers = JSON.parse(mapIndex.dataset.markers);
     markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-      const element = document.createElement('div');
-      element.className = 'marker';
-      element.style.backgroundImage = `url('${marker.image_url}')`;
-      element.style.backgroundSize = 'contain';
-      element.style.width = '25px';
-      element.style.height = '25px';
-
+      const popup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML(`<h2>${marker.description}</h2>
+          <a href="/spots/${marker.spot_id}">See spot</a>
+          `)
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(new mapboxgl.Popup({ offset: 25 })
-        .setHTML(marker.infoWindow.content)
-        .addTo(map);
+        .setPopup(popup)
+        .addTo(map)
     });
   }
 };
