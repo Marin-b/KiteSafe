@@ -1,17 +1,24 @@
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 <%= simple_form_for(@spot) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
-    <%= f.input :latitude,
+    <%= f.hidden_field :latitude,
                 required: true, wrapper_html: {class: "around"}, label: "Latitude of the spot:" %>
-    <%= f.input :longitude,
+    <%= f.hidden_field :longitude,
                 required: true, wrapper_html: {class: "around"}, label: "Longitude of the spot:" %>
     <%= f.input :description,
                   required: true, label: "Describe the spot in detail:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
-    <%= f.label "Optimal wave condition at this spot is:" %>
+    <%= f.label "Type:" %>
       <br>
-      <%= f.select :optimal_wave_condition, %w(Choppy Flat Waves) %>
+      <%= f.select :spot_type, %w(Choppy Flat Waves) %>
       <br>
       <br>
-    <%= f.submit ">>" %>
+    <%= f.submit "Continue" %>
   </div>
 <% end %>

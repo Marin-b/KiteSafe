@@ -35,6 +35,6 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:optimal_wave_condition, :latitude, :longitude, :description)
+    params.require(:spot).permit(:spot_type, :latitude, :longitude, :description)
   end
 end

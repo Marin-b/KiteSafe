@@ -14,4 +14,34 @@
   <%= f.submit "Exit", class: "btn btn-primary" %>
 <% end %>
 
+
+<div class="flexbox">
+  <ul>
+    <% if @pros.length > 0 %>
+      <h2>Pros :</h2>
+    <% end %>
+    <% @pros.each do |pro| %>
+      <li>
+        <div class="space-between">
+          <%= pro.description %>
+          <%= link_to "<i class='fas fa-times-circle'></i>".html_safe, spot_advice_path(@spot, pro), method: :delete  %>
+        </div>
+
+      </li>
+    <% end %>
+  </ul>
+  <ul>
+    <% if @cons.length > 0 %>
+      <h2>Cons : </h2>
+    <% end %>
+    <% @cons.each do |con| %>
+      <li>
+        <div class="space-between">
+          <%= con.description %>
+          <%= link_to "<i class='fas fa-times-circle'></i>".html_safe, spot_advice_path(@spot, con), method: :delete  %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
 <!-- Should be set as a string -->
