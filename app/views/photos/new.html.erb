@@ -5,9 +5,9 @@
     <%= simple_form_for [@spot, @photo] do |f| %>
       <%= f.input :photo, label: "Upload"%>
       <%= f.input :photo_cache, as: :hidden %>
-      <%= f.submit "Add another photo", class: "btn btn-primary" %>
+      <%= f.submit "+ photo", class: "btn secondary-btn" %>
       <hr>
-      <%= f.submit "Done", class: "btn btn-primary" %>
+      <%= f.submit "Done", class: "btn secondary-btn" %>
     <% end %>
   </div>
   <div class="photos">

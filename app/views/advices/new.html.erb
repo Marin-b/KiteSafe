@@ -1,14 +1,14 @@
 <div class="form-wrap">
-  <h3>Please enter a pros!</h3>
+  <h3>Please enter a pro!</h3>
   <%= simple_form_for [@spot, @advice] do |f| %>
-    <%= f.input :description %>
+    <%= f.input :description, label: false%>
     <%= f.hidden_field :kind, as: :hidden, value: true %>
     <%= f.submit "Submit", class: "btn secondary-btn" %>
   <% end %>
 
-  <h3>Please enter a cons!</h3>
+  <h3>Please enter a con!</h3>
   <%= simple_form_for [@spot, @advice] do |f| %>
-    <%= f.input :description %>
+    <%= f.input :description, label: false  %>
     <%= f.hidden_field :kind, as: :hidden, value: false %>
     <%= f.submit "Submit", class: "btn secondary-btn" %>
     <hr>

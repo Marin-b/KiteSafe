@@ -3,7 +3,7 @@
 <%= f.error_notification %>
   <div class="form-inputs" id="review-form">
     <%= f.input :description, label: "Describe your spot", id: "labelfont" %>
-    <%= f.input :rating, collection: [*0..5], label: false, prompt: "Pick a rating <i class='fas fa-sort-down'></i>".html_safe %>
+    <%= f.input :rating, collection: [*1..5], label: false, prompt: "Pick a rating <i class='fas fa-sort-down'></i>".html_safe %>
      <br>
     <%= f.submit "Submit review", class: "btn secondary-btn" %>
     <br>
