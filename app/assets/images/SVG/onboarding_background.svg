@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="812" viewBox="0 0 375 812">
+  <defs>
+    <polygon id="background-b" points="-2.893 403.565 373.379 -3.035 375.607 -.636 233.024 153.44 -.664 405.965"/>
+    <filter id="background-a" width="107.4%" height="106.8%" x="-2.6%" y="-3.2%" filterUnits="objectBoundingBox">
+      <feOffset dx="4" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.92854021 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="375" height="815" y="-1" fill="#233142"/>
+    <g transform="rotate(-175 204.66 454.775)">
+      <polygon fill="#455C7A" points="185.322 46.53 489.275 575.361 61.6 499.109" transform="rotate(165 275.438 310.945)"/>
+      <polygon fill="#233142" points="-59.512 335.939 515.6 314.242 515.475 317.571 297.544 325.792 -59.637 339.268" transform="rotate(47 227.981 326.755)"/>
+    </g>
+    <use fill="#000" filter="url(#background-a)" xlink:href="#background-b"/>
+    <use fill="#233142" xlink:href="#background-b"/>
+    <polygon fill="#FFF" points="-15.5 15.5 390.5 390.5 -15.5 390.5" transform="rotate(90 187.5 203)"/>
+  </g>
+</svg>
