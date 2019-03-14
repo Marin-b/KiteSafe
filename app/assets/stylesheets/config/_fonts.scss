@@ -1,6 +1,12 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700>
 |Raleway:400,100,300,700,500");
+// 300 = "light"
+// 400 = "regular"
+// 500 = "medium"
+// 700 = "bold"
+
+
 
 // Define fonts for body and headers
 $body-font: "Roboto", "Helvetica", "sans-serif";
@@ -18,6 +24,13 @@ $paragraph-font: "Roboto", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+hr {
+  border-top: 1px solid #455C7A !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+
+}
 .fa-star .fill  {
     color: #F2F7A4 !important;
     margin: 7px 1px;
@@ -38,15 +51,16 @@ body {
 
 p {
   font-family: $paragraph-font;
-  margin-bottom: 1.25em;
+  margin-bottom: 0 !important;
   color: #F9F9F9;
+  font-weight: 300;
 }
 
-h1, h2, h3, h4, h5 {
-  margin: 2.75rem 0 1rem;
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0 !important;
   font-family: $headers-font;
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 13;
   color: #F9F9F9;
 }
 
@@ -62,5 +76,7 @@ h3 {font-size: 1.953em;}
 h4 {font-size: 1.563em;}
 
 h5 {font-size: 1.25em;}
+
+h6 {font-size: 1.15em;}
 
 small, .text_small {font-size: 0.8em;}
