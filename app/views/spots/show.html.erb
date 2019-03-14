@@ -25,13 +25,13 @@
       </div>
 
       <div class="description">
-        <h3>Description</h3>
+        <h4>Description</h4>
         <p> <%= @spot.description %> </p>
       </div>
 
       <div class="advice">
         <div class="pro">
-          <h3>Do's at this spot:</h3>
+          <h4>Do's at this spot:</h4>
             <ul>
           <% @spot.pros.each do |advice| %>
             <li>
@@ -41,7 +41,7 @@
             </ul>
         </div>
         <div class="con">
-          <h3>Don'ts at this spot:</h3>
+          <h4>Don'ts at this spot:</h4>
             <ul>
           <% @spot.cons.each do |advice| %>
             <li>
@@ -53,7 +53,8 @@
       </div>
 
       <div class="reviews">
-
+        <h4>Reviews</h4>
+        <p> <% @spot.reviews %> </p>
       </div>
 
       <div class="location">
