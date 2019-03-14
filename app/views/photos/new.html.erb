@@ -1,6 +1,7 @@
-<div class="flexbox">
+
+<div class="flexbox container-form">
   <div class="form-inputs">
-    <h2>Add a photo</h2>
+    <h1>Add a photo</h1>
     <%= simple_form_for [@spot, @photo] do |f| %>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
@@ -15,3 +16,4 @@
   <% end %>
   </div>
 </div>
+
