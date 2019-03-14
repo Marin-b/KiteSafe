@@ -2,16 +2,16 @@
 <%= simple_form_for [@spot, @advice] do |f| %>
   <%= f.input :description %>
   <%= f.hidden_field :kind, as: :hidden, value: true %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <%= f.submit "Submit", class: "btn secondary-btn" %>
 <% end %>
 
 <h3>Please enter a cons!</h3>
 <%= simple_form_for [@spot, @advice] do |f| %>
   <%= f.input :description %>
   <%= f.hidden_field :kind, as: :hidden, value: false %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <%= f.submit "Submit", class: "btn secondary-btn" %>
   <hr>
-  <%= f.submit "Exit", class: "btn btn-primary" %>
+  <%= f.submit "Exit", class: "btn main-btn" %>
 <% end %>
 
 

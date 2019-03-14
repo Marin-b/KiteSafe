@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :difficulty_levels, only: [:new, :create]
     resources :reviews, only: [:new, :create, :destroy]
   end
+  get 'onboarding', to: "onboarding#first"
 end
