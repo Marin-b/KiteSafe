@@ -18,6 +18,8 @@ class Spot < ApplicationRecord
   end
   end
 
+
+
   def pros
     self.advices.where(kind: true)
   end

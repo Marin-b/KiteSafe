@@ -1,14 +1,17 @@
 
 <%= simple_form_for [@spot, @difficulty_level] do |f| %>
 <%= f.error_notification %>
-  <div class="form-inputs">
-    <%= f.input :optimal_wind_direction %>
-    <%= f.label :name, "Select your minimum level"   %>
-    <%= f.select :minimum_level, [*1..10] %>
+  <div class="form-inputs" id="review-form">
+    <%= f.input :optimal_wind_direction, label: "Describe your spot"%>
     <br>
-    <%= f.submit "Submit Difficulty level", class: "btn btn-primary" %>
+    <%= f.input :minimum_level, collection: [*0..5], label: false, prompt: "Pick your minimal level <i class='fas fa-sort-down'></i>".html_safe %>
+    <br>
+    <%= f.submit "Submit level",  class: "btn secondary-btn " %>
   </div>
 <% end %>
+
+
+
 
 
 
