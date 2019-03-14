@@ -11,7 +11,7 @@ class Spot < ApplicationRecord
     self.reviews.each do |review|
       sum += review.rating
     end
-    return sum / self.reviews.count
+    sum / self.reviews.count
   end
 
   def pros

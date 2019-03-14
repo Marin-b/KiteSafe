@@ -145,33 +145,4 @@ review_four = Review.create(
   user: user_three,
   spot: spot_four)
 
-#Weather Conditionq
-weather_conditions = WeatherCondition.create(
-  wind_direction: "offshore",
-  wind_speed: "100k/h",
-  wave_condition: "medium",
-  date: Date.today,
-  spot: spot)
-
-weather_conditions = WeatherCondition.create(
-  wind_direction: "offshore",
-  wind_speed: "10k/h",
-  wave_condition: "flat",
-  date: Date.today,
-  spot: spot_two)
-
-weather_conditions = WeatherCondition.create(
-  wind_direction: "offshore",
-  wind_speed: "20k/h",
-  wave_condition: "wavey",
-  date: Date.today,
-  spot: spot_three)
-
-weather_conditions = WeatherCondition.create(
-  wind_direction: "offshore",
-  wind_speed: "50k/h",
-  wave_condition: "flat",
-  date: Date.today,
-  spot: spot_four)
-
 puts "Seeds done"
