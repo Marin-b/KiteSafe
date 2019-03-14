@@ -1,0 +1,52 @@
+.spot-title-container{
+background: #233142;
+height: 60px;
+width: 100%;
+}
+.title-group{
+  display: flex;
+  justify-content: space-between;
+}
+.spot-name {
+  text-align: left;
+ li .title-name-reg{
+  font-family: Roboto-Medium;
+  font-size: 18px;
+  color: #E3E3E3;
+  letter-spacing: 0.39px;
+ }
+ li .title-name-small{
+  font-family: Roboto-Light;
+  font-size: 12px;
+  color: #F9F9F9;
+ }
+}
+
+
+
+.percent-group {
+  .percent-num{
+    font-family: Roboto-Medium;
+    font-size: 26.45px;
+    color: #1BCF83;
+    letter-spacing: 0.34px;
+    text-align: center;
+    line-height: 18.4px;
+  }
+
+  .percent-sign{
+    font-family: Roboto-Regular;
+    font-size: 14px;
+    color: #1BCF83;
+    letter-spacing: 0.35px;
+  }
+  .match{
+    font-family: Roboto-Light;
+    font-size: 10px;
+    color: #1BCF83;
+    letter-spacing: 0.25px;
+    text-align: center;
+  }
+}
+
+

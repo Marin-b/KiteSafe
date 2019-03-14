@@ -3,8 +3,12 @@
 <%= f.error_notification %>
   <div class="form-inputs">
     <%= f.input :optimal_wind_direction %>
-    <%= f.input :minimum_level %>
-    <%= f.button :submit %>
+    <%= f.label :name, "Select your minimum level"   %>
+    <%= f.select :minimum_level, [*1..10] %>
+    <br>
+    <%= f.submit "Submit Difficulty level", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+
 
