@@ -1,8 +1,9 @@
-<div class="flexbox">
-  <div class="form">
-    <h2>Add a photo</h2>
+
+<div class="flexbox container-form">
+  <div class="form-inputs" id="review-form">
+    <h1>Add a photo</h1>
     <%= simple_form_for [@spot, @photo] do |f| %>
-      <%= f.input :photo %>
+      <%= f.input :photo, label: "Upload"%>
       <%= f.input :photo_cache, as: :hidden %>
       <%= f.submit "Add another photo", class: "btn btn-primary" %>
       <hr>
@@ -13,5 +14,6 @@
    <% @photos.each do |photo| %>
     <%= cl_image_tag photo.photo.url, height: 300, width: 400, crop: :fill %>
   <% end %>
-  </div>
+ </div>
 </div>
+

@@ -1,15 +1,17 @@
-.form-inputs {
-  margin: 60px auto;
-  width: 700px;
+.form-wrap {
+  margin: 0 auto;
   background-color: #ccc;
-  padding: 30px;
+  padding: 40px;
 }
-// .container_reviews {
-//   margin: 60px auto;
-//   width: 700px;
-//   background-color: red;
-//   padding: 30px;
-// }
-.form-control {
-  height: 40px;
+
+.container-reviews {
+  margin-top: -20px;
+  background-color: #ccc;
+}
+#review-form label {
+  font-size: 1.5em;
+  padding: 10px 0px;
+  #review_rating option {
+    font-size: 5px;
+    }
 }
