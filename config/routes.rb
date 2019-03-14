@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get 'map/show'
   devise_for :users
   root to: 'pages#home'
+
+  resource :map, only: :show
+
   resources :spots do
     resources :advices
     resources :photos, only: [:new, :create, :destroy]
