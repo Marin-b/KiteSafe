@@ -1,12 +1,39 @@
-.navbar-lewagon {
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+
+.nav-bottom-mobile {
+  align-items: center;
   justify-content: space-between;
-  background: white;
-}
+  height: 60px;
+  padding-left: 20px;
+  background-color: #F9F9F9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+  .nav-links {
+    padding-top:10px;
+    li {
+      text-align: center;
+      font-size: 12px;
+      padding: 0px 10px;
+      color: gray;
+    }
+    a{
+     color: gray;
+     text-decoration: none;
+   }
+ }

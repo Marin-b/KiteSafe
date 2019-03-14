@@ -1,22 +1,17 @@
 class PhotosController < ApplicationController
   def new
     @photo = Photo.new
+    @photos = Photo.where(spot_id: params[:spot_id])
     @spot = Spot.find(params[:spot_id])
   end
 
   def create
-    if params[:photo].nil? && params["commit"] != "Done"
-      redirect_to new_spot_photo_path(@spot)
-      return
-    elsif params[:photo].nil? && params["commit"] == "Done"
-      redirect_to spot_path(@spot)
-      return
-    end
+    @photos = Photo.where(spot_id: params[:spot_id])
     @photo = Photo.new(photo_params)
-    @spot = Spot.find(@spot)
-    @photo.spot_id = @spot
+    @spot = Spot.find(params[:spot_id])
+    @photo.spot_id = @spot.id
     if @photo.save
-      params["commit"] == "Done" ? (redirect_to spot_path(@spot)) : (redirect_to new_spot_photo_path(@spot))
+      params[:commit] == "Done" ? (redirect_to spot_path(@spot)) : (redirect_to new_spot_photo_path(@spot))
     else
       render :new
     end
@@ -28,6 +23,6 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:url)
+    params.require(:photo).permit(:photo)
   end
 end

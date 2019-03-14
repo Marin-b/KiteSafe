@@ -5,11 +5,15 @@
     </div>
 
     <div class="spotinfo">
-
+    <h2>Spot Info</h2>
       <div class="ratingmatch">
         <div class="rating">
-
-
+          <div class="date-rating">
+            <% @spot.average_rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
+          <p>Average user rating</p>
         </div>
         <div class="match">
           <p> % match </p>
@@ -21,7 +25,31 @@
       </div>
 
       <div class="description">
-        <%= @spot.description %>
+        <h3>Description</h3>
+        <p> <%= @spot.description %> </p>
+      </div>
+
+      <div class="advice">
+        <div class="pro">
+          <h3>Do's at this spot:</h3>
+            <ul>
+          <% @spot.pros.each do |advice| %>
+            <li>
+              <%= advice.description %>
+            </li>
+          <% end %>
+            </ul>
+        </div>
+        <div class="con">
+          <h3>Don'ts at this spot:</h3>
+            <ul>
+          <% @spot.cons.each do |advice| %>
+            <li>
+           <%= advice.description %>
+            </li>
+          <% end %>
+            </ul>
+        </div>
       </div>
 
       <div class="reviews">
