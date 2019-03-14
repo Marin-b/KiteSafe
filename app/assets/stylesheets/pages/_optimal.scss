@@ -67,6 +67,14 @@ align-items: center;
   width: 100%;
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+
+.image-description{
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 400px;
 }
 
 .card-bottom {
