@@ -1,4 +1,4 @@
 class OnboardingController < ApplicationController
-  def first
+  def home
   end
 end
