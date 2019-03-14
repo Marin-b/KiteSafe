@@ -1,60 +1,106 @@
 <div class="wrapper">
-  <div class="container">
+  <div class="showcontainer">
     <div class="photobanner" style="background-image: url('https://images.unsplash.com/photo-1525626712546-694f3d60f30a?ixlib=rb-1.2.1&auto=format&fit=crop&w=629&q=80')">
       <h2> <%= @spot.name %> </h2>
     </div>
 
     <div class="spotinfo">
-    <h2>Spot Info</h2>
-      <div class="ratingmatch">
-        <div class="rating">
-          <div class="date-rating">
-            <% @spot.average_rating.times do %>
+      <h2>Spot Info</h2>
+        <div class="ratingmatch">
+          <div class="rating">
+            <div class="starsavg">
+              <% @spot.average_rating.times do %>
               <i class="fas fa-star fill"></i>
-            <% end %>
+              <% end %>
+            </div>
+            <p>Average user rating</p>
           </div>
-          <p>Average user rating</p>
+          <div class="match">
+            <div class="match-number">
+              <% @spot.difficulty_levels.each do |spot_level| %>
+              <h2> <%= (current_user.level / spot_level.minimum_level) * 100 %> </h2>
+              <% end %>
+            </div>
+            <div class="match-percent">
+              <p> % </p>
+            </div>
+            <div class="match-match">
+              <p> Match </p>
+            </div>
+          </div>
         </div>
-        <div class="match">
-          <p> % match </p>
+
+        <div class="weatherconditions">
+          <div class="wind-speed">
+            <%= image_tag("SVG/wind-speed-icon.svg", size: "47x35", alt: "wind icon") %>
+          </div>
+
+          <div class="wind-direction">
+
+          </div>
+
+          <div class="wave-type">
+            <%= image_tag("SVG/wave-icon.svg", size: "47x35", alt: "wave icon") %>
+          </div>
+
         </div>
-      </div>
 
-      <div class="weatherconditions">
+        <div class="description">
+          <h4>Description</h4>
+          <p> <%= @spot.description %> </p>
+        </div>
 
-      </div>
-
-      <div class="description">
-        <h4>Description</h4>
-        <p> <%= @spot.description %> </p>
-      </div>
-
-      <div class="advice">
-        <div class="pro">
-          <h4>Do's at this spot:</h4>
+        <div class="advice">
+          <div class="pro">
+            <h4>Do's at this spot:</h4>
             <ul>
-          <% @spot.pros.each do |advice| %>
-            <li>
-              <%= advice.description %>
-            </li>
-          <% end %>
+              <% @spot.pros.each do |advice| %>
+              <li>
+                <i class="fas fa-check"></i>  <%= advice.description %>
+              </li>
+              <% end %>
             </ul>
-        </div>
-        <div class="con">
-          <h4>Don'ts at this spot:</h4>
+          </div>
+          <div class="con">
+            <h4>Don'ts at this spot:</h4>
             <ul>
-          <% @spot.cons.each do |advice| %>
-            <li>
-           <%= advice.description %>
-            </li>
-          <% end %>
-            </ul>
-        </div>
-      </div>
+              <% @spot.cons.each do |advice| %>
+              <li>
+               <i class="fas fa-times"></i>  <%= advice.description %>
+             </li>
+             <% end %>
+           </ul>
+         </div>
+       </div>
 
-      <div class="reviews">
+       <div class="reviews">
         <h4>Reviews</h4>
         <p> Below are the most recent reviews about this spot from fellow kitesurfers </p>
+          <div class="container">
+            <% @spot.reviews.each do |review| %>
+            <div class="row">
+              <div class="notification">
+                <div class="review-avatar">
+                  <img src= 'https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' class="avatar-user"/>
+                </div>
+
+                <div class="review-date">
+                  <p><small> <%= Date.parse(review.created_at.to_s).strftime("%b %d, %Y") %> </small></p>
+                </div>
+                <div class="review-description">
+                  <p><%= review.description %></p>
+                </div>
+
+                <div class="review-rating">
+                  <% review.rating.times do %>
+                  <i class="fas fa-star"></i>
+                  <% end %>
+                </div>
+
+              </div>
+            </div>
+            <% end %>
+          </div>
       </div>
 
       <div class="location">

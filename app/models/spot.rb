@@ -11,8 +11,14 @@ class Spot < ApplicationRecord
     self.reviews.each do |review|
       sum += review.rating
     end
-    sum / self.reviews.count
+  if self.reviews.count > 0
+    return sum / self.reviews.count
+  else
+    sum = 1
   end
+  end
+
+
 
   def pros
     self.advices.where(kind: true)
