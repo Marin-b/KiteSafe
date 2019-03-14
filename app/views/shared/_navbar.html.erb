@@ -1,14 +1,14 @@
-<div class="nav-bottom-mobile">
-      <ul class="list-inline nav-links">
-        <li class="list-inline-item"><a href="#"><%= image_tag("SVG/kite-icon.svg", size: "27x23", alt: "kite icon") %><br>Optimal</a></li>
-        <li class="list-inline-item"><a href="#"><%= image_tag("SVG/map-icon.svg", size: "25x22", alt: "map icon") %><br>Map</a></li>
-        <li class="list-inline-item"><a href="#"><%= image_tag("SVG/add-photo.svg", size: "26x26", alt: "map icon") %><br>Add</a></li>
-        <li class="list-inline-item"><a href="#"><%= image_tag("SVG/calendar-icon.svg", size: "22x22", alt: "map icon") %><br>Events</a></li>
-        <li class="list-inline-item"><a href="#"><%= image_tag("SVG/profile-icon.svg", size: "24x22", alt: "map icon") %><br>Profile</a></li>
-      </ul>
-    </div>
+<% unless current_page?(controller: 'onboarding', action: 'home') %>
+  <div class="nav-bottom-mobile">
+    <ul class="list-inline nav-links">
+      <li class="list-inline-item"><a href="#"><%= image_tag("SVG/kite-icon.svg", size: "27x23", alt: "kite icon") %><br>Optimal</a></li>
+      <li class="list-inline-item"><a href="#"><%= image_tag("SVG/map-icon.svg", size: "25x22", alt: "map icon") %><br>Map</a></li>
+      <li class="list-inline-item"><a href="#"><%= image_tag("SVG/add-photo.svg", size: "26x26", alt: "map icon") %><br>Add</a></li>
+      <li class="list-inline-item"><a href="#"><%= image_tag("SVG/calendar-icon.svg", size: "22x22", alt: "map icon") %><br>Events</a></li>
+      <li class="list-inline-item"><a href="#"><%= image_tag("SVG/profile-icon.svg", size: "24x22", alt: "map icon") %><br>Profile</a></li>
+    </ul>
   </div>
-
+<% end %>
 
 
 

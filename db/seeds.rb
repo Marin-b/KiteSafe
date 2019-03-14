@@ -12,7 +12,7 @@
 # Review
 # Spot
 # Weather condition
-
+#
 
 puts "Running seed .. "
 
