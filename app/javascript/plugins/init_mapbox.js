@@ -45,6 +45,7 @@ const initMapbox = () => {
         .setPopup(popup)
         .addTo(map)
     });
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
   }
 };
 
