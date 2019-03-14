@@ -1,3 +1,7 @@
+.wrapper {
+  margin-bottom: 60px;
+}
+
 .black-rectangle{
   height: 84px;
   background-color: black;
@@ -61,4 +65,11 @@ align-items: center;
 .image-spot {
   height: 435px;
   width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-bottom {
+  background-color: black;
+  height: 70px;
 }
