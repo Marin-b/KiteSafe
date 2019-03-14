@@ -124,6 +124,20 @@ review = Review.create(
   user: user_two,
   spot: spot)
 
+review_five = Review.create(
+  rating: 3,
+  description: "Bit too to walk",
+  date: Date.today,
+  user: user_four,
+  spot: spot)
+
+review_six = Review.create(
+  rating: 4,
+  description: "Wind was perfect here!",
+  date: Date.today,
+  user: user_three,
+  spot: spot)
+
 review_two = Review.create(
   rating: 3,
   description: "It was ok",
@@ -173,5 +187,10 @@ weather_conditions = WeatherCondition.create(
   wave_condition: "flat",
   date: Date.today,
   spot: spot_four)
+
+difficulty_level = DifficultyLevel.create(
+  optimal_wind_direction: 255,
+  minimum_level: 2,
+  spot: spot)
 
 puts "Seeds done"
