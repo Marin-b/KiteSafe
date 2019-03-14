@@ -11,6 +11,15 @@ h4 {
   color: white;
 }
 
+body {
+    margin: 0;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
 .pro {
   color: white;
   font-weight: lighter;
@@ -21,9 +30,7 @@ h4 {
   color: white;
   font-weight: lighter;
 }
-.container {
-  width: 1400px;
-}
+
 
 .photobanner {
   background-size: cover;
@@ -40,7 +47,6 @@ h4 {
 
 .rating {
   padding-right: 100px;
-  border-right: 1px solid $lightblue;
   border-height: 10px;
 }
 
@@ -65,7 +71,7 @@ h4 {
 }
 
 .description {
-  margin-top: 30px;
+  margin-bottom: 30px;
   margin-top: 25px;
   border-bottom: 2px solid $lightblue;
 }
@@ -75,6 +81,8 @@ h4 {
   border-bottom: 2px solid $lightblue;
 }
 
-
+.reviews {
+  margin-top: 30px;
+}
 
 
