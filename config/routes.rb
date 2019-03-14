@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create, :destroy]
   end
 
-  get 'onboarding', to: "onboarding#first"
+  get 'onboarding', to: "onboarding#home"
 
   require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do
