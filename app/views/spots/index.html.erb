@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <div class="black-rectangle">
+  </div>
+  <hr>
+  <% @spots.each do |spot| %>
+  <div class="spot-title-container">
+    <div>
+      <ul class="spot-name">
+        <li class="title-name-reg">
+          <h5><%= spot.name %></h5>
+        </li>
+      </ul>
+    </div>
+
+    <div class="percentage-result-box">
+      <ul class="list-inline percent-result">
+        <li class="list-inline-item percent-num">
+          <h4 class="green">90</h4>
+        </li>
+
+        <li class="list-inline-item percent-sign">
+          <h6 class="green">%</h6>
+        </li>
+      </ul>
+      <h6 class="match">Match</h6>
+    </div>
+  </div>
+  <hr>
+
+  <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+  url('images/JPG/kite.jpg')">
+<%= image_tag(spot.photos.first.photo.url, width: '100%') unless nil %>
+  <div class="image-description">
+    <ul class>
+      <li><h5><%= spot.weather_conditions.first.wind_speed.ceil  unless nil %> kts</h5></li>
+
+      <li><h5><%= spot.weather_conditions.first.wind_direction.ceil unless nil %> km/h</h5></li>
+
+      <li><h5><%= spot.spot_type unless nil%></h5></li>
+
+    </ul>
+  </div>
+  <a class="card-link" href="" ></a>
+
+  <%= link_to spots_show_path %>
+</div>
+
+<% end %>
+</div>
+
+
+

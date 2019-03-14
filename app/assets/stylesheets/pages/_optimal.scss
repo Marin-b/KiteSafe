@@ -1,0 +1,64 @@
+.black-rectangle{
+  height: 84px;
+  background-color: black;
+}
+
+.spot-title-container{
+background: #233142;
+height: 60px;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.spot-name {
+  text-align: left;
+  list-style-type: none;
+  margin-top: auto;
+  margin-bottom: auto;
+ li .title-name-reg{
+  color: #E3E3E3;
+  letter-spacing: 0.39px;
+ }
+ li .title-name-small{
+  color: #F9F9F9;
+ }
+}
+
+.green {
+  color: #1BCF83;
+}
+
+.percentage-result-box{
+  margin-right: 24px;
+}
+
+.percent-result{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.percent-num{
+    list-style-type: none;
+    color: #1BCF83;
+    text-align: center;
+    margin-right: 0px !important;
+  }
+
+  .percent-sign{
+    color: #1BCF83;
+    letter-spacing: 0.35px;
+    text-align: top;
+  }
+  .match{
+    font-family: Roboto-Light;
+    font-size: 10px;
+    color: #1BCF83;
+    letter-spacing: 0.25px;
+    text-align: center;
+}
+
+.image-spot {
+  height: 435px;
+  width: 100%;
+}
