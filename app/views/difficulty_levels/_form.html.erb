@@ -2,7 +2,7 @@
 <%= simple_form_for [@spot, @difficulty_level] do |f| %>
 <%= f.error_notification %>
   <div class="form-inputs" id="review-form">
-    <%= f.input :optimal_wind_direction, label: "Describe your spot"%>
+    <%= f.input :optimal_wind_direction, label: "Optimal wind direction:"%>
     <br>
     <%= f.input :minimum_level, collection: [*0..5], label: false, prompt: "Pick your minimal level <i class='fas fa-sort-down'></i>".html_safe %>
     <br>

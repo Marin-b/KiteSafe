@@ -11,7 +11,7 @@ class AdvicesController < ApplicationController
 
   def create
     if params[:commit] == "Exit"
-      redirect_to root_path
+      redirect_to new_spot_difficulty_level_path
       return
     end
     @advice = Advice.new(advice_params)

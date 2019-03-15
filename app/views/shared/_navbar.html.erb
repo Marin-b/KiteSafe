@@ -2,7 +2,7 @@
   <div class="nav-bottom-mobile">
     <ul class="list-inline nav-links">
       <li class="centered">
-        <%= link_to map_show_path  do %>
+        <%= link_to root_path  do %>
           <%= image_tag("SVG/map-icon.svg", size: "25x22", alt: "map icon") %>
           <br>
           Map
@@ -30,11 +30,11 @@
         <% end %>
       </li>
       <li class="centered">
-        <%= link_to root_path  do %>
-          <%= image_tag("SVG/profile-icon.svg", size: "24x22", alt: "map icon") %>
+          <%= link_to destroy_user_session_path, method: :delete  do %>
+            <%= image_tag("SVG/profile-icon.svg", size: "24x22", alt: "map icon") %>
           <br>
           Profile
-        <% end %>
+          <% end %>
       </li>
     </ul>
   </div>
@@ -46,5 +46,10 @@
     </ul>
   </div>
 <% end %>
+
+
+
+
+
 
 

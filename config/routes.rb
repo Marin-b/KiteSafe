@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'quizz/quiss'
-  get 'map/show'
   devise_for :users
   root to: 'map#show'
 
