@@ -1,7 +1,16 @@
 <div class="wrapper">
   <div class="showcontainer">
-    <div class="photobanner" style="background-image: url('https://images.unsplash.com/photo-1525626712546-694f3d60f30a?ixlib=rb-1.2.1&auto=format&fit=crop&w=629&q=80')">
-      <h2> <%= @spot.name %> </h2>
+
+    <div class="photobanner"
+      <% if @spot.photos.empty? %>
+        <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+        url('https://images.unsplash.com/photo-1525626712546-694f3d60f30a?ixlib=rb-1.2.1&auto=format&fit=crop&w=629&q=80')">
+        <% else %>
+        <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+        url('<%= image_path 'spot.photos.first.photo.url' %>')">
+        <% end %>
+        <h2 class="spotname"> <%= @spot.name %> </h2>
+      </div>
     </div>
 
     <div class="spotinfo">
@@ -18,7 +27,7 @@
           <div class="match">
             <div class="match-number">
               <% @spot.difficulty_levels.each do |spot_level| %>
-              <h2> <%= (current_user.level / spot_level.minimum_level) * 100 %> </h2>
+              <h2> <%= ((current_user.level.to_f / spot_level.minimum_level.to_f) * 100).to_i %> </h2>
               <% end %>
             </div>
             <div class="match-percent">
@@ -46,7 +55,7 @@
         </div>
 
         <div class="description">
-          <h4>Description</h4>
+          <h4 class="description-title">Description</h4>
           <p> <%= @spot.description %> </p>
         </div>
 
@@ -75,7 +84,7 @@
 
        <div class="reviews">
         <h4>Reviews</h4>
-        <p> Below are the most recent reviews about this spot from fellow kitesurfers </p>
+        <p class="review-intro"> Below are the most recent reviews about this spot from fellow kitesurfers </p>
           <div class="container">
             <% @spot.reviews.each do |review| %>
             <div class="row">
@@ -100,6 +109,11 @@
               </div>
             </div>
             <% end %>
+            <div class="review-button-box">
+              <button class="secondary-btn review-btn">
+               <%= link_to "Review it", new_spot_review_path(@spot) %>
+              </button>
+            </div>
           </div>
       </div>
 
