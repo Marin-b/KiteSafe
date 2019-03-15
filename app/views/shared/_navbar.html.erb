@@ -1,4 +1,4 @@
-<% unless current_page?(controller: 'onboarding', action: 'home') %>
+<% if (current_user) %>
   <div class="nav-bottom-mobile">
     <ul class="list-inline nav-links">
       <li class="list-inline-item"><a href="#"><%= image_tag("SVG/kite-icon.svg", size: "27x23", alt: "kite icon") %><br>Optimal</a></li>
