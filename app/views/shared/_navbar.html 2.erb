@@ -1,5 +1,5 @@
-<% if current_page?("/onboarding") || current_page?("/level") || current_page?("/users/sign_in") %>
-<% elsif current_user %>
+<% if current_page?("/onboarding") || current_page?("/level") %>
+<% elsif (current_user) %>
   <div class="nav-bottom-mobile">
     <ul class="list-inline nav-links">
       <li class="list-inline-item"><a href="#"><%= image_tag("SVG/kite-icon.svg", size: "27x23", alt: "kite icon") %><br>Optimal</a></li>
@@ -9,6 +9,7 @@
       <li class="list-inline-item"><a href="#"><%= image_tag("SVG/profile-icon.svg", size: "24x22", alt: "map icon") %><br>Profile</a></li>
     </ul>
   </div>
+
 <% else %>
   <div class="nav-bottom-mobile">
     <ul class="list-inline nav-links">
