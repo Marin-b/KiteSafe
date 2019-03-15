@@ -38,6 +38,11 @@ align-items: center;
   margin-right: 24px;
 }
 
+
+.conditions {
+
+}
+
 .percent-result{
   margin-top: auto;
   margin-bottom: auto;
@@ -67,6 +72,13 @@ align-items: center;
   width: 100%;
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+
+.image-description{
+  position: absolute;
+  right: 21px;
+  top: 400px;
 }
 
 .card-bottom {

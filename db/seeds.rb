@@ -25,19 +25,19 @@ Spot.destroy_all
 User.destroy_all
 
 #New User
-user = User.create(email: "chris@chris.com", password: "123456")
+user = User.create(email: "chris@chris.com", password: "123456", level: 2)
 #Leaves Review - Spot One
-user_two = User.create(email: "avalon@avalon.com", password: "123456")
+user_two = User.create(email: "avalon@avalon.com", password: "123456", level: 1)
 
 #New User
-user_three = User.create(email: "paulus@paulus.com", password: "123456")
+user_three = User.create(email: "paulus@paulus.com", password: "123456", level: 5)
 #Leaves Review - Spot Two
-user_four = User.create(email: "marin@marin.com", password: "123456")
+user_four = User.create(email: "marin@marin.com", password: "123456", level: 3)
 
 #New User
-user_five = User.create(email: "ellyn@ellyn.com", password: "123456")
+user_five = User.create(email: "ellyn@ellyn.com", password: "123456", level: 4)
 #Leaves Review - Spot Three
-user_six = User.create(email: "example@example.com", password: "123456")
+user_six = User.create(email: "example@example.com", password: "123456", level: 2)
 
 
 
@@ -159,8 +159,20 @@ review_four = Review.create(
   user: user_three,
   spot: spot_four)
 
+difficulty_level = DifficultyLevel.create(
+  optimal_wind_direction: 295,
+  minimum_level: 4,
+  spot: spot_four)
 
+difficulty_level = DifficultyLevel.create(
+  optimal_wind_direction: 155,
+  minimum_level: 2,
+  spot: spot_three)
 
+difficulty_level = DifficultyLevel.create(
+  optimal_wind_direction: 264,
+  minimum_level: 1,
+  spot: spot_two)
 
 difficulty_level = DifficultyLevel.create(
   optimal_wind_direction: 255,

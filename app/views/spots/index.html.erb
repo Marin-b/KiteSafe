@@ -35,16 +35,31 @@
       <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
       url('<%= image_path 'spot.photos.first.photo.url' %>')">
       <% end %>
+
+      <% if spot.weather_conditions.empty? %>
+
       <div class="image-description">
-        <ul class>
-          <li><h5><%= spot.weather_conditions.first.wind_speed  unless nil %> kts</h5></li>
+        <ul class="list-inline conditions">
+          <li class="list-inline-item"><h5>Fetching Data</h5></li>
 
-          <li><h5><%= spot.weather_conditions.first.wind_direction unless nil %> km/h</h5></li>
+          <li class="list-inline-item"><h5>Fetching Data</h5></li>
 
-          <li><h5><%= spot.spot_type unless nil%></h5></li>
-
+          <li class="list-inline-item"><h5>Fetching Data</h5></li>
         </ul>
       </div>
+
+      <% else %>
+
+      <div class="image-description">
+        <ul class="list-inline conditions">
+          <li class="list-inline-item"><h5><%= spot.weather_conditions.first.wind_speed  unless nil %> kts</h5></li>
+
+          <li class="list-inline-item"><h5><%= spot.weather_conditions.first.wind_direction unless nil %> km/h</h5></li>
+
+          <li class="list-inline-item"><h5><%= spot.spot_type unless nil%></h5></li>
+        </ul>
+      </div>
+      <% end %>
     </div>
     <hr>
     <div class="card-bottom">
