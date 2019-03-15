@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'quizz/quiss'
   get 'map/show'
   devise_for :users
-  root to: 'pages#home'
+  root to: 'map#show'
 
   resource :map, only: :show
 
