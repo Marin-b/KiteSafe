@@ -1,75 +1,94 @@
+
 <div class="wrapper">
   <div class="black-rectangle">
   </div>
-  <% @spots.each do |spot| %>
+    <% @spots.each do |spot| %>
     <hr>
     <%= link_to spot_path(spot) do %>
-      <div class="spot-title-container">
-        <div>
-          <ul class="spot-name">
-            <li class="title-name-reg">
-              <h5><%= spot.name %></h5>
-            </li>
-          </ul>
-        </div>
-
-        <div class="percentage-result-box">
-          <ul class="list-inline percent-result">
-            <li class="list-inline-item percent-num">
-              <h4 class="green">90</h4>
-            </li>
-
-            <li class="list-inline-item percent-sign">
-              <h6 class="green">%</h6>
-            </li>
-          </ul>
-          <h6 class="match">Match</h6>
-        </div>
-      </div>
-      <hr>
-
-      <% if spot.photos.empty? %>
-      <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
-      url('<%= image_path 'JPG/kite.jpg' %>')">
-      <% else %>
-      <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
-      url('<%= image_path 'spot.photos.first.photo.url' %>')">
-      <% end %>
-
-      <% if spot.weather_conditions.empty? %>
-
-      <div class="image-description">
-        <ul class="list-inline conditions">
-          <li class="list-inline-item"><h5>Fetching Data</h5></li>
-
-          <li class="list-inline-item"><h5>Fetching Data</h5></li>
-
-          <li class="list-inline-item"><h5>Fetching Data</h5></li>
+    <div class="spot-title-container">
+      <div>
+        <ul class="spot-name">
+          <li class="title-name-reg">
+            <h5><%= spot.name %></h5>
+          </li>
         </ul>
       </div>
 
-      <% else %>
+      <div class="percentage-result-box">
+        <ul class="list-inline percent-result">
+          <li class="list-inline-item percent-num">
+            <h4 class="green">90</h4>
+          </li>
 
-      <div class="image-description">
-        <ul class="list-inline conditions">
-          <li class="list-inline-item"><h5><%= spot.weather_conditions.first.wind_speed  unless nil %> kts</h5></li>
-
-          <li class="list-inline-item"><h5><%= spot.weather_conditions.first.wind_direction unless nil %> km/h</h5></li>
-
-          <li class="list-inline-item"><h5><%= spot.spot_type unless nil%></h5></li>
+          <li class="list-inline-item percent-sign">
+            <h6 class="green">%</h6>
+          </li>
         </ul>
+        <h6 class="match">Match</h6>
       </div>
-      <% end %>
     </div>
     <hr>
-    <div class="card-bottom">
-      <div>
 
-      </div>
+    <% if spot.photos.empty? %>
+    <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+    url('<%= image_path 'JPG/kite.jpg' %>')">
+    <% else %>
+    <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+    url('<%= image_path 'spot.photos.first.photo.url' %>')">
+    <% end %>
+
+  </div>
+  <hr>
+
+  <div class="card-bottom">
+    <div class="row my-row">
+      <div class="average-rating">
+        <p>Avg. Rating</p>
+        <% spot.average_rating.times do %>
+        <i class="fas fa-star fill"></i>
+        <% end %>
+        </div>
+
+    <% if spot.weather_conditions.empty? %>
+
+    <div class="image-description">
+      <ul class="list-inline conditions">
+        <li class="list-inline-item"><h5>Fetching Data</h5></li>
+
+        <li class="list-inline-item"><h5>Fetching Data</h5></li>
+
+        <li class="list-inline-item"><h5>Fetching Data</h5></li>
+      </ul>
     </div>
-  <% end %>
+
+    <% else %>
+
+    <div class="image-description">
+      <ul class="list-inline conditions">
+        <li class="list-inline-item"><h5><%= spot.weather_conditions.first.wind_speed  unless nil %> kts</h5></li>
+
+        <li class="list-inline-item"><h5><%= spot.weather_conditions.first.wind_direction unless nil %> km/h</h5></li>
+        <% if spot.spot_type == "Wavey" %>
+        <li class="list-inline-item"><%= image_tag("SVG/big-wave.svg", size: "26x26", alt: "map icon") %></h5></li>
+        <% elsif spot.spot_type == "Choppy" %>
+        <li class="list-inline-item"><%= image_tag("SVG/wave-icon.svg", size: "26x26", alt: "map icon") %></h5></li>
+        <% else spot.spot_type == "Flat" %>
+        <li class="list-inline-item"><%= image_tag("SVG/wave-icon.svg", size: "26x26", alt: "map icon") %></h5></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+
+    </div>
+  </div>
+ <% end %>
 <% end  %>
 </div>
+
+
+
+
 
 
 

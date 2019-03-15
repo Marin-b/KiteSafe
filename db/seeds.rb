@@ -21,8 +21,10 @@ Advice.destroy_all
 Photo.destroy_all
 Review.destroy_all
 WeatherCondition.destroy_all
+DifficultyLevel.destroy_all
 Spot.destroy_all
 User.destroy_all
+
 
 #New User
 user = User.create(email: "chris@chris.com", password: "123456", level: 2)
@@ -47,7 +49,7 @@ puts "Users created"
 spot = Spot.create(
   description: "Awesome spot",
   name: "Rodrigues Island",
-  spot_type: "wavey",
+  spot_type: "Wavey",
   latitude: 46.227638,
   longitude: 2.213749,
   user: user)
@@ -55,7 +57,7 @@ spot = Spot.create(
 spot_two = Spot.create(
   description: "Cool spot",
   name: "Tarifa, Spain",
-  spot_type: "wavey",
+  spot_type: "Wavey",
   latitude: 52.373169,
   longitude: 4.890660,
   user: user_two)
@@ -63,7 +65,7 @@ spot_two = Spot.create(
 spot_three = Spot.create(
   description: "Nice spot",
   name: "Combuco, Brazil",
-  spot_type: "medium",
+  spot_type: "Flat",
   latitude: 37.774929,
   longitude: -122.419418,
   user: user_three)
@@ -71,7 +73,7 @@ spot_three = Spot.create(
 spot_four = Spot.create(
   description: "Its an ok spot",
   name: "Taveuni Island",
-  spot_type: "flat",
+  spot_type: "Flat",
   latitude: 51.165691,
   longitude: 10.451526,
   user: user_four)
@@ -179,5 +181,11 @@ difficulty_level = DifficultyLevel.create(
   minimum_level: 2,
   spot: spot)
 
-
+weather_condition =
+  wind_direction: nil,
+  wind_speed: nil,
+  date: nil,
+  spot_id: nil,
+  created_at: nil,
+  updated_at: nil
 puts "Seeds done"
