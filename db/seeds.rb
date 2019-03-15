@@ -181,11 +181,4 @@ difficulty_level = DifficultyLevel.create(
   minimum_level: 2,
   spot: spot)
 
-weather_condition =
-  wind_direction: nil,
-  wind_speed: nil,
-  date: nil,
-  spot_id: nil,
-  created_at: nil,
-  updated_at: nil
 puts "Seeds done"
