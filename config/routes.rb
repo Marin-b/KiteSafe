@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'quizz/quiss'
   get 'map/show'
   devise_for :users
   root to: 'pages#home'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   get 'onboarding', to: "onboarding#home"
+  get 'level', to: "quizz#quizz"
 
   require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do

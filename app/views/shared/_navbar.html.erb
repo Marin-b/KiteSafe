@@ -8,6 +8,14 @@
       <li class="list-inline-item"><a href="#"><%= image_tag("SVG/profile-icon.svg", size: "24x22", alt: "map icon") %><br>Profile</a></li>
     </ul>
   </div>
+<% elsif current_page?("/onboarding") || current_page?("/level") %>
+<% else %>
+  <div class="nav-bottom-mobile">
+    <ul class="list-inline nav-links">
+      <li class="list-inline-item"><%= link_to "Sign in", new_user_session_path %></li>
+      <li class="list-inline-item"><%= link_to "Sign up", new_user_registration_path %></li>
+    </ul>
+  </div>
 <% end %>
 
 
