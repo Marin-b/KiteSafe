@@ -26,9 +26,8 @@
           </div>
           <div class="match">
             <div class="match-number">
-              <% @spot.difficulty_levels.each do |spot_level| %>
-               <h2> <%= ((current_user.level.to_f / spot_level.minimum_level.to_f) * 100).to_i %> </h2>
-              <% end %>
+              <% match_percentage = ((@level.to_f / @spot.difficulty_levels.first.minimum_level.to_f) * 100).to_i %>
+              <h2> <%= match_percentage > 100 ? 100 : match_percentage %> </h2>
             </div>
             <div class="match-percent">
               <p> % </p>

@@ -6,6 +6,14 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
+    session[:level] = params[:level].to_i
+    if (current_user)
+      @level = current_user.level
+    elsif params[:level]
+      @level = params[:level].to_i
+    else
+      redirect_to level_path
+    end
   end
 
   def create
@@ -20,6 +28,11 @@ class SpotsController < ApplicationController
   end
 
   def show
+    if current_user
+      @level =  current_user.level
+    else
+      @level = session[:level]
+    end
     @spot = Spot.find(params[:id])
   end
 

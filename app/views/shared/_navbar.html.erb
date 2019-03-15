@@ -1,18 +1,48 @@
 <% if user_signed_in? %>
   <div class="nav-bottom-mobile">
     <ul class="list-inline nav-links">
-      <li class="list-inline-item"><a href="#"><%= image_tag("SVG/kite-icon.svg", size: "27x23", alt: "kite icon") %><br>Optimal</a></li>
-      <li class="list-inline-item"><a href="#"><%= image_tag("SVG/map-icon.svg", size: "25x22", alt: "map icon") %><br>Map</a></li>
-      <li class="list-inline-item"><a href="#"><%= image_tag("SVG/add-photo.svg", size: "26x26", alt: "map icon") %><br>Add</a></li>
-      <li class="list-inline-item"><a href="#"><%= image_tag("SVG/calendar-icon.svg", size: "22x22", alt: "map icon") %><br>Events</a></li>
-      <li class="list-inline-item"><a href="#"><%= image_tag("SVG/profile-icon.svg", size: "24x22", alt: "map icon") %><br>Profile</a></li>
+      <li class="centered">
+        <%= link_to map_show_path  do %>
+          <%= image_tag("SVG/map-icon.svg", size: "25x22", alt: "map icon") %>
+          <br>
+          Map
+        <% end %>
+      </li>
+      <li class="centered">
+        <%= link_to spots_path  do %>
+          <%= image_tag("SVG/kite-icon.svg", size: "27x23", alt: "kite icon") %>
+          <br>
+          Best spot
+        <% end %>
+      </li>
+      <li class="centered">
+        <%= link_to new_spot_path  do %>
+          <%= image_tag("SVG/add-photo.svg", size: "26x26", alt: "map icon") %>
+          <br>
+          Add
+        <% end %>
+      </li>
+      <li class="centered">
+        <%= link_to root_path  do %>
+          <%= image_tag("SVG/calendar-icon.svg", size: "22x22", alt: "map icon") %>
+          <br>
+          Events
+        <% end %>
+      </li>
+      <li class="centered">
+        <%= link_to root_path  do %>
+          <%= image_tag("SVG/profile-icon.svg", size: "24x22", alt: "map icon") %>
+          <br>
+          Profile
+        <% end %>
+      </li>
     </ul>
   </div>
 <% else %>
   <div class="nav-bottom-mobile">
     <ul class="list-inline nav-links">
-      <li class="list-inline-item"><%= link_to "Sign in", new_user_session_path %></li>
-      <li class="list-inline-item"><%= link_to "Sign up", new_user_registration_path %></li>
+      <li class="centered"><%= link_to "Sign in", new_user_session_path %></li>
+      <li class="centered"><%= link_to "Sign up", new_user_registration_path %></li>
     </ul>
   </div>
 <% end %>
