@@ -162,12 +162,12 @@ review_four = Review.create(
 difficulty_level = DifficultyLevel.create(
   optimal_wind_direction: 295,
   minimum_level: 4,
-  spot: spot_4)
+  spot: spot_four)
 
 difficulty_level = DifficultyLevel.create(
   optimal_wind_direction: 155,
   minimum_level: 2,
-  spot: spot_3)
+  spot: spot_three)
 
 difficulty_level = DifficultyLevel.create(
   optimal_wind_direction: 264,
