@@ -12,11 +12,15 @@
                 required: true, wrapper_html: {class: "around"}, label: "Latitude of the spot:" %>
     <%= f.hidden_field :longitude,
                 required: true, wrapper_html: {class: "around"}, label: "Longitude of the spot:" %>
+
+    <%= f.input :name,
+                  required: true, label: "Name:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
+
     <%= f.input :description,
-                  required: true, label: "Describe the spot in detail:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
+                  required: true, label: "Detailed description:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
     <%= f.label "Type:" %>
       <br>
-      <%= f.select :spot_type, %w(Choppy Flat Waves) %>
+      <%= f.select :spot_type, %w(Flat Choppy Wavey) %>
       <br>
       <br>
     <%= f.submit "Continue" %>
