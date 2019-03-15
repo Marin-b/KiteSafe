@@ -1,5 +1,4 @@
-<% if current_page?("/onboarding") || current_page?("/level")  %>
-<% elsif (current_user) %>
+<% if user_signed_in? %>
   <div class="nav-bottom-mobile">
     <ul class="list-inline nav-links">
       <li class="centered">

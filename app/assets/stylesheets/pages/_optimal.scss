@@ -21,6 +21,7 @@ align-items: center;
   list-style-type: none;
   margin-top: auto;
   margin-bottom: auto;
+  padding-left: 24px;
  li .title-name-reg{
   color: #E3E3E3;
   letter-spacing: 0.39px;
@@ -72,16 +73,25 @@ align-items: center;
   width: 100%;
   background-size: cover;
   background-position: center;
-  position: relative;
 }
 
 .image-description{
   position: absolute;
   right: 21px;
-  top: 400px;
+  top: 24px;
 }
 
 .card-bottom {
   background-color: black;
   height: 70px;
+  position: relative;
 }
+
+.my-row{
+  padding-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 24px;
+  margin-right: 0px;
+}
+
+
