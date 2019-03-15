@@ -19,7 +19,7 @@
           <div class="rating">
             <div class="starsavg">
               <% @spot.average_rating.times do %>
-              <i class="fas fa-star fill"></i>
+                <i class="fas fa-star fill"></i>
               <% end %>
             </div>
             <p>Average user rating</p>
@@ -27,7 +27,7 @@
           <div class="match">
             <div class="match-number">
               <% @spot.difficulty_levels.each do |spot_level| %>
-              <h2> <%= ((current_user.level.to_f / spot_level.minimum_level.to_f) * 100).to_i %> </h2>
+               <h2> <%= ((current_user.level.to_f / spot_level.minimum_level.to_f) * 100).to_i %> </h2>
               <% end %>
             </div>
             <div class="match-percent">

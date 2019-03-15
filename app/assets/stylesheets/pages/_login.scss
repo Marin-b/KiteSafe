@@ -1,0 +1,43 @@
+.form-inputs {
+  margin: 80px auto;
+  background-color: #ccc;
+  padding: 30px;
+}
+.form-wrap {
+  margin: 0px auto;
+  background-color: #ccc;
+  padding: 40px;
+}
+.login-btn{
+  height: 35px;
+  width: 120px;
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+  background-color: $darkblue;
+  border-radius: 26px;
+  margin: 10px 0px 15px 0px;
+}
+
+.container-login {
+  margin-top: 0px;
+  background-color: #ccc;
+  padding-bottom: 40px;
+  text-align: left;
+}
+.form-wrap h1 {
+  margin-left: 30px;
+}
+.sign-up a {
+  margin: 50px 0;
+
+  padding: 40px 0;
+  font-size: 18px;
+  color: #233142;
+  text-align: left;
+  line-height: 2em;
+}
+
