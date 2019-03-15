@@ -1,15 +1,22 @@
 <div class="onboarding" style="background: url(<%= cl_image_path('onboarding_background') %>)">
-  <h1 class="onboarding-title"><span class="red">Kite</span>Safe</h1>
-  <i class="fas fa-map-marker-alt fa-3x"></i>
-  <div class="onboarding-text">
-    <h5 style="font-weight:300">We match your experience as a kitesurfers with spots around you!</h5>
+  <div class="info">
+    <h1 class="onboarding-title"><span class="red">Kite</span>Safe</h1>
+    <i class="fas fa-map-marker-alt fa-3x"></i>
+    <div class="onboarding-text">
+      <h5 style="font-weight:300">We match your experience as a kitesurfers with spots around you!</h5>
+    </div>
+    <div class="flexbox auto-margin">
+      <i class="fas fa-circle fa-2x circle-slider selected-circle"></i>
+      <i class="fas fa-circle fa-2x circle-slider"></i>
+      <i class="fas fa-circle fa-2x circle-slider"></i>
+      <i class="fas fa-circle fa-2x circle-slider"></i>
+    </div>
   </div>
-  <div class="flexbox auto-margin">
-    <i class="fas fa-circle fa-2x circle-slider selected-circle"></i>
-    <i class="fas fa-circle fa-2x circle-slider"></i>
-    <i class="fas fa-circle fa-2x circle-slider"></i>
-    <i class="fas fa-circle fa-2x circle-slider"></i>
+  <div class="onboarding-links">
+    <%= link_to "Continue", level_path, class: "main-btn" %>
+    <div class="onboarding-signin">
+      <p>Already have an account?</p>
+      <%= link_to "Sign in", new_user_session_path %>
+    </div>
   </div>
-  <%= link_to "Continue", root_path, class: "main-btn" %>
-
 </div>

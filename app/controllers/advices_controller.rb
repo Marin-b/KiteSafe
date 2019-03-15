@@ -1,6 +1,7 @@
 class AdvicesController < ApplicationController
   before_action :set_spot, only: [:new, :create, :show, :edit, :destroy]
   before_action :set_advice, only: [:destroy]
+
   def new
     @advice = Advice.new
     @advices = Advice.where(spot_id: params[:spot_id])

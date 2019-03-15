@@ -1,0 +1,98 @@
+<div class="quizz-wrapper">
+  <h2>Pick your level:</h2>
+  <%= form_tag("/spots", method: "get") do %>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading flexbox" role="tab" id="headingOne">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <i class="fas fa-angle-down"></i>
+              Beginner
+            </a>
+          </h4>
+          <%= check_box_tag(:level, "1") %>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            You just picked up kitesurfing, great! You are not yet comfortable with handling the kite, and still in the process of learning how to water start.
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="panel panel-default">
+        <div class="panel-heading flexbox" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <i class="fas fa-angle-down"></i>
+              Independent
+            </a>
+          </h4>
+          <%= check_box_tag(:level, "2") %>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            You manage the water start most of the time, but your are unable to ride upwind. Your kite control is good but you are to busy controlling the kite to be aware of other kitesurfers around you.
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="panel panel-default">
+        <div class="panel-heading flexbox" role="tab" id="headingThree">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <i class="fas fa-angle-down"></i>
+              Advanced
+            </a>
+          </h4>
+          <%= check_box_tag(:level, "3") %>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            You are able to ride upwind. You are aware of your surrounding most of the time and you are getting comfortable riding along others. Your kite control is good and you are confident with your ability of launching and landing the kite.
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="panel panel-default">
+        <div class="panel-heading flexbox" role="tab" id="headingFour">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <i class="fas fa-angle-down"></i>
+              Freestyler
+            </a>
+          </h4>
+          <%= check_box_tag(:level, "4") %>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+          <div class="panel-body">
+            You are aware of your surrounding at all time. You are comfortable with jumps and in the process of learning more tricks. You also know everything about the safety precautions on the beach and around othe riders.
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="panel panel-default">
+        <div class="panel-heading flexbox" role="tab" id="headingThree">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            <i class="fas fa-angle-down"></i>
+              Rescue Master
+            </a>
+          </h4>
+          <%= check_box_tag(:level, "5") %>
+        </div>
+        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+          <div class="panel-body">
+            As a master of the self rescue, you've been kitesurfing for a long time and know you can get yourself out of every situation. You are able to help other kitesurfer in danger if need be.
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="links-quizz">
+      <%= submit_tag("Continue", class: "main-btn")  %>
+      <% unless (current_user) %>
+        <p>Save your level by <span class="red"> <%= link_to "signing in", new_user_session_path %></span></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
