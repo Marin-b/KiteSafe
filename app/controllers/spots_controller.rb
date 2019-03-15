@@ -6,14 +6,13 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
-    @markers = @spots.map do |spot|
-      {
-        lng: spot.longitude,
-        lat: spot.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { spot: spot }),
-        description: spot.description,
-        spot_id: spot.id
-      }
+    session[:level] = params[:level].to_i
+    if (current_user)
+      @level = current_user.level
+    elsif params[:level]
+      @level = params[:level].to_i
+    else
+      redirect_to level_path
     end
   end
 
@@ -29,6 +28,11 @@ class SpotsController < ApplicationController
   end
 
   def show
+    if current_user
+      @level =  current_user.level
+    else
+      @level = session[:level]
+    end
     @spot = Spot.find(params[:id])
   end
 
