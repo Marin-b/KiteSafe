@@ -96,6 +96,7 @@
         <li class="list-inline-item"><h5><%= spot.weather_conditions.first.wind_speed.to_i.ceil  unless nil %> kts</h5></li>
 
         <li class="list-inline-item"><h5><%= spot.weather_conditions.first.wind_direction.to_i.ceil unless nil %> °</h5></li>
+
         <% if spot.spot_type == "Wavey" %>
         <li class="list-inline-item"><%= image_tag("SVG/big-wave.svg", size: "26x26", alt: "map icon") %></h5></li>
         <% elsif spot.spot_type == "Choppy" %>
