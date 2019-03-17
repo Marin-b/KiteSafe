@@ -1,7 +1,33 @@
 
 <div class="wrapper">
   <div class="black-rectangle">
-  </div>
+
+<div class="filter-text">
+  <p>Filter Options</p>
+</div>
+
+            <div class="review-button-container">
+              <button class="secondary-btn review-btn">
+               <%= link_to "Skill Level" %>
+              </button>
+            </div>
+
+            <div class="review-button-container">
+              <button class="secondary-btn review-btn">
+               <%= link_to "Location" %>
+              </button>
+            </div>
+
+
+            <div class="review-button-container">
+              <button class="secondary-btn review-btn">
+               <%= link_to "Wave Type" %>
+              </button>
+            </div>
+
+
+       </div>
+
     <% @spots.each do |spot| %>
     <hr>
     <%= link_to spot_path(spot) do %>

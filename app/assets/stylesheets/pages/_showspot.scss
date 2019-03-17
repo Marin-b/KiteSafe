@@ -1,6 +1,36 @@
 body {
     margin: 0;
 }
+.spot-info-h2{
+  padding-left:20px;
+  padding-top: 15px;
+}
+h5 {
+  padding-bottom: 5px;
+}
+
+.fa-chevron-left{
+ position: absolute;
+ top: 40px;
+ left: 25px;
+ font-size: 28px;
+ color: $light-gray;
+}
+
+.fa-chevron-down{
+ position: absolute;
+ top: 20px;
+ left: 50%;
+ font-size: 17px;
+ color: $linecolor;
+}
+
+
+.line-show{
+  border-top: 2px solid #455C7A !important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 .wrapper {
   margin-bottom: 60px;
@@ -9,28 +39,29 @@ body {
 .showcontainer {
   margin: 0;
   padding: 0;
+  position: relative;
 }
-
 
 .photobanner {
   position: relative;
   background-size: cover;
-  height: 513px;
+  height: 560px;
   position: relative;
 }
 
 .spotname {
   position: absolute;
-  bottom: 30px;
-  left: 25px;
+  top: 100px;
+  left: 20px;
   color: $red;
   text-shadow: 1px 1px rgba(50, 50, 50, 0.3);
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 // spot info with the rating and the match in %
 .spotinfo{
   background-color: $darkblue;
-  padding-left: 15px;
   padding-bottom: 0px;
   padding-top: 12px;
   border-top-right-radius: 15px;
@@ -38,12 +69,14 @@ body {
   position: absolute;
   right: 0px;
   left: 0px;
-  top: 500px;
+  top: 550px;
 }
 
 .ratingmatch {
   position: relative;
   height: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .rating {
@@ -64,6 +97,7 @@ body {
 
 .match h2 {
   color: #5FD084;
+  font-size: 2.4rem;
 }
 
 .match p {
@@ -72,37 +106,41 @@ body {
 
 .match-number {
   position: absolute;
-  top: 8px;
-  right: 80px;
+  right: 65px;
   color: #5FD084;
 }
 
 .match-percent {
   position: absolute;
-  top: 8px;
-  right: 70px;
+  top: 6px;
+  font-size: 15px;
+  right: 50px;
   color: #5FD084;
 }
 
 .match-match {
   position: absolute;
   top: 34px;
-  right: 80px;
+  right: 68px;
 }
 
+.icon-text{
+  margin-top: 7px;
+}
 
 // weatherconditions slider
 .weatherconditions {
-  height: 100px;
-  border-bottom: 2px solid $lightblue;
-  border-top: 2px solid $lightblue;
-  position: relative;
+  margin: 20px;
+  height: 55px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+
 }
 
-.wind-speed {
-  position: absolute;
-  top: 20px;
-  left: 40px;
+.fa-long-arrow-alt-up{
+  color: white;
+  font-size: 32px;
 }
 
 .fa-wind {
@@ -110,10 +148,13 @@ body {
   font-size: 50px;
 }
 
-.wave-type {
-  position: absolute;
+.wind-speed {
   top: 20px;
-  right: 60px;
+  left: 40px;
+}
+.wave-type {
+  top: 20px;
+  right: 40px;
 }
 
 .fa-water {
@@ -123,27 +164,24 @@ body {
 
 // Description
 .description {
-  padding-bottom: 30px;
-  margin-top: 25px;
-  border-bottom: 2px solid $lightblue;
+  margin: 20px;
 }
 
-.description-title {
-  padding-bottom: 5px;
-}
 
 // Advice
 
 .advice {
-  margin-top: 30px;
-  border-bottom: 2px solid $lightblue;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .pro {
   color: white;
   font-weight: lighter;
-  margin-bottom: 20px;
   padding-left: 0px;
+  width: 49%;
 }
 
 
@@ -165,12 +203,19 @@ body {
 .con {
   color: white;
   font-weight: lighter;
+  width: 49%;
 }
 
+.list-dont{
+    padding-left: 0px;
+}
+.list-do{
+    padding-left: 0px;
+}
 // Reviews section
 
 .reviews {
-  margin-top: 30px;
+  margin: 20px;
   z-index: 5;
 }
 
@@ -196,9 +241,8 @@ body {
   background: $lightblue;
   position: relative;
   height: 60px;
-  width: 400px;
+  width: 100%;
   border-radius: 2px;
-  margin-right: 10px;
 }
 
 .review-avatar {
@@ -211,6 +255,10 @@ body {
   position: absolute;
   left: 80px;
   top: 5px;
+}
+small {
+  color: #939fa9;
+  font-weight: 600;
 }
 
 .review-description {
@@ -228,20 +276,26 @@ body {
 .review-button-box {
   display: flex;
   justify-content: space-around;
+  margin: 20px;
 }
 
-.review-btn {
-  width: 150px;
-  height: 30px;
+.review-btn{
+  width: 205px;
+  height: 40px;
+  margin: 0 auto;
   border: solid 1px $red;
-  padding-bottom: 30px;
+  text-align: center;
   a {
     font-size: 0.65em;
     color: white;
     text-decoration: none;
   }
 }
-
+.review-btn:hover{
+  background-color:$red;
+  transition: background .1s ease-in-out;
+  border-color: none;
+}
 // Location map
 
 .location {
