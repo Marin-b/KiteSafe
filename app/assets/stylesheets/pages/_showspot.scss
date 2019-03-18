@@ -1,29 +1,11 @@
 body {
     margin: 0;
 }
-.spot-info-h2{
-  padding-left:20px;
-  padding-top: 15px;
-}
+
 h5 {
   padding-bottom: 5px;
 }
 
-.fa-chevron-left{
- position: absolute;
- top: 40px;
- left: 25px;
- font-size: 28px;
- color: $light-gray;
-}
-
-.fa-chevron-down{
- position: absolute;
- top: 20px;
- left: 50%;
- font-size: 17px;
- color: $linecolor;
-}
 
 
 .line-show{
@@ -60,7 +42,7 @@ h5 {
 }
 
 // spot info with the rating and the match in %
-.spotinfo{
+.spotinfo {
   background-color: $darkblue;
   padding-bottom: 0px;
   padding-top: 12px;
@@ -72,16 +54,37 @@ h5 {
   top: 550px;
 }
 
+.spot-info-h2{
+  padding-left:20px;
+  padding-top: 15px;
+}
+
+.fa-chevron-left{
+ position: absolute;
+ top: 40px;
+ left: 25px;
+ font-size: 28px;
+ color: $light-gray;
+}
+
+.fa-chevron-down{
+ position: absolute;
+ top: 20px;
+ left: 50%;
+ font-size: 17px;
+ color: $linecolor;
+}
+
 .ratingmatch {
   position: relative;
-  height: 70px;
+  height: 85px;
   margin-left: 20px;
   margin-right: 20px;
 }
 
 .rating {
   position: absolute;
-  top: 5px;
+  top: 25px;
   left: 5px;
 }
 
@@ -95,6 +98,18 @@ h5 {
   margin: 7px 1px;
 }
 
+.wave-icon {
+  position: absolute;
+  top: 25px;
+  left: 150px;
+}
+
+.icon-text {
+  position: absolute;
+  top: 48px;
+  left: 152px;
+}
+
 .match h2 {
   color: $lightgreen;
   font-size: 2.4rem;
@@ -106,22 +121,23 @@ h5 {
 
 .match-number {
   position: absolute;
-  right: 65px;
+  right: 20px;
+  top: 24px;
   color: $lightgreen;
 }
 
 .match-percent {
   position: absolute;
-  top: 6px;
+  top: 30px;
   font-size: 15px;
-  right: 50px;
+  right: 5px;
   color: $lightgreen;
 }
 
 .match-match {
   position: absolute;
-  top: 34px;
-  right: 68px;
+  top: 58px;
+  right: 23px;
 }
 
 .icon-text{
@@ -129,13 +145,39 @@ h5 {
 }
 
 // weatherconditions slider
+
+.arrowright {
+  position: relative;
+}
+
 .weatherconditions {
-  margin: 20px;
-  height: 55px;
+  width: 100%;
+  height: 95px;
+  position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  text-align: center;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.per-hour {
   display: flex;
   justify-content: space-around;
-  text-align: center;
+  min-width: 100vw;
+  padding-right: 20px;
+  border-right: 1px solid $red;
+}
 
+.weather {
+  height: 90%;
+}
+
+.timetext {
+  color: white;
+  font-size: 12px;
 }
 
 .fa-long-arrow-alt-down {
@@ -148,18 +190,18 @@ h5 {
   font-size: 50px;
 }
 
-.wind-speed {
-  top: 20px;
-  left: 40px;
-}
-.wave-type {
-  top: 20px;
-  right: 40px;
+.fa-clock {
+  color: white;
+  font-size: 35px;
 }
 
-.fa-water {
-  color: white;
-  font-size: 50px;
+.fa-chevron-right {
+  position: absolute;
+  left: 93vw;
+  top: 35px;
+  color: $red;
+  font-size: 22px;
+  font-weight: lighter;
 }
 
 // Description
@@ -172,16 +214,12 @@ h5 {
 
 .advice {
   margin: 20px;
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
 }
 
 .pro {
   color: white;
   font-weight: lighter;
   padding-left: 0px;
-  width: 49%;
 }
 
 
@@ -197,21 +235,14 @@ h5 {
 .fa-times {
   color: $red;
   padding-right: 7px;
-  font-size: 16px;
+  font-size: 23px;
 }
 
 .con {
   color: white;
   font-weight: lighter;
-  width: 49%;
 }
 
-.list-dont{
-    padding-left: 0px;
-}
-.list-do{
-    padding-left: 0px;
-}
 // Reviews section
 
 .reviews {
@@ -240,7 +271,7 @@ h5 {
 .notification {
   background: $lightblue;
   position: relative;
-  height: 60px;
+  min-height: 80px;
   width: 100%;
   border-radius: 2px;
 }
