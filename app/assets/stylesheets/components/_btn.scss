@@ -1,8 +1,8 @@
 .main-btn {
-  padding: 10px 30px;
+  padding: 10px 60px;
   color: #FFFFFF;
   font-family: Roboto;
-  font-size: 1.953em;
+  font-size: 18px;
   font-weight: 400;
   line-height: 25px;
   text-align: center;
@@ -11,12 +11,17 @@
   margin: 20px 0;
 }
 
+.main-btn:hover{
+ color: $darkblue;
+ background-color: $red;
+}
+
 .secondary-btn{
   height: 45px;
   width: 180px;
   color: #FFFFFF;
   font-family: Roboto;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 25px;
   text-align: center;
@@ -25,4 +30,8 @@
   margin: 10px 0px 15px 0px;
 }
 
+.secondary-btn:hover{
+color: white;
+background-color: $red;
+}
 
