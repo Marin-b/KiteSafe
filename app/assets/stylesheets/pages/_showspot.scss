@@ -302,5 +302,12 @@ small {
   height: 200px;
 }
 
-
-
+.hidden {
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+}
+.map-container-show {
+  height:480px;
+  z-index: 3;
+}
