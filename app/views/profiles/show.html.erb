@@ -1,38 +1,30 @@
 <div class="wrapper">
-  <div class="showcontainer">
+  <div class="container-profile">
     <div class="photobanner"
         <div class="image-spot" style="background-image: linear-gradient(-180deg, #343C44 0%, rgba(52,60,68,0.76) 1%, rgba(28,30,32,0.37) 10%, rgba(255,255,255,0.00) 99%),
         url('https://images.unsplash.com/photo-1525626712546-694f3d60f30a?ixlib=rb-1.2.1&auto=format&fit=crop&w=629&q=80')">
+
     </div>
-    <div class="review-avatar">
+
+    <div class="user-avatar">
        <img src= 'https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' class="avatar-user"/>
+    <h3><%= @user.username %></h3>
+
+      <h3>Age <%= @user.try(:age) %></h3>
+      <h3>Level <%= @user.level %></h3>
     </div>
 
-      <%= @user.email %>
-      <%= @user.username %>
-      <%= @user.description%>
-
-      <%= @user.level %>
-
-      <%= link_to "edit profile", edit_user_registration_path(@user) %>
-
-      <h1 class="username"> <%= @user.username %></h1>
-
-      <h3> <%= @user.try(:age) %> </h3>
-
-      <h1> Preferences </h1>
-
+      <p><%= @user.description%></p>
+      <p> <%= @user.email %></p>
       <div>
-      <h3>I have been kitesurfing for</h3>
-      <p>example year</p>
-    <i class="fas fa-long-arrow-alt-up" ></i>
-      <h3>My kitesurfing sessions last</h3>
-      <p>example year</p>
-      <h3>My preffered wave conditions </h3>
-      <p>example year</p>
+        <button class="btn btn-outline-light"><%= link_to "edit profile", edit_user_registration_path(@user) %></button>
+        <i class="far fa-edit"></i>
       </div>
 
+      <div>
 
-  </div>
+  <div></div></div>
 </div>
-
+<!--
+<button type="button" class="btn btn-outline-danger">Danger</button>
+ -->

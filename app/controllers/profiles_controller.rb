@@ -7,11 +7,10 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    @user =  current_user
+    @user.save
   end
 
-  def destroy
-    @profile.destroy
-  end
 end
 
 
