@@ -4,6 +4,8 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initOnboardingSlider } from '../functions/onboarding';
+import { showUploadedPictures } from '../functions/showPictures';
 
 initOnboardingSlider();
 initMapbox();
+showUploadedPictures();

@@ -1,11 +1,59 @@
-.form-inputs {
+.photoForm {
   margin: 60px auto;
-  background-color: #ccc;
+  background-color: white;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 30px;
-  margin-top: 200px;
+  margin-top: 10vw;
+  border-radius: 20px;
+  min-width: 90vw;
+  height: 550px;
+  text-align: center;
+  abbr{ opacity: 0;}
 }
 .container-form {
-  background-color: #ccc;
-  padding-bottom: 180px;
   margin-top: -20px;
+  background-color: $darkblue;
+  .inlinebtn {
+    width: 40%;
+    padding: 10px 10px;
+  }
+  .flexbox {
+    justify-content: space-between;
+  }
+  input:nth-child(1) {
+    background-color: #ccc;
+    border: 2px solid black;
+  }
 }
+.showPhotos {
+  position: absolute;
+  text-align:center;
+  left: 5vw;
+  transition: bottom 1s;
+  bottom: 100vh;
+  background-color: white;
+  border-radius: 20px;
+  width: 90vw;
+  height: 550px;
+}
+
+.xD {
+  border-radius: 20px 20px 0px 0px;
+  height: 85%;
+  overflow: scroll;
+  padding: auto;
+}
+
+.anImage {
+  height:300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+
+}
+.submititself {
+  padding-top: 200px;
+}
+

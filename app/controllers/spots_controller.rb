@@ -8,9 +8,11 @@ class SpotsController < ApplicationController
     @spots = Spot.all
     session[:level] = params[:level].to_i
     if (current_user)
+      current_user.level = session[:level]
+      current_user.save
       @level = current_user.level
-    elsif params[:level]
-      @level = params[:level].to_i
+    elsif session[:level]
+      @level = session[:level]
     else
       redirect_to level_path
     end
@@ -29,7 +31,7 @@ class SpotsController < ApplicationController
   def show
     if current_user
       @level = current_user.level
-    else
+    elsif session[:level] != 0
       @level = session[:level]
     end
     @spot = Spot.find(params[:id])

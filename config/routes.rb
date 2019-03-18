@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'map#show'
-
+  devise_for :users, controllers: { registrations: "registrations" }
   resource :map, only: :show
+  root to: 'map#show'
 
   resources :spots do
     resources :advices
