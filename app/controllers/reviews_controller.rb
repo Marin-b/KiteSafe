@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.spot = Spot.find(params[:spot_id])
     @review.user_id = current_user.id
-    raise
     @review.save
     redirect_to spot_path(@review.spot)
   end

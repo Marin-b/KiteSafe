@@ -17,6 +17,7 @@
     <div class="spotinfo">
       <i class="fas fa-chevron-down"></i>
       <h2 class="spot-info-h2">Spot Info</h2>
+
         <div class="ratingmatch">
           <div class="rating">
             <div class="starsavg">
@@ -24,8 +25,18 @@
                 <i class="fas fa-star fill"></i>
               <% end %>
             </div>
-            <p>Average user rating</p>
+            <p>Avg. user rating</p>
           </div>
+
+          <div class="wave-type">
+            <div class=wave-icon>
+            <%= image_tag("SVG/wave-icon.svg", size: "47x35", alt: "wave icon") %>
+            </div>
+            <div>
+              <p class="icon-text"> <%= @spot.spot_type %> </p>
+            </div>
+          </div>
+
           <div class="match">
             <div class="match-number">
               <% match_percentage = ((@level.to_f / @spot.difficulty_levels.first.minimum_level.to_f) * 100).to_i %>
@@ -42,28 +53,36 @@
 
         <hr class="line-show">
 
-        <div class="weatherconditions">
-          <div class="wind-speed">
-            <%= image_tag("SVG/wind-speed-icon.svg", size: "47x35", alt: "wind icon") %>
-            <div>
-              <p class="icon-text"> <%= @spot.weather_conditions.first.wind_speed.to_i.ceil  unless nil %> kts</p>
-            </div>
-          </div>
+        <div class="arrowright">
+          <div class="weatherconditions">
+          <% @spot.weather_conditions.each do |condition| %>
+          <div class="per-hour">
 
-          <div class="wind-direction">
-            <i class="fas fa-long-arrow-alt-down" data-fa-transform="rotate-<%= @spot.weather_conditions.first.wind_direction.to_i.ceil %>"></i>
-            <div>
-              <p class="icon-text"><%= @spot.weather_conditions.first.wind_direction.to_i.ceil unless nil %> °</p>
+            <div class="weather">
+              <i class="far fa-clock"></i>
+              <div>
+                <p class="timetext"> <%= DateTime.parse(condition.date.to_s).strftime("%b %e, %H:%M") %> </p>
+              </div>
             </div>
-          </div>
 
-          <div class="wave-type">
-            <%= image_tag("SVG/wave-icon.svg", size: "47x35", alt: "wave icon") %>
-            <div>
-              <p class="icon-text"> <%= @spot.spot_type %> </p>
+            <div class="weather">
+              <%= image_tag("SVG/wind-speed-icon.svg", size: "47x35", alt: "wind icon") %>
+              <div>
+                <p> <%= condition.wind_speed.to_i.ceil  unless nil %> kts</p>
+              </div>
             </div>
-          </div>
-        </div>
+
+            <div class="weather">
+              <i class="fas fa-long-arrow-alt-down" data-fa-transform="rotate-<%= condition.wind_direction.to_i.ceil %>"></i>
+              <div>
+                <p><%= condition.wind_direction.to_i.ceil unless nil %> °</p>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+          </div> <!---div closing the first hour of weather--->
+          <% end %>
+          </div> <!-- div ending weatherconditions -->
+        </div> <!-- div ending arrowright -->
 
         <hr class="line-show">
 
@@ -75,24 +94,22 @@
         <hr class="line-show">
 
         <div class="advice">
-
+          <h5>Advice</h5>
           <div class="pro">
-            <h5>Do's at this spot:</h5>
             <ul class="list-do">
               <% @spot.pros.each do |advice| %>
               <li>
-                <i class="fas fa-check"></i>  <%= advice.description %>
+                <i class="fas fa-check"></i> <%= advice.description %>
               </li>
               <% end %>
             </ul>
           </div>
 
           <div class="con">
-            <h5>Dont's at this spot:</h5>
             <ul class="list-dont">
               <% @spot.cons.each do |advice| %>
               <li>
-               <i class="fas fa-times"></i>  <%= advice.description %>
+               <i class="fas fa-times"> </i> <%= advice.description %>
              </li>
              <% end %>
            </ul>
@@ -109,15 +126,20 @@
             <% @spot.reviews.each do |review| %>
             <div class="row">
               <div class="notification">
+                <% if @current_user.avatar != nil %>
+                <div class="review-avatar" style="background-image: url('<%= cl_image_path @current_user.avatar.url %>')"
+                >
+                <% else %>
                 <div class="review-avatar">
                   <img src= 'https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' class="avatar-user"/>
                 </div>
+                <% end %>
 
                 <div class="review-date">
-                  <small class="date-text"> <%= Date.parse(review.created_at.to_s).strftime("%b %d, %Y") %> </small></p>
+                  <p><small class="date-text"> <%= Date.parse(review.created_at.to_s).strftime("%b %d, %Y") %> </small></p>
                 </div>
                 <div class="review-description">
-                  <p><%= review.description %></p>
+                  <p><%= review.description.truncate(60) %></p>
                 </div>
 
                 <div class="review-rating">
