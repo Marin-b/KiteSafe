@@ -45,21 +45,21 @@
           <div class="wind-speed">
             <%= image_tag("SVG/wind-speed-icon.svg", size: "47x35", alt: "wind icon") %>
             <div>
-              <p class="icon-text">Wind Speed</p>
+              <p class="icon-text"> <%= @spot.weather_conditions.first.wind_speed.to_i.ceil  unless nil %> kts</p>
             </div>
           </div>
 
           <div class="wind-direction">
-            <i class="fas fa-long-arrow-alt-up"></i>
+            <i class="fas fa-long-arrow-alt-down" data-fa-transform="rotate-<%= @spot.weather_conditions.first.wind_direction.to_i.ceil %>"></i>
             <div>
-              <p class="icon-text">Wind Direction</p>
+              <p class="icon-text"><%= @spot.weather_conditions.first.wind_direction.to_i.ceil unless nil %> °</p>
             </div>
           </div>
 
           <div class="wave-type">
             <%= image_tag("SVG/wave-icon.svg", size: "47x35", alt: "wave icon") %>
-          <div>
-            <p class="icon-text">Wave Type</p>
+            <div>
+              <p class="icon-text"> <%= @spot.spot_type %> </p>
             </div>
           </div>
         </div>
@@ -74,6 +74,7 @@
         <hr class="line-show">
 
         <div class="advice">
+
           <div class="pro">
             <h5>Do's at this spot:</h5>
             <ul class="list-do">
@@ -84,6 +85,7 @@
               <% end %>
             </ul>
           </div>
+
           <div class="con">
             <h5>Dont's at this spot:</h5>
             <ul class="list-dont">
@@ -94,8 +96,10 @@
              <% end %>
            </ul>
          </div>
+
        </div>
         <hr class="line-show">
+
        <div class="reviews">
         <h5>Reviews</h5>
         <p class="review-intro">
@@ -124,12 +128,13 @@
               </div>
             </div>
             <% end %>
+
             <div class="review-button-box">
               <button class="secondary-btn review-btn">
                <%= link_to "Review it", new_spot_review_path(@spot) %>
               </button>
             </div>
-          </div>
+        </div>
       </div>
 
       <div class="location">
