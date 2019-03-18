@@ -27,7 +27,7 @@ User.destroy_all
 
 
 #New User
-user = User.create(email: "chris@chris.com", password: "123456", level: 2, age: "30", description: "Awesome kitesurfer", username: "Chris")
+user = User.create(email: "chris@chris.com", password: "123456", level: 2, age: "30", description: "Started kite surfing last year. Like explore new spots.", username: "Chris")
 #Leaves Review - Spot One
 user_two = User.create(email: "avalon@avalon.com", password: "123456", level: 1)
 
