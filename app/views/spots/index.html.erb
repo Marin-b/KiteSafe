@@ -1,4 +1,4 @@
-
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 <div class="wrapper">
   <div class="black-rectangle">
 
@@ -94,8 +94,7 @@
     <div class="image-description">
       <ul class="list-inline conditions">
         <li class="list-inline-item"><h5><%= spot.weather_conditions.first.wind_speed.to_i.ceil  unless nil %> kts</h5></li>
-
-        <li class="list-inline-item"><h5><%= spot.weather_conditions.first.wind_direction.to_i.ceil unless nil %> °</h5></li>
+        <li class="list-inline-item"><i class="fas fa-long-arrow-alt-down" data-fa-transform="rotate-<%= spot.weather_conditions.first.wind_direction.to_i.ceil %>"></i></li>
         <% if spot.spot_type == "Wavey" %>
         <li class="list-inline-item"><%= image_tag("SVG/big-wave.svg", size: "26x26", alt: "map icon") %></h5></li>
         <% elsif spot.spot_type == "Choppy" %>

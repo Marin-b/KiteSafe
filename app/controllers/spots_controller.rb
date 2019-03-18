@@ -19,7 +19,6 @@ class SpotsController < ApplicationController
   def create
     @spot = Spot.new(spot_params)
     @spot.user_id = current_user.id
-    #@spot.user = current_user
     if @spot.save
       redirect_to new_spot_advice_path(@spot)
     else
@@ -29,7 +28,7 @@ class SpotsController < ApplicationController
 
   def show
     if current_user
-      @level =  current_user.level
+      @level = current_user.level
     else
       @level = session[:level]
     end

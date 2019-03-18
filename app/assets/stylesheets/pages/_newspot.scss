@@ -1,4 +1,73 @@
-.around {
-  padding-bottom: 15px;
+.map-form-container {
+padding-top: 1px;
+padding-bottom: 30px;
+background-color: $darkblue;
 }
 
+.h2-bottom-margin {
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+#new_spot {
+ margin-left: 20px;
+ margin-right: 20px;
+}
+
+.add-spot {
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+#form-box{
+  background-color: white;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.textarea {
+  border-left-style: none;
+  border-right-style: none;
+  border-radius: .0rem;
+  border-top-style: none;
+}
+
+.form-control-label{
+  font-size: large;
+}
+
+.spot_description {
+  padding-top: 15px;
+}
+
+.spot_Type {
+  font-size: 1.2rem;
+}
+
+.align-button-center{
+  text-align: center;
+}
+
+.continue {
+  width: 100%;
+}
+
+.pt-0{
+  display: none;
+}
+
+.input-type {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wave-title-box{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.wave-type{
+  font-size: 1.2rem;
+}

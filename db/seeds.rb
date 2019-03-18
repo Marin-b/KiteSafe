@@ -181,5 +181,4 @@ difficulty_level = DifficultyLevel.create(
   minimum_level: 2,
   spot: spot)
 
-
 puts "Seeds done"
