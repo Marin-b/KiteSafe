@@ -7,8 +7,9 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @user =  current_user
+    @user = current_user
     @user.save
+    redirect_to profile_path
   end
 
 end
