@@ -1,28 +1,45 @@
 <div
   id="map"
   style="width: 100%;
-  height: 600px;"
+  height: 450px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 <%= simple_form_for(@spot) do |f| %>
   <%= f.error_notification %>
-  <div class="form-inputs">
+  <div class="form-inputs add-spot" id="form-box">
     <%= f.hidden_field :latitude,
                 required: true, wrapper_html: {class: "around"}, label: "Latitude of the spot:" %>
     <%= f.hidden_field :longitude,
                 required: true, wrapper_html: {class: "around"}, label: "Longitude of the spot:" %>
 
     <%= f.input :name,
-                  required: true, label: "Name:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
+                  required: true, label: "Spot Name:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
 
     <%= f.input :description,
                   required: true, label: "Detailed description:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
-    <%= f.label "Type:" %>
+    <div class="wave-title-box">
+    <%= f.label "Wave Type:", class: "wave-type" %>
+    </div>
       <br>
-      <%= f.select :spot_type, %w(Flat Choppy Wavey) %>
+      <div class="input-type">
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <%= f.input :spot_type, as: :radio_buttons, collection: ["Flat"] %>
+          </li>
+          <li class="list-inline-item">
+            <%= f.input :spot_type, as: :radio_buttons, collection: ["Choppy"] %>
+          </li>
+          <li class="list-inline-item">
+            <%= f.input :spot_type, as: :radio_buttons, collection: ["Wavey"] %>
+          </li>
+        </ul>
+       </div>
       <br>
       <br>
-    <%= f.submit "Continue" %>
+      <div class="align-button-center">
+    <%= f.submit "Continue", class: "btn secondary-btn continue" %>
+    </div>
   </div>
 <% end %>
+
