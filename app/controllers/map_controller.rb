@@ -1,4 +1,5 @@
 class MapController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
   def show
     @spots = Spot.all
     @markers = @spots.map do |spot|

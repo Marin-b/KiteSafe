@@ -27,7 +27,6 @@ class SpotsController < ApplicationController
   end
 
   def show
-    raise
     if current_user
       @level = current_user.level
     else
