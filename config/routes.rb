@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'onboarding', to: "onboarding#home"
   get 'level', to: "quizz#quizz"
+  get 'profile', to: "profiles#show"
 
   require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do
