@@ -122,42 +122,36 @@ advice_four = Advice.create(
 review = Review.create(
   rating: 5,
   description: "Awesome",
-  date: Date.today,
   user: user_two,
   spot: spot)
 
 review_five = Review.create(
   rating: 3,
   description: "Bit too to walk",
-  date: Date.today,
   user: user_four,
   spot: spot)
 
 review_six = Review.create(
   rating: 4,
   description: "Wind was perfect here!",
-  date: Date.today,
   user: user_three,
   spot: spot)
 
 review_two = Review.create(
   rating: 3,
   description: "It was ok",
-  date: Date.today,
   user: user_four,
   spot: spot_two)
 
 review_three = Review.create(
   rating: 4,
   description: "Fun times",
-  date: Date.today,
   user: user_six,
   spot: spot_three)
 
 review_four = Review.create(
   rating: 2,
   description: "Fun times...not!",
-  date: Date.today,
   user: user_three,
   spot: spot_four)
 

@@ -1,21 +1,28 @@
-
 <div class="flexbox container-form">
-  <div row>
-  <div class="form-inputs" id="review-form">
-    <h1>Add a photo</h1>
-    <%= simple_form_for [@spot, @photo] do |f| %>
-      <%= f.input :photo, label: "Upload"%>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.submit "+ photo", class: "btn secondary-btn" %>
-      <hr>
-      <%= f.submit "Done", class: "btn secondary-btn" %>
+  <div class="photoForm" id="review-form">
+    <div class="formitself">
+      <h1 class="red">Add a photo</h1>
+      <%= simple_form_for [@spot, @photo] do |f| %>
+        <%= f.input :photo, label: ""%>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit "+Photo", class: "btn secondary-btn inlinebtn" %>
+        <btn class="btn secondary-btn inlinebtn" id="showUploadedPictures">View</btn>
+      </div>
+      <div class="submititself">
+        <hr>
+        <%= f.submit "Done", class: "btn main-btn" %>
+      </div>
     <% end %>
   </div>
-  </div row>
-  <div class="photos">
-   <% @photos.each do |photo| %>
-    <%= cl_image_tag photo.photo.url, height: 300, width: 400, crop: :fill %>
-  <% end %>
+  <div class="showPhotos">
+    <div class="xD">
+      <% @photos.each do |photo| %>
+        <div style="background-image: url(<%= photo.photo.url %>)" class="anImage">
+        </div>
+        <hr>
+      <% end %>
+    </div>
+    <button class="btn main-btn" id="closePhotos">Close</button>
  </div>
 </div>
 
