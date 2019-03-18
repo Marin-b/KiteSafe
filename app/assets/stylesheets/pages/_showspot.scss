@@ -96,18 +96,18 @@ h5 {
 }
 
 .match h2 {
-  color: #5FD084;
+  color: $lightgreen;
   font-size: 2.4rem;
 }
 
 .match p {
-  color: #5FD084;
+  color: $lightgreen;
 }
 
 .match-number {
   position: absolute;
   right: 65px;
-  color: #5FD084;
+  color: $lightgreen;
 }
 
 .match-percent {
@@ -115,7 +115,7 @@ h5 {
   top: 6px;
   font-size: 15px;
   right: 50px;
-  color: #5FD084;
+  color: $lightgreen;
 }
 
 .match-match {
@@ -138,9 +138,9 @@ h5 {
 
 }
 
-.fa-long-arrow-alt-up{
+.fa-long-arrow-alt-down {
   color: white;
-  font-size: 32px;
+  font-size: 34px;
 }
 
 .fa-wind {
