@@ -11,6 +11,7 @@ const updateInput = (marker) => {
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
   const mapIndex = document.getElementById('mapIndex')
+  const mapShow = document.getElementById('mapShow')
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     let marker
@@ -46,6 +47,18 @@ const initMapbox = () => {
         .addTo(map)
     });
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
+  }
+  if (mapShow) {
+    const lat = parseFloat(document.querySelector('.lattitudeForMap').innerHTML)
+    const long = parseFloat(document.querySelector('.longitudeForMap').innerHTML)
+    console.log(lat, long)
+    mapboxgl.accessToken = mapShow.dataset.mapboxApiKey;
+    const map = new mapboxgl.Map({
+      container: 'mapShow',
+      style: 'mapbox://styles/mapbox/streets-v10',
+      center: [long, lat],
+      zoom: 13
+    });
   }
 };
 
