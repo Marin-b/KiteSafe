@@ -126,8 +126,8 @@
             <% @spot.reviews.each do |review| %>
             <div class="row">
               <div class="notification">
-                <% if @current_user.avatar != nil %>
-                <div class="review-avatar" style="background-image: url('<%= cl_image_path @current_user.avatar.url %>')"
+                <% if User.find(review.user_id).avatar != nil %>
+                <div class="review-avatar" style="background-image: url('<%= cl_image_path User.find(review.user_id).avatar.url %>')"
                 >
                 <% else %>
                 <div class="review-avatar">
