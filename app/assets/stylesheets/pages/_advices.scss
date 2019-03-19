@@ -3,3 +3,107 @@
   background-color: #ccc;
   padding: 50px;
 }
+
+.form-container {
+  height: 100vh;
+  background-color: $darkblue;
+  padding-top: 45px;
+  position: relative;
+}
+
+.centered-btn {
+  width: 100%;
+  border-radius: initial;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.centered-btn:hover{
+  transform: initial;
+}
+
+#advice-box {
+  background-color: white;
+  border-radius: 10px;
+  margin-right: 15px;
+  margin-left: 15px;
+  color: $darkblue;
+  position: absolute;
+  top: 10%;
+  left: 1%;
+}
+
+.dark-text{
+  color: $darkblue;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.centered-btn-continue{
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.centered-btn-continue:hover{
+  border-color: $red !important;
+}
+
+.pro-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.pro-form{
+  width: inherit;
+  background: transparent;
+  border: transparent;
+  padding: 0px;
+}
+.pro-form:focus{
+  outline: none;
+}
+
+.fa-plus-circle {
+  font-size: 1.8rem;
+  color: #999999;
+  padding: 10px;
+
+}
+
+.fa-plus-circle:hover {
+  color: $darkblue;
+}
+
+#advice_description{
+  margin-top: 14px;
+  border-right: transparent;
+  border-left: transparent;
+  border-top: transparent;
+  border-radius: 0px;
+  line-height: .5;
+  white-space: nowrap;
+}
+
+#advice_description:focus{
+  border-color: #343A40 !important;
+  box-shadow: none !important;
+  max-height: 30px;
+}
+
+.fa-times-circle {
+  color: $red;
+}
+
+.aligned-list-advice {
+  padding-left: 40px;
+}
+#new_advice{
+  margin-left: 23px;
+}
+.space-between{
+  max-width: 230px;
+  word-break: break-word;
+
+}
