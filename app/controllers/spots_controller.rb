@@ -35,6 +35,7 @@ class SpotsController < ApplicationController
       @level = session[:level]
     end
     @spot = Spot.find(params[:id])
+    @marker = { lng: @spot.longitude, lat: @spot.latitude }
   end
 
   def edit

@@ -8,10 +8,16 @@ const updateInput = (marker) => {
   longInput.value = marker.lng
 }
 
+const fitMapToMarkers = (map, markers) => {
+  const bounds = new mapboxgl.LngLatBounds();
+  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+};
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-  const mapIndex = document.getElementById('mapIndex')
-  const mapShow = document.getElementById('mapShow')
+  const mapIndex = document.getElementById('mapIndex');
+  const mapShow = document.getElementById('mapShow');
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     let marker
@@ -38,14 +44,13 @@ const initMapbox = () => {
     const markers = JSON.parse(mapIndex.dataset.markers);
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup({ offset: 25 })
-        .setHTML(`<h2>${marker.description}</h2>
-          <a href="/spots/${marker.spot_id}">See spot</a>
-          `)
+        .setHTML(marker.infoWindow)
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map)
     });
+    fitMapToMarkers(map, markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
   }
   if (mapShow) {
@@ -59,7 +64,11 @@ const initMapbox = () => {
       center: [long, lat],
       zoom: 15
     });
-  }
+    const marker = JSON.parse(mapShow.dataset.markers);
+    new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .addTo(map);
+    };
 };
 
 export { initMapbox };

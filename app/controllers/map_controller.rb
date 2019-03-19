@@ -8,7 +8,10 @@ class MapController < ApplicationController
         lat: spot.latitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { spot: spot }),
         description: spot.description,
-        spot_id: spot.id
+        spot_id: spot.id,
+        spot_type: spot.spot_type,
+        name: spot.name,
+        reviews: spot.reviews
       }
     end
   end
