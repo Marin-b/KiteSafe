@@ -17,15 +17,15 @@
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :level, input_html: { autocomplete: "level" }  %>
+    <%= f.input :age, input_html: {autocomplete: "age"} %>
+    <%= f.input :description, input_html: {autocomplete: "description"} %>
+    <%= f.input :avatar, input_html: {autocomplete: "avatar", class: "form-input-label"}  %>
+    <%= f.input :avatar_cache, as: :hidden %>
     <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :level, input_html: { autocomplete: "level" }  %>
-    <%= f.input :age, input_html: {autocomplete: "age"} %>
-    <%= f.input :description, input_html: {autocomplete: "description"} %>
-    <%= f.input :avatar,  input_html: {autocomplete: "avatar"}  %>
-    <%= f.input :avatar_cache, as: :hidden %>
 
   <div class="form-actions">
     <%= f.button :submit, "Update", class: "secondary-btn" %>
