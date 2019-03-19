@@ -33,7 +33,7 @@
             <%= image_tag("SVG/wave-icon.svg", size: "47x35", alt: "wave icon") %>
             </div>
             <div>
-              <p class="icon-text"> <%= @spot.spot_type %> </p>
+              <p class="wave-text"> <%= @spot.spot_type %> </p>
             </div>
           </div>
 
@@ -56,30 +56,30 @@
         <div class="arrowright">
           <div class="weatherconditions">
           <% @spot.weather_conditions.each do |condition| %>
-          <div class="per-hour">
+            <div class="per-hour">
 
-            <div class="weather">
-              <i class="far fa-clock"></i>
-              <div>
-                <p class="timetext"> <%= DateTime.parse(condition.date.to_s).strftime("%b %e, %H:%M") %> </p>
+              <div class="weather">
+                <i class="far fa-clock"></i>
+                <div>
+                  <p class="timetext"> <%= DateTime.parse(condition.date.to_s).strftime("%b %e, %H:%M") %> </p>
+                </div>
               </div>
-            </div>
 
-            <div class="weather">
-              <%= image_tag("SVG/wind-speed-icon.svg", size: "47x35", alt: "wind icon") %>
-              <div>
-                <p> <%= condition.wind_speed.to_i.ceil  unless nil %> kts</p>
+              <div class="weather">
+                <%= image_tag("SVG/wind-speed-icon.svg", size: "47x35", alt: "wind icon") %>
+                <div>
+                  <p> <%= condition.wind_speed.to_i.ceil  unless nil %> kts</p>
+                </div>
               </div>
-            </div>
 
-            <div class="weather">
-              <i class="fas fa-long-arrow-alt-down" data-fa-transform="rotate-<%= condition.wind_direction.to_i.ceil %>"></i>
-              <div>
-                <p><%= condition.wind_direction.to_i.ceil unless nil %> °</p>
+              <div class="weather">
+                <i class="fas fa-long-arrow-alt-down" data-fa-transform="rotate-<%= condition.wind_direction.to_i.ceil %>"></i>
+                <div>
+                  <p><%= condition.wind_direction.to_i.ceil unless nil %> °</p>
+                </div>
               </div>
-            </div>
-            <i class="fas fa-chevron-right"></i>
-          </div> <!---div closing the first hour of weather--->
+              <i class="fas fa-chevron-right"></i>
+            </div> <!---div closing the first hour of weather--->
           <% end %>
           </div> <!-- div ending weatherconditions -->
         </div> <!-- div ending arrowright -->
@@ -153,19 +153,21 @@
             <% end %>
 
             <div class="review-button-box">
-              <button class="secondary-btn review-btn">
+              <button class="review-btn">
                <%= link_to "Review it", new_spot_review_path(@spot) %>
               </button>
             </div>
         </div>
       </div>
+
       <hr class="line-show">
+
       <div class="map-container-show">
         <p class="lattitudeForMap hidden"><%= @spot.latitude %></p>
         <p class="longitudeForMap hidden"><%= @spot.longitude %></p>
         <div  id="mapShow"
               style="width: 100%;
-              height: 400px;
+              height: 500px;
               margin-top: 20px;
               padding-bottom: 0px;"
               data-markers="<%= @markers.to_json %>"

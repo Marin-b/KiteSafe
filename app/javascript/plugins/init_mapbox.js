@@ -57,7 +57,7 @@ const initMapbox = () => {
       container: 'mapShow',
       style: 'mapbox://styles/mapbox/streets-v10',
       center: [long, lat],
-      zoom: 13
+      zoom: 15
     });
   }
 };
