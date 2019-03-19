@@ -1,0 +1,11 @@
+<div class="marker-card">
+  <h2> <%= spot.name %> </h2>
+  <h3> <%= spot.description %> </h3>
+  <h3> <%= spot.spot_type %> </h3>
+    <div class="starsaverage">
+      <% spot.average_rating.times do %>
+        <i class="fas fa-star fill"></i>
+      <% end %>
+    </div>
+  <%= link_to "See this spot", spot_path(spot) %>
+</div>
