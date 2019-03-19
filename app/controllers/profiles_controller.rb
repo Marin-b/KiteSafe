@@ -4,16 +4,21 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+  @user = current_user
   end
 
   def update
-    @user = current_user
-    @user.save
-    redirect_to profile_path
+    @profile = current_user
+    @profile.update(profile_params)
+    redirect_to profile_path(@profile)
   end
 
-end
+  private
 
+  def profile_params
+    params.require(:user).permit(:avatar)
+  end
+end
 
 
 
