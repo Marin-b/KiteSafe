@@ -36,8 +36,6 @@
           Profile
           <% end %>
       </li>
-
-       <li class="centered">sign out<%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
     </ul>
   </div>
 <% else %>
@@ -45,8 +43,6 @@
     <ul class="list-inline nav-links">
       <li class="centered"><%= link_to "Sign in", new_user_session_path %></li>
       <li class="centered"><%= link_to "Sign up", new_user_registration_path %></li>
-      <li class="centered"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-
     </ul>
   </div>
 <% end %>
