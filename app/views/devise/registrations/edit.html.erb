@@ -24,11 +24,14 @@
     <%= f.input :level, input_html: { autocomplete: "level" }  %>
     <%= f.input :age, input_html: {autocomplete: "age"} %>
     <%= f.input :description, input_html: {autocomplete: "description"} %>
-  </div>
+    <%= f.input :avatar,  input_html: {autocomplete: "avatar"}  %>
+    <%= f.input :avatar_cache, as: :hidden %>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "secondary-btn" %>
   </div>
+  </div>
+
 <% end %>
 
 <h3>Cancel my account</h3>

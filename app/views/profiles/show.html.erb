@@ -1,25 +1,27 @@
 <div class="container-profile">
   <div class="photobanner-user" style="background-image: linear-gradient(-180deg, #343C44 0%, rgba(52,60,68,0.76) 1%, rgba(28,30,32,0.37) 10%, rgba(255,255,255,0.00) 99%), url('https://images.unsplash.com/photo-1525626712546-694f3d60f30a?ixlib=rb-1.2.1');">
-
-
-    <h2><%= @user.username %></h2>
-    <img src= 'https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' class="avatar-user avatar-big"/>
-    <div class="profile-info">
-    <h4><%= @user.try(:age) %></h4>
-    <h4>Level <%= @user.level %></h4>
+      <h2> <%= @user.username %> </h2>
+     <% if @user.avatar.present? %>
+        <%= cl_image_tag @user.avatar, size: "120x120", crop: :fill %>
+     <% else  %>
+      <%= image_tag "PNG/avatar-placeholder.png", size: "120x120",class: "avatar-icon" %>
+     <% end %>
+    <div class="user-info">
+      <h4>Age <%= @user.try(:age) %></h4>
+      <h4>Level <%= @user.level %></h4>
+      <br>
+      <h5> <%= @user.email %></h5>
     </div>
-  </div>
+    </div>
   <div class="description-user">
     <p><%= @user.description%></p>
-
     <div class="edit-profile">
-      <p> <%= @user.email %></p>
       <%= link_to "edit profile", edit_user_registration_path(@user) %>
       <i class="far fa-edit"></i>
     </div>
+    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "sign-out" %></li>
   </div>
 </div>
 
-<!--
-<button type="button" class="btn btn-outline-danger">Danger</button>
- -->
+
+

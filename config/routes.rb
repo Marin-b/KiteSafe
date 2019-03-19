@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
+
+  # to redirect user to the profile page after editing the profile:
+  as :user do
+    get 'users', :to => 'profiles#show', :as => :user_root # Rails 3
+  end
   resource :map, only: :show
   root to: 'map#show'
 
