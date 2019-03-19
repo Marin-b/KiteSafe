@@ -39,12 +39,24 @@
     </ul>
   </div>
 <% else %>
-  <div class="nav-bottom-mobile">
-    <ul class="list-inline nav-links">
-      <li class="centered"><%= link_to "Sign in", new_user_session_path %></li>
-      <li class="centered"><%= link_to "Sign up", new_user_registration_path %></li>
+  <div class="nav-bottom-mobile nav-links">
+    <div class="left-box">
+      <%= link_to "Sign in", new_user_session_path %>
+    </div>
+    <div class="right-box">
+      <%= link_to "Sign up", new_user_registration_path %>
+      </div>
+   </div>
+
+
+
+
+<!--     <ul class="list-inline nav-links">
+      <li class="centered-left">
+        <%= link_to "Sign in", new_user_session_path %></li>
+      <li class="centered-right"><%= link_to "Sign up", new_user_registration_path %></li>
     </ul>
-  </div>
+  </div> -->
 <% end %>
 
 
