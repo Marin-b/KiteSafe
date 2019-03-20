@@ -6,7 +6,6 @@
   bottom: 0;
   width: 100%;
   overflow: hidden;
-  z-index: 1;
   }
 
   .nav-links {
@@ -14,7 +13,7 @@
     height: 60px;
     display: flex;
     justify-content: space-around;
-    margin: 0 !important;
+    margin: 0 ;
     text-align: center;
     align-items: center;
     li {

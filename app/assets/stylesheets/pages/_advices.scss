@@ -1,13 +1,14 @@
-.form-wrap {
-  background-color: #ccc;
-  padding: 50px;
-}
-
 .form-container {
   height: 100vh;
   background-color: $darkblue;
   padding-top: 45px;
 }
+// .form-wrap {
+//   margin: 0px auto;
+//   background-color: #ccc;
+//   padding: 50px;
+// }
+
 
 .centered-btn {
   width: 100%;
@@ -41,6 +42,8 @@
 }
 .centered-btn-continue:hover{
   border-color: $red !important;
+  border-width: 1px;
+  border-style: solid !important;
 }
 
 .pro-container{

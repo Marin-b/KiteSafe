@@ -9,9 +9,11 @@ class DifficultyLevelsController < ApplicationController
     difficulty_level.spot_id = Spot.find(params[:spot_id]).id
     if difficulty_level.save
       redirect_to new_spot_photo_path(params[:spot_id])
+      Spot.find(params[:spot_id]).api_call
     else
       render :new
     end
+
   end
 
   private

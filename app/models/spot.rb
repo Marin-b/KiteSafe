@@ -5,7 +5,8 @@ class Spot < ApplicationRecord
   has_many :advices, dependent: :destroy
   has_many :photos, dependent: :destroy
   has_one :difficulty_level, dependent: :destroy
-  after_create :api_call
+  # after_create :api_call
+  validates :latitude, :longitude, presence: true
 
 
   def average_rating
@@ -19,7 +20,7 @@ class Spot < ApplicationRecord
   end
 
   def api_call
-    AfterCreateSpotJob.perform_later
+    AfterCreateSpotJob.perform_later(self.id)
   end
 
   def pros
