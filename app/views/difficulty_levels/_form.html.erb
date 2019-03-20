@@ -3,9 +3,11 @@
 <%= simple_form_for [@spot, @difficulty_level] do |f| %>
 <%= f.error_notification %>
   <div class="form-inputs" id="review-form" style="overflow: hidden">
-    <h3> What is the wind direction when the wind is offshore? Give it a difficulty level as well</h3>
-    <%= f.input :offshore_direction, collection: cardinals %>
-    <%= f.input :level_0, collection: level_choices, label: false%>
+    <h3 class="review-title-padding"> What is the wind direction when offshore?</h3>
+    <%= f.input :offshore_direction, collection: cardinals, prompt: "Choose offshore wind direction", label: false %>
+
+    <%= f.input :level_0, collection: level_choices, prompt: "Choose difficulty level", label: false %>
+
     <div class="hidden hiddenDiv">
       <br>
       <%= simple_fields_for :other do |o| %>
@@ -23,7 +25,9 @@
       <% end %>
       <br>
       <%= f.input :level_270, collection: level_choices, label: false %>
-      <%= f.submit "Submit level",  class: "btn secondary-btn " %>
+      <div class="button-center">
+      <%= f.submit "Submit level",  class: "main-btn centered-btn-continue" %>
+      </div>
     </div>
   </div>
 <% end %>
