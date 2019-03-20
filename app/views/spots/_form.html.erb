@@ -1,10 +1,3 @@
-<div
-  id="map"
-  style="width: 100%;
-  height: 450px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
 <%= simple_form_for(@spot) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs add-spot" id="form-box">

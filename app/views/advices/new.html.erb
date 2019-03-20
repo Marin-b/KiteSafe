@@ -1,26 +1,20 @@
-<div class="form-wrap">
-  <h3>Please enter a pro!</h3>
-  <%= simple_form_for [@spot, @advice] do |f| %>
-    <%= f.input :description, label: false%>
-    <%= f.hidden_field :kind, as: :hidden, value: true %>
-    <%= f.submit "Submit", class: "btn secondary-btn" %>
-  <% end %>
+<div class="form-container">
+<div class="form-wrap" id="advice-box">
+  <h3 class="dark-text">Enter your advice on the spot!</h3>
 
-  <h3>Please enter a con!</h3>
-  <%= simple_form_for [@spot, @advice] do |f| %>
-    <%= f.input :description, label: false  %>
-    <%= f.hidden_field :kind, as: :hidden, value: false %>
-    <%= f.submit "Submit", class: "btn secondary-btn" %>
-    <hr>
-    <br>
-    <%= f.submit "Exit", class: "btn main-btn" %>
-  <% end %>
+  <div class="pro-container">
+    <div class="pro-form">
+      <%= simple_form_for [@spot, @advice] do |f| %>
+      <%= f.input :description, placeholder: "Ex. pro's of the spot",label: false %>
+      <%= f.hidden_field :kind, as: :hidden, value: true %>
+    </div>
+    <div class="pro-add">
+      <%= button_tag class: "pro-form" do %><i class="fas fa-plus-circle"></i><% end %>
+    </div>
+  </div>
 
-
-  <div class="flexbox">
-    <ul>
+    <ul class="aligned-list-advice">
       <% if @pros.length > 0 %>
-        <h2>Pros :</h2>
       <% end %>
       <% @pros.each do |pro| %>
         <li>
@@ -28,13 +22,25 @@
             <%= pro.description %>
             <%= link_to "<i class='fas fa-times-circle'></i>".html_safe, spot_advice_path(@spot, pro), method: :delete  %>
           </div>
-
         </li>
       <% end %>
     </ul>
-    <ul>
+  <% end %>
+
+
+  <div class="pro-container">
+    <div class="pro-form">
+  <%= simple_form_for [@spot, @advice] do |f| %>
+    <%= f.input :description, placeholder: "Ex. con's of the spot",label: false  %>
+    <%= f.hidden_field :kind, as: :hidden, value: false %>
+    </div>
+    <div class="pro-add">
+      <%= button_tag class: "pro-form" do %><i class="fas fa-plus-circle"></i><% end %>
+    </div>
+  </div>
+
+    <ul class="aligned-list-advice">
       <% if @cons.length > 0 %>
-        <h2>Cons : </h2>
       <% end %>
       <% @cons.each do |con| %>
         <li>
@@ -45,6 +51,9 @@
         </li>
       <% end %>
     </ul>
-  </div>
+    <br>
+    <%= f.submit "Continue", class: "main-btn centered-btn-continue" %>
+  <% end %>
+</div>
 </div>
 <!-- Should be set as a string -->
