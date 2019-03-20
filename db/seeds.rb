@@ -155,6 +155,26 @@ review_four = Review.create(
   user: user_three,
   spot: spot_four)
 
+photo_one = Photo.create(
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/cumbuco-sunset-kitesurf-e1517991750331.jpg",
+  spot: spot
+  )
+
+photo_two = Photo.create(
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/cumbuco-sunset-kitesurf-e1517991750331.jpg",
+  spot: spot_two
+  )
+
+photo_three = Photo.create(
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/cumbuco-sunset-kitesurf-e1517991750331.jpg",
+  spot: spot_three
+  )
+
+photo_four = Photo.create(
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/cumbuco-sunset-kitesurf-e1517991750331.jpg",
+  spot: spot_four
+  )
+
 difficulty_level = DifficultyLevel.create(
   offshore_direction: "N",
   level_0: 4,

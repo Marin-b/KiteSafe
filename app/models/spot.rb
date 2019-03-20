@@ -1,10 +1,12 @@
 class Spot < ApplicationRecord
   belongs_to :user
-  has_many :reviews
-  has_many :weather_conditions
-  has_many :advices
-  has_many :photos
-  has_one :difficulty_level
+  has_many :reviews, dependent: :destroy
+  has_many :weather_conditions, dependent: :destroy
+  has_many :advices, dependent: :destroy
+  has_many :photos, dependent: :destroy
+  has_one :difficulty_level, dependent: :destroy
+  # after_create :api_call
+  validates :latitude, :longitude, presence: true
 
 
   def average_rating
@@ -15,6 +17,10 @@ class Spot < ApplicationRecord
     return sum / self.reviews.count if self.reviews.count > 0
 
     sum = 1
+  end
+
+  def api_call
+    AfterCreateSpotJob.perform_later(self.id)
   end
 
   def pros

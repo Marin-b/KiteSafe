@@ -1,15 +1,14 @@
-.form-wrap {
-  margin: 0 auto;
-  background-color: #ccc;
-  padding: 50px;
-}
-
 .form-container {
   height: 100vh;
   background-color: $darkblue;
   padding-top: 45px;
-  position: relative;
 }
+// .form-wrap {
+//   margin: 0px auto;
+//   background-color: #ccc;
+//   padding: 50px;
+// }
+
 
 .centered-btn {
   width: 100%;
@@ -28,9 +27,6 @@
   margin-right: 15px;
   margin-left: 15px;
   color: $darkblue;
-  position: absolute;
-  top: 10%;
-  left: 1%;
 }
 
 .dark-text{
@@ -46,6 +42,8 @@
 }
 .centered-btn-continue:hover{
   border-color: $red !important;
+  border-width: 1px;
+  border-style: solid !important;
 }
 
 .pro-container{
@@ -74,6 +72,7 @@
 
 .fa-plus-circle:hover {
   color: $darkblue;
+  box-shadow: none !important;
 }
 
 #advice_description{
@@ -107,3 +106,13 @@
   word-break: break-word;
 
 }
+
+.button-background {
+  border-color: transparent;
+  background-color: transparent;
+}
+.button-center{
+  text-align: center;
+  padding-top: 15px;
+}
+
