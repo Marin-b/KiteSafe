@@ -47,8 +47,8 @@
 }
 .description-user {
   margin-top: 15px;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
   background-color: red;
   position: absolute;
   height: 100vh;
@@ -57,7 +57,7 @@
   background-color: #233142;
 }
 .avatar-icon {
-  border: 6px solid $red;
+  border: 3px solid white;
   border-radius: 50%;
   margin: 16px;
 }
