@@ -12,7 +12,7 @@ class SpotsController < ApplicationController
       current_user.level = session[:level]
       current_user.save
       @level = current_user.level
-    elsif session[:level]
+    elsif session[:level] != 0
       @level = session[:level]
     else
       redirect_to level_path
