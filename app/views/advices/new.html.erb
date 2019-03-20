@@ -5,13 +5,17 @@
   <div class="pro-container">
     <div class="pro-form">
       <%= simple_form_for [@spot, @advice] do |f| %>
-      <%= f.input :description, placeholder: "Ex. pro's of the spot",label: false %>
+      <%= f.input :description, placeholder: "Ex. pro's of the spot", label: false %>
       <%= f.hidden_field :kind, as: :hidden, value: true %>
     </div>
     <div class="pro-add">
-      <%= button_tag class: "pro-form" do %><i class="fas fa-plus-circle"></i><% end %>
+ <%= button_tag type: :submit, class: "button-background" do  %>
+          <i class= "fas fa-plus-circle"></i>
+      <% end %>
     </div>
+      <% end %>
   </div>
+
 
     <ul class="aligned-list-advice">
       <% if @pros.length > 0 %>
@@ -25,7 +29,7 @@
         </li>
       <% end %>
     </ul>
-  <% end %>
+
 
 
   <div class="pro-container">
@@ -35,10 +39,11 @@
     <%= f.hidden_field :kind, as: :hidden, value: false %>
     </div>
     <div class="pro-add">
-      <%= button_tag class: "pro-form" do %><i class="fas fa-plus-circle"></i><% end %>
+ <%= button_tag type: :submit, class: "button-background" do  %>
+          <i class= "fas fa-plus-circle"></i>
+      <% end %>
     </div>
   </div>
-
     <ul class="aligned-list-advice">
       <% if @cons.length > 0 %>
       <% end %>
@@ -51,9 +56,9 @@
         </li>
       <% end %>
     </ul>
-    <br>
-    <%= f.submit "Continue", class: "main-btn centered-btn-continue" %>
-  <% end %>
+    <div class="button-center">
+    <%= link_to "Continue", new_spot_difficulty_level_path(@spot), class: "main-btn centered-btn-continue" %>
+    <div>
+<% end %>
 </div>
 </div>
-<!-- Should be set as a string -->
