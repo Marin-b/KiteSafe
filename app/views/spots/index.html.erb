@@ -43,6 +43,7 @@
             <h4 class="green">
                 <% match_percentage = ((@level.to_f / spot.difficulty_levels.first.minimum_level.to_f) * 100).to_i %>
                 <%= match_percentage > 100 ? 100 : match_percentage %>
+
             </h4>
           </li>
 
