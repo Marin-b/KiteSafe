@@ -1,12 +1,10 @@
 class AdvicesController < ApplicationController
   before_action :set_spot, only: [:new, :create, :show, :edit, :destroy]
   before_action :set_advice, only: [:destroy]
+  before_action :set_pros_cons, only: [:create, :new]
 
   def new
     @advice = Advice.new
-    @advices = Advice.where(spot_id: params[:spot_id])
-    @pros = @advices.where(kind: true)
-    @cons = @advices.where(kind: false)
   end
 
   def create
@@ -40,6 +38,12 @@ class AdvicesController < ApplicationController
 
   def advice_params
     params.require(:advice).permit(:description, :kind)
+  end
+
+  def set_pros_cons
+    @advices = Advice.where(spot_id: params[:spot_id])
+    @pros = @advices.where(kind: true)
+    @cons = @advices.where(kind: false)
   end
 end
 

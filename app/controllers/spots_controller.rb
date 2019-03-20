@@ -1,5 +1,6 @@
 class SpotsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+  before_action :set_level, only: :index, unless: :level_not_set?
 
   def new
     @spot = Spot.new
@@ -7,16 +8,7 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
-    session[:level] = params[:level].to_i
-    if (current_user)
-      current_user.level = session[:level]
-      current_user.save
-      @level = current_user.level
-    elsif session[:level] != 0
-      @level = session[:level]
-    else
-      redirect_to level_path
-    end
+    @level = session[:level] || current_user&.level
   end
 
   def create
@@ -57,5 +49,20 @@ class SpotsController < ApplicationController
 
   def spot_params
     params.require(:spot).permit(:spot_type, :latitude, :longitude, :description, :name)
+  end
+
+  def level_not_set?
+    session[:level] ||= params[:level]&.to_i
+
+    unless session[:level] || current_user&.level
+      redirect_to level_path
+    end
+  end
+
+  def set_level
+    if user_signed_in? && session[:level]
+      current_user.set_level(session[:level])
+      session.delete(:level)
+    end
   end
 end
