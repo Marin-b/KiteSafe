@@ -6,6 +6,7 @@ class Spot < ApplicationRecord
   has_many :photos, dependent: :destroy
   has_one :difficulty_level, dependent: :destroy
   # after_create :api_call
+  validates :latitude, :longitude, presence: true
 
 
   def average_rating

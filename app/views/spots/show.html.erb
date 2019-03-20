@@ -3,13 +3,15 @@
   <div class="showcontainer">
     <div class="photobanner">
       <% if @spot.photos.empty? %>
-        <div class="image-spot" style="background-image: linear-gradient(-180deg, #343C44 0%, rgba(52,60,68,0.76) 1%, rgba(28,30,32,0.37) 10%, rgba(255,255,255,0.00) 99%),
-        url('https://images.unsplash.com/photo-1525626712546-694f3d60f30a?ixlib=rb-1.2.1&auto=format&fit=crop&w=629&q=80')">
-        <% else %>
-        <div class="image-spot" style="background-image: linear-gradient(-180deg, #343C44 0%, rgba(52,60,68,0.76) 1%, rgba(28,30,32,0.37) 10%, rgba(255,255,255,0.00) 99%),
-        url('<%= cl_image_path @spot.photos.first.photo.url %>')">
+        <div class="image-spot" style="background-image: linear-gradient(-180deg, #343C44 0%, rgba(52,60,68,0.76) 1%, rgba(28,30,32,0.37) 10%, rgba(255,255,255,0.00) 99%), url('https://images.unsplash.com/photo-1525626712546-694f3d60f30a?ixlib=rb-1.2.1&auto=format&fit=crop&w=629&q=80')"></div>
+      <% else %>
+        <div class="image-spot" style="background-image: linear-gradient(-180deg, #343C44 0%, rgba(52,60,68,0.76) 1%, rgba(28,30,32,0.37) 10%, rgba(255,255,255,0.00) 99%), url('<%= cl_image_path @spot.photos.first.photo.url %>')"></div>
         <% end %>
-        <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, :back %>
+        <% if request.env["HTTP_REFERER"].include?("photo") %>
+          <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, "/" %>
+        <% else %>
+          <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, :back %>
+        <% end %>
         <h1 class="spotname"> <%= @spot.name %></h1>
       </div>
     </div>
@@ -18,43 +20,43 @@
       <i class="fas fa-chevron-down"></i>
       <h2 class="spot-info-h2">Spot Info</h2>
 
-        <div class="ratingmatch">
-          <div class="rating">
-            <div class="starsavg">
-              <% @spot.average_rating.times do %>
-                <i class="fas fa-star fill"></i>
-              <% end %>
-            </div>
-            <p>Avg. user rating</p>
+      <div class="ratingmatch">
+        <div class="rating">
+          <div class="starsavg">
+            <% @spot.average_rating.times do %>
+              <i class="fas fa-star fill"></i>
+            <% end %>
           </div>
+          <p>Avg. user rating</p>
+        </div>
 
-          <div class="wave-type">
-            <div class=wave-icon>
+        <div class="wave-type">
+          <div class=wave-icon>
             <%= image_tag("SVG/wave-icon.svg", size: "47x35", alt: "wave icon") %>
-            </div>
-            <div>
-              <p class="wave-text"> <%= @spot.spot_type %> </p>
-            </div>
           </div>
-
-          <div class="match">
-            <div class="match-number">
-              <% match_percentage = ((@level.to_f / @spot.weather_conditions.first.level.to_f) * 100).to_i %>
-              <h2> <%= match_percentage > 100 ? 100 : match_percentage %> </h2>
-            </div>
-            <div class="match-percent">
-              <p> % </p>
-            </div>
-            <div class="match-match">
-              <p> Match </p>
-            </div>
+          <div>
+            <p class="wave-text"> <%= @spot.spot_type %> </p>
           </div>
         </div>
 
-        <hr class="line-show">
+        <div class="match">
+          <div class="match-number">
+            <% match_percentage = ((@level.to_f / @spot.weather_conditions.first.level.to_f) * 100).to_i %>
+            <h2> <%= match_percentage > 100 ? 100 : match_percentage %> </h2>
+          </div>
+          <div class="match-percent">
+            <p> % </p>
+          </div>
+          <div class="match-match">
+            <p> Match </p>
+          </div>
+        </div>
+      </div>
 
-        <div class="arrowright">
-          <div class="weatherconditions">
+      <hr class="line-show">
+
+      <div class="arrowright">
+        <div class="weatherconditions">
           <% @spot.weather_conditions.each do |condition| %>
             <div class="per-hour">
 
@@ -81,91 +83,89 @@
               <i class="fas fa-chevron-right"></i>
             </div> <!---div closing the first hour of weather--->
           <% end %>
-          </div> <!-- div ending weatherconditions -->
-        </div> <!-- div ending arrowright -->
+        </div> <!-- div ending weatherconditions -->
+      </div> <!-- div ending arrowright -->
 
-        <hr class="line-show">
+      <hr class="line-show">
 
-        <div class="description">
-          <h5>Description</h5>
-          <p> <%= @spot.description %> </p>
-        </div>
-
-        <hr class="line-show">
-
-        <div class="advice">
-          <h5>Advice</h5>
-          <div class="pro">
-            <ul class="list-do">
-              <% @spot.pros.each do |advice| %>
-              <li>
-                <i class="fas fa-check"></i> <%= advice.description %>
-              </li>
-              <% end %>
-            </ul>
-          </div>
-
-          <div class="con">
-            <ul class="list-dont">
-              <% @spot.cons.each do |advice| %>
-              <li>
-               <i class="fas fa-times"> </i> <%= advice.description %>
-             </li>
-             <% end %>
-           </ul>
-         </div>
-
-       </div>
-        <hr class="line-show">
-
-       <div class="reviews">
-        <h5>Reviews</h5>
-        <p class="review-intro">
-        Below are the most recent reviews about this spot from fellow kitesurfers </p>
-          <div class="container">
-            <% @spot.reviews.each do |review| %>
-            <div class="row">
-              <div class="notification">
-                <% if User.find(review.user_id).avatar.url != nil %>
-                <div class="review-avatar" style="background-image: url('<%= cl_image_path User.find(review.user_id).avatar.url %>')"
-                >
-                <% else %>
-                <div class="review-avatar">
-                  <img src= 'https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' class="avatar-user"/>
-                </div>
-                <% end %>
-
-                <div class="review-date">
-                  <p><small class="date-text"> <%= Date.parse(review.created_at.to_s).strftime("%b %d, %Y") %> </small></p>
-                </div>
-                <div class="review-description">
-                  <p><%= review.description.truncate(60) %></p>
-                </div>
-
-                <div class="review-rating">
-                  <% review.rating.times do %>
-                  <i class="fas fa-star"></i>
-                  <% end %>
-                </div>
-
-              </div>
-            </div>
-            <% end %>
-
-            <div class="review-button-box">
-              <button class="review-btn">
-               <%= link_to "Review it", new_spot_review_path(@spot) %>
-              </button>
-            </div>
-        </div>
+      <div class="description">
+        <h5>Description</h5>
+        <p> <%= @spot.description %> </p>
       </div>
 
       <hr class="line-show">
 
-      <div class="map-container-show">
-        <p class="lattitudeForMap hidden"><%= @spot.latitude %></p>
-        <p class="longitudeForMap hidden"><%= @spot.longitude %></p>
-        <div  id="mapShow"
+      <div class="advice">
+        <h5>Advice</h5>
+        <div class="pro">
+          <ul class="list-do">
+            <% @spot.pros.each do |advice| %>
+              <li>
+                <i class="fas fa-check"></i> <%= advice.description %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="con">
+          <ul class="list-dont">
+            <% @spot.cons.each do |advice| %>
+              <li>
+                <i class="fas fa-times"> </i> <%= advice.description %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+        <hr class="line-show">
+
+        <div class="reviews">
+          <h5>Reviews</h5>
+          <p class="review-intro">
+          Below are the most recent reviews about this spot from fellow kitesurfers </p>
+          <div class="container">
+            <% @spot.reviews.each do |review| %>
+              <div class="row">
+                <div class="notification">
+                  <% if User.find(review.user_id).avatar.url != nil %>
+                    <div class="review-avatar" style="background-image: url('<%= cl_image_path User.find(review.user_id).avatar.url %>')"></div>
+                  <% else %>
+                    <div class="review-avatar">
+                      <img src= 'https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' class="avatar-user"/>
+                    </div>
+                  <% end %>
+
+                  <div class="review-date">
+                    <p><small class="date-text"> <%= Date.parse(review.created_at.to_s).strftime("%b %d, %Y") %> </small></p>
+                  </div>
+                  <div class="review-description">
+                    <p><%= review.description.truncate(60) %></p>
+                  </div>
+
+                  <div class="review-rating">
+                    <% review.rating.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                  </div>
+
+                </div>
+              </div>
+            <% end %>
+
+            <div class="review-button-box">
+              <button class="review-btn">
+                <%= link_to "Review it", new_spot_review_path(@spot) %>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="line-show">
+
+        <div class="map-container-show">
+          <p class="lattitudeForMap hidden"><%= @spot.latitude %></p>
+          <p class="longitudeForMap hidden"><%= @spot.longitude %></p>
+          <div  id="mapShow"
               style="width: 100%;
               height: 500px;
               margin-top: 20px;
@@ -173,6 +173,7 @@
               data-markers="<%= @marker.to_json %>"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
               >
+          </div>
         </div>
       </div>
     </div>
