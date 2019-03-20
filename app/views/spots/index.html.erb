@@ -1,32 +1,32 @@
 <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 <div class="wrapper">
-  <div class="black-rectangle">
+ <!--  <div class="black-rectangle"> -->
 
-<div class="filter-text">
-  <p>Filter Options</p>
-</div>
+    <!-- <div class="filter-text">
+      <p>Filter Options</p>
+    </div> -->
 
-            <div class="review-button-container">
-              <button class="review-btn">
-               <%= link_to "Skill Level" %>
-              </button>
-            </div>
+<!--     <div class="review-button-container">
+      <button class="review-btn">
+       <%= link_to "Skill Level" %>
+      </button>
+    </div>
 
-            <div class="review-button-container">
-              <button class="review-btn">
-               <%= link_to "Location" %>
-              </button>
-            </div>
+    <div class="review-button-container">
+      <button class="review-btn">
+       <%= link_to "Location" %>
+      </button>
+    </div>
 
 
-            <div class="review-button-container">
-              <button class="review-btn">
-               <%= link_to "Wave Type" %>
-              </button>
-            </div>
-       </div>
+    <div class="review-button-container">
+      <button class="review-btn">
+       <%= link_to "Wave Type" %>
+      </button>
+    </div> -->
+  <!-- </div> -->
 
-    <% @spots.each do |spot| %>
+  <% @spots.each do |spot| %>
     <hr>
     <%= link_to spot_path(spot) do %>
     <div class="spot-title-container">
@@ -41,7 +41,7 @@
         <ul class="list-inline percent-result">
           <li class="list-inline-item percent-num">
             <h4 class="green">
-                <% match_percentage = ((@level.to_f / spot.difficulty_levels.first.minimum_level.to_f) * 100).to_i %>
+                <% match_percentage = ((@level.to_f / spot.weather_conditions.first.level.to_f) * 100).to_i %>
                 <%= match_percentage > 100 ? 100 : match_percentage %>
             </h4>
           </li>
