@@ -28,20 +28,6 @@
       <% end %>
     </ul>
 
-
-      <ul class="aligned-list-advice">
-       <% if @pros.length > 0 %>
-       <% end %>
-       <% @pros.each do |pro| %>
-       <li>
-         <div class="space-between">
-           <%= pro.description %>
-           <%= link_to "<i class='fas fa-times-circle'></i>".html_safe,    spot_advice_path(@spot, pro), method: :delete  %>
-         </div>
-       </li>
-       <% end %>
-     </ul>
-
     <%= simple_form_for [@spot, @advice] do |f| %>
       <div class="pro-container">
         <div class="pro-form">
