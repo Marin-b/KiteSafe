@@ -1,0 +1,13 @@
+.map-logo {
+  color: $red;
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  left: 10px;
+  background-color: rgba(240,240,240,.2);
+}
+.safe {
+  color: white;
+  font-style: italic;
+  padding: 2px;
+}
