@@ -1,16 +1,114 @@
-.marker-card {
-
+.mapboxgl-popup-content {
+  padding: 0px 0px 0px 0px !important;
+  margin: 0px;
 }
 
-.marker-card h2, h3 {
-  color: black;
+.mapboxgl-popup-close-button {
+  color: white !important;
 }
 
 .marker-card {
+  width: 220px;
+  height: 180px;
+  background-color: $darkblue;
+  padding: 0px;
+  margin: 0px;
+  border: 2px solid white;
+  border-radius: 5px;
+}
 
+.spotfirstname {
+  text-align: center;
+  color: $red;
+  padding: 10px 0px;
+}
+
+.description-popup {
+  font-size: 16px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.content-icons {
+  position: relative;
+  padding-bottom: 18px;
 }
 
 .starsaverage {
+  padding-left: 12px;
   display: flex;
   text-align: center;
 }
+
+.popup-rating {
+  position: absolute;
+  left: 12px;
+  top: 25px;
+  font-size: 13px;
+}
+
+.wave-popup {
+  position: absolute;
+  left: 90px;
+  top: 5px;
+  font-size: 10px;
+}
+
+.wave-popup-text {
+  position: absolute;
+  left: 95px;
+  top: 35px;
+}
+
+.popup-number {
+  color: $lightgreen;
+  position: absolute;
+  right: 25px;
+  top: 5px;
+}
+
+.popup-percent {
+  color: $lightgreen;
+  position: absolute;
+  right: 15px;
+  top: 4px;
+}
+
+.popup-match {
+  color: $lightgreen;
+  position: absolute;
+  right: 28px;
+  top: 25px;
+  font-size: 10px;
+}
+
+.popup-btn-box {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.see-spot-button {
+  width: 100px;
+  height: 23px;
+  border: solid 1px $red;
+  text-align: center;
+  background-color: $red;
+  border-radius: 26px;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 15px;
+  padding-bottom: 15px;
+  a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px;
+  }
+}
+
+
+
+
+
+
+
