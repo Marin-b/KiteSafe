@@ -16,6 +16,15 @@
   position: absolute;
   z-index: 1;
   width: 600px;
-  height: 60px;
+  height: 65px;
   filter: blur(2px);
+}
+.logo-ks {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  margin-left: -9px;
+  bottom: 74px;
+  width: 34px;
+  height: 34px;
 }
