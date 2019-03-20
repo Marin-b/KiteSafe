@@ -7,7 +7,7 @@
         url('https://images.unsplash.com/photo-1525626712546-694f3d60f30a?ixlib=rb-1.2.1&auto=format&fit=crop&w=629&q=80')">
         <% else %>
         <div class="image-spot" style="background-image: linear-gradient(-180deg, #343C44 0%, rgba(52,60,68,0.76) 1%, rgba(28,30,32,0.37) 10%, rgba(255,255,255,0.00) 99%),
-        url('<%= image_path 'spot.photos.first.photo.url' %>')">
+        url('<%= cl_image_path 'spot.photos.first.photo.url' %>')">
         <% end %>
         <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, :back %>
         <h1 class="spotname"> <%= @spot.name %></h1>
@@ -126,7 +126,7 @@
             <% @spot.reviews.each do |review| %>
             <div class="row">
               <div class="notification">
-                <% if User.find(review.user_id).avatar != nil %>
+                <% if User.find(review.user_id).avatar.url != nil %>
                 <div class="review-avatar" style="background-image: url('<%= cl_image_path User.find(review.user_id).avatar.url %>')"
                 >
                 <% else %>
