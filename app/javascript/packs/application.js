@@ -6,8 +6,10 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initOnboardingSlider } from '../functions/onboarding';
 import { showUploadedPictures } from '../functions/showPictures';
 import { showForms } from '../functions/difficultyLevel';
+import { arrowDisappear } from '../functions/arrowDisappear';
 
 initOnboardingSlider();
 initMapbox();
 showUploadedPictures();
 showForms();
+arrowDisappear();
