@@ -5,7 +5,7 @@ class Spot < ApplicationRecord
   has_many :advices, dependent: :destroy
   has_many :photos, dependent: :destroy
   has_one :difficulty_level, dependent: :destroy
-  after_create :api_call
+  # after_create :api_call
 
 
   def average_rating
