@@ -1,12 +1,30 @@
-
+<% cardinals = %w(N NE E SE S SW W NW)%>
+<% level_choices = [*1..5] << "Not kiteable" %>
 <%= simple_form_for [@spot, @difficulty_level] do |f| %>
 <%= f.error_notification %>
-  <div class="form-inputs" id="review-form">
-    <%= f.input :optimal_wind_direction, label: "Optimal wind direction:"%>
-    <br>
-    <%= f.input :minimum_level, collection: [*0..5], label: false, prompt: "Pick your minimal level <i class='fas fa-sort-down'></i>".html_safe %>
-    <br>
-    <%= f.submit "Submit level",  class: "btn secondary-btn " %>
+  <div class="form-inputs" id="review-form" style="overflow: hidden">
+    <h3> What is the wind direction when the wind is offshore? Give it a difficulty level as well</h3>
+    <%= f.input :offshore_direction, collection: cardinals %>
+    <%= f.input :level_0, collection: level_choices, label: false%>
+    <div class="hidden hiddenDiv">
+      <br>
+      <%= simple_fields_for :other do |o| %>
+        <%= o.input :Sideshore, collection: cardinals %>
+      <% end %>
+      <br>
+      <%= f.input :level_90, collection: level_choices, label: false %>
+      <%= simple_fields_for :other do |o| %>
+        <%= o.input :Onshore, collection: cardinals%>
+      <% end %>
+      <br>
+      <%= f.input :level_180, collection: level_choices, label: false %>
+      <%= simple_fields_for :other do |o| %>
+        <%= o.input :Sideshore_, collection: cardinals%>
+      <% end %>
+      <br>
+      <%= f.input :level_270, collection: level_choices, label: false %>
+      <%= f.submit "Submit level",  class: "btn secondary-btn " %>
+    </div>
   </div>
 <% end %>
 

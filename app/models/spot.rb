@@ -4,21 +4,18 @@ class Spot < ApplicationRecord
   has_many :weather_conditions
   has_many :advices
   has_many :photos
-  has_many :difficulty_levels
+  has_one :difficulty_level
+
 
   def average_rating
     sum = 0
     self.reviews.each do |review|
       sum += review.rating
     end
-  if self.reviews.count > 0
-    return sum / self.reviews.count
-  else
+    return sum / self.reviews.count if self.reviews.count > 0
+
     sum = 1
   end
-  end
-
-
 
   def pros
     self.advices.where(kind: true)

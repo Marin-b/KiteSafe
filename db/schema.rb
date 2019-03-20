@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_18_130536) do
+ActiveRecord::Schema.define(version: 2019_03_19_142854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,14 @@ ActiveRecord::Schema.define(version: 2019_03_18_130536) do
   end
 
   create_table "difficulty_levels", force: :cascade do |t|
-    t.string "optimal_wind_direction"
-    t.integer "minimum_level"
     t.bigint "spot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "offshore_direction"
+    t.integer "level_0"
+    t.integer "level_90"
+    t.integer "level_180"
+    t.integer "level_270"
     t.index ["spot_id"], name: "index_difficulty_levels_on_spot_id"
   end
 
@@ -88,6 +91,7 @@ ActiveRecord::Schema.define(version: 2019_03_18_130536) do
     t.bigint "spot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "level"
     t.index ["spot_id"], name: "index_weather_conditions_on_spot_id"
   end
 

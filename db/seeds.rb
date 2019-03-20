@@ -156,23 +156,35 @@ review_four = Review.create(
   spot: spot_four)
 
 difficulty_level = DifficultyLevel.create(
-  optimal_wind_direction: 295,
-  minimum_level: 4,
+  offshore_direction: "N",
+  level_0: 4,
+  level_90: 2,
+  level_180: 3,
+  level_270: 2,
   spot: spot_four)
 
 difficulty_level = DifficultyLevel.create(
-  optimal_wind_direction: 155,
-  minimum_level: 2,
+  offshore_direction: "NW",
+  level_0: 5,
+  level_90: 3,
+  level_180: 4,
+  level_270: 4,
   spot: spot_three)
 
 difficulty_level = DifficultyLevel.create(
-  optimal_wind_direction: 264,
-  minimum_level: 1,
+  offshore_direction: "S",
+  level_0: 3,
+  level_90: 1,
+  level_180: 2,
+  level_270: 1,
   spot: spot_two)
 
 difficulty_level = DifficultyLevel.create(
-  optimal_wind_direction: 255,
-  minimum_level: 2,
+  offshore_direction: "SE",
+  level_0: 1,
+  level_90: 1,
+  level_180: 1,
+  level_270: 1,
   spot: spot)
 
 puts "Seeds done"
