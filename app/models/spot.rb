@@ -19,7 +19,7 @@ class Spot < ApplicationRecord
   end
 
   def api_call
-    AfterCreateSpotJob.perform_later
+    AfterCreateSpotJob.perform_later(self.id)
   end
 
   def pros
