@@ -56,13 +56,12 @@
     <hr>
 
     <% if spot.photos.empty? %>
-    <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
-    url('<%= image_path 'JPG/kite.jpg' %>')">
+      <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+      url('<%= image_path 'JPG/kite.jpg' %>')">
     <% else %>
-    <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
-    url('<%= image_path 'spot.photos.first.photo.url' %>')">
+      <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+      url('<%= cl_image_path spot.photos.first.photo.url %>')">
     <% end %>
-
   </div>
   <hr>
 

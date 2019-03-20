@@ -2,19 +2,31 @@
   <div class="form-wrap" id="advice-box">
     <h3 class="dark-text">Enter your advice on the spot!</h3>
 
-       <div class="pro-container">
-         <div class="pro-form">
-           <%= simple_form_for [@spot, @advice] do |f| %>
-           <%= f.input :description, placeholder: "Ex. pro's of the spot",    label: false %>
-           <%= f.hidden_field :kind, as: :hidden, value: true %>
-         </div>
-         <div class="pro-add">
-          <%= button_tag type: :submit, class: "button-background" do  %>
-          <i class= "fas fa-plus-circle"></i>
-          <% end %>
-        </div>
-        <% end %>
+    <%= simple_form_for [@spot, @advice] do |f| %>
+      <div class="pro-container">
+          <div class="pro-form">
+            <%= f.input :description, placeholder: "Ex. pro's of the spot", label: false %>
+            <%= f.hidden_field :kind, as: :hidden, value: true %>
+          </div>
+          <div class="pro-add">
+            <%= button_tag type: :submit, class: "button-background" do  %>
+              <i class= "fas fa-plus-circle"></i>
+            <% end %>
+          </div>
       </div>
+    <% end %>
+
+
+    <ul class="aligned-list-advice">
+      <% @pros.each do |pro| %>
+        <li>
+          <div class="space-between">
+            <%= pro.description %>
+            <%= link_to "<i class='fas fa-times-circle'></i>".html_safe, spot_advice_path(@spot, pro), method: :delete  %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
 
 
       <ul class="aligned-list-advice">
@@ -30,33 +42,31 @@
        <% end %>
      </ul>
 
-     <div class="pro-container">
-       <div class="pro-form">
-         <%= simple_form_for [@spot, @advice] do |f| %>
-         <%= f.input :description, placeholder: "Ex. con's of the spot",label: false  %>
-         <%= f.hidden_field :kind, as: :hidden, value: false %>
-       </div>
-       <div class="pro-add">
-        <%= button_tag type: :submit, class: "button-background" do  %>
-        <i class= "fas fa-plus-circle"></i>
-        <% end %>
+    <%= simple_form_for [@spot, @advice] do |f| %>
+      <div class="pro-container">
+        <div class="pro-form">
+          <%= f.input :description, placeholder: "Ex. con's of the spot",label: false  %>
+          <%= f.hidden_field :kind, as: :hidden, value: false %>
+        </div>
+        <div class="pro-add">
+          <%= button_tag type: :submit, class: "button-background" do  %>
+            <i class= "fas fa-plus-circle"></i>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <ul class="aligned-list-advice">
-     <% if @cons.length > 0 %>
-     <% end %>
-     <% @cons.each do |con| %>
-     <li>
-       <div class="space-between">
-         <%= con.description %>
-         <%= link_to "<i class='fas fa-times-circle'></i>".html_safe,    spot_advice_path(@spot, con), method: :delete  %>
-       </div>
-     </li>
-     <% end %>
-   </ul>
-   <div class="button-center">
-     <%= link_to "Continue", new_spot_difficulty_level_path(@spot), class: "main-btn centered-btn-continue" %>
-     <div>
     <% end %>
+    <ul class="aligned-list-advice">
+      <% @cons.each do |con| %>
+        <li>
+          <div class="space-between">
+            <%= con.description %>
+            <%= link_to "<i class='fas fa-times-circle'></i>".html_safe, spot_advice_path(@spot, con), method: :delete  %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <div class="button-center">
+      <%= link_to "Continue", new_spot_difficulty_level_path(@spot), class: "main-btn centered-btn-continue" %>
+    </div>
   </div>
 </div>

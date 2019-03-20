@@ -12,7 +12,7 @@ class SpotsController < ApplicationController
       current_user.level = session[:level]
       current_user.save
       @level = current_user.level
-    elsif session[:level]
+    elsif session[:level] != 0
       @level = session[:level]
     else
       redirect_to level_path
@@ -56,6 +56,6 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:spot_type, :latitude, :longitude, :description)
+    params.require(:spot).permit(:spot_type, :latitude, :longitude, :description, :name)
   end
 end

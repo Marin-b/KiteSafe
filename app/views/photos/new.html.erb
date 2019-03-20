@@ -3,7 +3,7 @@
     <div class="formitself">
       <h1 class="red">Add a photo</h1>
       <%= simple_form_for [@spot, @photo] do |f| %>
-        <%= f.input :photo, label: ""%>
+        <%= f.input :photo, label: "", width: 400, height: 300, crop: :fill%>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.submit "+Photo", class: "btn secondary-btn inlinebtn" %>
         <btn class="btn secondary-btn inlinebtn" id="showUploadedPictures">View</btn>
