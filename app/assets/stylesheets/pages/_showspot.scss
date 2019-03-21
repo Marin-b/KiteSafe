@@ -111,35 +111,34 @@ h5 {
   font-size: 14px;
 }
 
-.match h2 {
-  color: $lightgreen;
-  font-size: 2.4rem;
+.match {
+  h2 {
+    font-size: 2.4rem;
+  }
+  .match-number {
+    position: absolute;
+    right: 20px;
+    top: 24px;
+  }
+  .match-percent {
+    position: absolute;
+    top: 30px;
+    font-size: 15px;
+    right: 5px;
+  }
+  .match-match {
+    position: absolute;
+    top: 58px;
+    right: 23px;
+  }
 }
 
-.match p {
-  color: $lightgreen;
+#redtogreen {
+  color: $lightgreen
 }
 
-.match-number {
-  position: absolute;
-  right: 20px;
-  top: 24px;
-  color: $lightgreen;
-}
 
-.match-percent {
-  position: absolute;
-  top: 30px;
-  font-size: 15px;
-  right: 5px;
-  color: $lightgreen;
-}
 
-.match-match {
-  position: absolute;
-  top: 58px;
-  right: 23px;
-}
 
 .icon-text{
   margin-top: 7px;
