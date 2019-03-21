@@ -94,8 +94,36 @@ align-items: center;
 .image-description{
   position: absolute;
   right: 21px;
-  top: 24px;
+  top: 10px;
   width: 50%;
+}
+
+.knots-number {
+  position: relative;
+  top: 8px;
+}
+
+.wind-direction-best {
+  position: relative;
+  right: 8px;
+}
+
+.knots-text {
+  position: relative;
+  top: 5px;
+  right: 5px;
+}
+
+.wave-icons-best {
+  position: relative;
+  left: 5px;
+  top: 0px;
+}
+
+.type-of-wave {
+  position: relative;
+  right: 38px;
+  top: 20px;
 }
 
 .card-bottom {
