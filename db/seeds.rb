@@ -32,14 +32,14 @@ user = User.create(email: "chris@chris.com", password: "123456", level: 2, age: 
 user_two = User.create(email: "avalon@avalon.com", password: "123456", level: 1, age: "18", description: "Kitesurfing por vida!", username: "Avanava", avatar: )
 
 #New User
-user_three = User.create(email: "paulus@paulus.com", password: "123456", level: 5, age: "24", description: "I'm a pro...not really I just try new things and hope for the best :)", username: "PaulyShore1", avatar: )
+user_three = User.create(email: "paulus@paulus.com", password: "123456", level: 5, age: "24", description: "I'm a pro...not really I just try new things and hope for the best :)", username: "PaulyShore1", remote_avatar_url: )
 #Leaves Review - Spot Two
-user_four = User.create(email: "marin@marin.com", password: "123456", level: 5, age: "21", description: "Let's go kitesurfing together!", username: "BeiberFan100", avatar: )
+user_four = User.create(email: "marin@marin.com", password: "123456", level: 5, age: "21", description: "Let's go kitesurfing together!", username: "BeiberFan100", remote_avatar_url: )
 
 #New User
-user_five = User.create(email: "ellyn@ellyn.com", password: "123456", level: 4, age: "21", description: "I am one with my board and kite :o. Much Zen!", username: "BonjourGal", avatar: )
+user_five = User.create(email: "ellyn@ellyn.com", password: "123456", level: 4, age: "21", description: "I am one with my board and kite :o. Much Zen!", username: "BonjourGal", remote_avatar_url: )
 #Leaves Review - Spot Three
-user_six = User.create(email: "example@example.com", password: "123456", level: 2, age: "45", description: "Started kite surfing last year. Like explore new spots.", username: "Example123", avatar: )
+user_six = User.create(email: "example@example.com", password: "123456", level: 2, age: "45", description: "Started kite surfing last year. Like explore new spots.", username: "Example123", remote_avatar_url: )
 
 
 
