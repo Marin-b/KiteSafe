@@ -333,7 +333,7 @@ small {
 }
 
 
-.review-btn{
+.review-btn:last-child{
   width: 100px;
   height: 40px;
   border: solid 1px $red;
@@ -367,7 +367,7 @@ small {
 }
 
 .map-container-show {
-  // height: 640px;
+  height: 640px;
   z-index: 3;
 }
 

@@ -89,7 +89,7 @@ align-items: center;
 .image-spot {
   height: 100%;
   width: 100%;
-  min-height: 473px;
+  min-height: 411px;
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -189,7 +189,7 @@ align-items: center;
 
 
 .index-arrow {
-  color: white;
+  color: #ccc;
   font-size: 1.5em;
 
 }
@@ -197,10 +197,9 @@ align-items: center;
 .arrow {
     text-align: center;
     animation: pulse 3s infinite;
-    color: white;
     position: absolute;
     left: 187px;
-    top: 485px;
+    top: 73%;
 }
 
 .bounce {
