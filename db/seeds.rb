@@ -148,7 +148,7 @@ photo_one = Photo.create(
   )
 
 photo_two = Photo.create(
-  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553167518/xlpogdkruojhobvraek6.jpg",
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553178236/kitesurfing-barcelona-spain-1.jpg",
   spot: spot_two
   )
 
@@ -183,7 +183,7 @@ photo_eight = Photo.create(
   )
 
 photo_nine = Photo.create(
-  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553168787/tggapfrfpm0uhcvcmtus.jpg",
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553178308/kitesurfing_Barcelona_Spain.jpg",
   spot: spot_nine
   )
 
