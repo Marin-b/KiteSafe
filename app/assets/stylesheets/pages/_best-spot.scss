@@ -6,18 +6,21 @@
 .black-rectangle{
     height: auto;
     background-color: black;
-    display: flex;
-    justify-content: space-between;
     padding-right: 30px;
     padding-left: 30px;
-    flex-direction: column;
-    flex-flow: wrap;
-    align-items: center;
     padding-bottom: 18px;
     padding-top: 10px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    select {
+      background-color: $lightblue;
+      border-radius: 5px;
+      height: 50%;
+      color: white;
+    }
 }
-
-
 
 .spot-title-container{
 background: #233142;

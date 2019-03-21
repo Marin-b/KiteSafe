@@ -13,7 +13,7 @@ const newWeatherView = (anIndex) => {
     }
     showMatch.innerHTML = newMatch
     previousIndex = anIndex
-    if(parseInt(showMatch.innerHTML) < 25) {
+    if(parseInt(showMatch.innerHTML) <= 25) {
       greentored.forEach(el => { el.style.color = "#F95959"})
     } else if(parseInt(showMatch.innerHTML) < 75) {
       greentored.forEach(el => { el.style.color = "#FFA500"})
