@@ -212,20 +212,28 @@ h5 {
 
 // Description
 .description {
-  margin: 20px;
+  margin: 20px 20px;
+}
+
+.intro-description {
+  margin: 0px 20px;
 }
 
 
 // Advice
 
 .advice {
-  margin: 20px;
+  margin: 0px 0px;
+}
+
+.advice-title {
+  margin: 20px 20px;
 }
 
 .pro {
   color: white;
   font-weight: lighter;
-  padding-left: 0px;
+  margin: 0px 0px;
 }
 
 
@@ -252,12 +260,13 @@ h5 {
 // Reviews section
 
 .reviews {
-  margin: 20px;
+  margin: 20px 20px;
   z-index: 5;
 }
 
 .review-intro {
   padding-bottom: 18px;
+  margin: 0px 20px;
 }
 
 .row {
@@ -284,14 +293,14 @@ h5 {
 
 .review-avatar {
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 0;
 }
 
 .review-date {
   position: absolute;
   left: 80px;
-  top: 5px;
+  top: 12px;
 }
 small {
   color: #939fa9;
@@ -301,13 +310,13 @@ small {
 .review-description {
   position: absolute;
   left: 80px;
-  top: 30px;
+  top: 33px;
 }
 
 .review-rating {
   position: absolute;
   right: 10px;
-  top: 0;
+  top: 5px;
 }
 
 .review-button-box {
