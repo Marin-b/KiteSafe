@@ -27,19 +27,19 @@ User.destroy_all
 
 
 #New User
-user = User.create(email: "chris@chris.com", password: "123456", level: 2, age: "30", description: "Started kite surfing last year and love to explore new spots.", username: "Ratsuns", remote_avatar_url: )
+user = User.create(email: "chris@chris.com", password: "123456", level: 2, age: "30", description: "Started kite surfing last year and love to explore new spots.", username: "Ratsuns", remote_avatar_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553177385/newnew.jpg" )
 #Leaves Review - Spot One
-user_two = User.create(email: "avalon@avalon.com", password: "123456", level: 1, age: "18", description: "Kitesurfing por vida!", username: "Avanava", avatar: )
+user_two = User.create(email: "avalon@avalon.com", password: "123456", level: 1, age: "18", description: "Kitesurfing por vida!", username: "Avanava", remote_avatar_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553177281/avalon.jpg" )
 
 #New User
-user_three = User.create(email: "paulus@paulus.com", password: "123456", level: 5, age: "24", description: "I'm a pro...not really I just try new things and hope for the best :)", username: "PaulyShore1", remote_avatar_url: )
+user_three = User.create(email: "paulus@paulus.com", password: "123456", level: 5, age: "24", description: "I'm a pro...not really I just try new things and hope for the best :)", username: "PaulyShore1", remote_avatar_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553177285/paulus.jpg" )
 #Leaves Review - Spot Two
-user_four = User.create(email: "marin@marin.com", password: "123456", level: 5, age: "21", description: "Let's go kitesurfing together!", username: "BeiberFan100", remote_avatar_url: )
+user_four = User.create(email: "marin@marin.com", password: "123456", level: 5, age: "21", description: "Let's go kitesurfing together!", username: "BeiberFan100", remote_avatar_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553177284/marin.jpg" )
 
 #New User
-user_five = User.create(email: "ellyn@ellyn.com", password: "123456", level: 4, age: "21", description: "I am one with my board and kite :o. Much Zen!", username: "BonjourGal", remote_avatar_url: )
+user_five = User.create(email: "ellyn@ellyn.com", password: "123456", level: 4, age: "21", description: "I am one with my board and kite :o. Much Zen!", username: "BonjourGal", remote_avatar_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553177283/ellyn.jpg" )
 #Leaves Review - Spot Three
-user_six = User.create(email: "example@example.com", password: "123456", level: 2, age: "45", description: "Started kite surfing last year. Like explore new spots.", username: "Example123", remote_avatar_url: )
+user_six = User.create(email: "mate@mate.com", password: "123456", level: 2, age: "18", description: "Started kite surfing last year. Like explore new spots mate!", username: "Mate", remote_avatar_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553177281/avalon.jpg" )
 
 
 
@@ -148,47 +148,47 @@ photo_one = Photo.create(
   )
 
 photo_two = Photo.create(
-  remote_photo_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553164902/MarkbyJanWachtmeester.jpg",
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553167518/xlpogdkruojhobvraek6.jpg",
   spot: spot_two
   )
 
 photo_three = Photo.create(
-  remote_photo_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553169141/Webp.net-resizeimage_2.jpg",
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553169141/Webp.net-resizeimage_2.jpg",
   spot: spot_three
   )
 
 photo_four = Photo.create(
-  remote_photo_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553169049/kitesurf_costanavarino12.jpg",
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553169049/kitesurf_costanavarino12.jpg",
   spot: spot_four
   )
 
 photo_five = Photo.create(
-  remote_photo_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553169052/Webp.net-resizeimage_4.jpg",
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553169052/Webp.net-resizeimage_4.jpg",
   spot: spot_five
   )
 
 photo_six = Photo.create(
-  remote_photo_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553169049/kite.jpg",
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553169049/kite.jpg",
   spot: spot_six
   )
 
 photo_seven = Photo.create(
-  remote_photo_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553169048/d4e82fe3c6d38159151f355a9be95c968bbfc1aa.jpg",
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553169048/d4e82fe3c6d38159151f355a9be95c968bbfc1aa.jpg",
   spot: spot_seven
   )
 
 photo_eight = Photo.create(
-  remote_photo_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553169047/9a5e22bc61938af99f2128cbb07e2434.jpg",
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553169047/9a5e22bc61938af99f2128cbb07e2434.jpg",
   spot: spot_eight
   )
 
 photo_nine = Photo.create(
-  remote_photo_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553168787/tggapfrfpm0uhcvcmtus.jpg",
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553168787/tggapfrfpm0uhcvcmtus.jpg",
   spot: spot_nine
   )
 
 photo_ten = Photo.create(
-  remote_photo_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553169052/Webp.net-resizeimage.jpg",
+  remote_photo_url: "http://res.cloudinary.com/dwg18rj8x/image/upload/v1553169052/Webp.net-resizeimage.jpg",
   spot: spot_ten
   )
 
@@ -231,7 +231,7 @@ advice_two = Advice.create(
   spot: spot_two
   )
 advice_two = Advice.create(
-  description: "Awesome spot! It's just 15 minutes’ walking distance form Las Ramblas".,
+  description: "Awesome spot! It's just 15 minutes’ walking distance form Las Ramblas.",
   kind: true,
   spot: spot_two
   )
