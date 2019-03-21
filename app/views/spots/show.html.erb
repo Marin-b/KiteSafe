@@ -41,20 +41,21 @@
 
         <div class="match">
           <div class="match-number">
-            <% match_percentage = ((@level.to_f / @spot.weather_conditions.first.level.to_f) * 100).to_i %>
-            <h2> <%= match_percentage > 100 ? 100 : match_percentage %> </h2>
+            <h2 class="showMatch" id="redtogreen"> </h2>
           </div>
           <div class="match-percent">
-            <p> % </p>
+            <p id="redtogreen"> % </p>
           </div>
           <div class="match-match">
-            <p> Match </p>
+            <p id="redtogreen"> Match </p>
           </div>
         </div>
       </div>
 
       <hr class="line-show">
-
+      <% theLevels = @spot.weather_conditions.all.map { |x| x = x.level}.to_s %>
+      <p class="userLevel hidden"><%= @level %></p>
+      <p class="allDiffLevels hidden"><%= theLevels.gsub(/\[|\]/, '') %></p>
       <div class="arrowright">
         <div class="weatherconditions">
           <% @spot.weather_conditions.each do |condition| %>
