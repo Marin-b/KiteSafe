@@ -1,5 +1,6 @@
 <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 <div class="wrapper">
+  <span class="top-arrow"></span>
  <!--  <div class="black-rectangle"> -->
 
     <!-- <div class="filter-text">
@@ -63,6 +64,11 @@
       <div class="image-spot" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
       url('<%= cl_image_path spot.photos.first.photo.url %>')">
     <% end %>
+
+
+  </div>
+  <div class="arrow bounce">
+    <i class="fas fa-chevron-down index-arrow"></i>
   </div>
   <hr>
 
@@ -103,12 +109,11 @@
       </ul>
     </div>
     <% end %>
-
-
     </div>
   </div>
  <% end %>
 <% end  %>
+
 </div>
 
 
