@@ -1,11 +1,11 @@
 <div class="form-container">
   <div class="form-wrap" id="advice-box">
-    <h3 class="dark-text">Enter your advice on the spot!</h3>
+    <h3 class="dark-text">Add Pros & Cons</h3>
 
     <%= simple_form_for [@spot, @advice] do |f| %>
       <div class="pro-container">
           <div class="pro-form">
-            <%= f.input :description, placeholder: "Ex. pro's of the spot", label: false %>
+            <%= f.input :description, placeholder: "Pro's of the spot", label: false %>
             <%= f.hidden_field :kind, as: :hidden, value: true %>
           </div>
           <div class="pro-add">
@@ -31,7 +31,7 @@
     <%= simple_form_for [@spot, @advice] do |f| %>
       <div class="pro-container">
         <div class="pro-form">
-          <%= f.input :description, placeholder: "Ex. con's of the spot",label: false  %>
+          <%= f.input :description, placeholder: "Con's of the spot",label: false  %>
           <%= f.hidden_field :kind, as: :hidden, value: false %>
         </div>
         <div class="pro-add">

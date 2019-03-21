@@ -7,9 +7,11 @@ import { initOnboardingSlider } from '../functions/onboarding';
 import { showUploadedPictures } from '../functions/showPictures';
 import { showForms } from '../functions/difficultyLevel';
 import { arrowDisappear } from '../functions/arrowDisappear';
+import { matchScroll } from '../functions/matchScroll'
 
 initOnboardingSlider();
 initMapbox();
 showUploadedPictures();
 showForms();
 arrowDisappear();
+matchScroll();
