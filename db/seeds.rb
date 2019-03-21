@@ -626,6 +626,14 @@ review_six = Review.create(
 puts "Reviews created"
 
 #Difficulty_levels
+difficulty_level = DifficultyLevel.create(
+  offshore_direction: "N",
+  level_0: 4,
+  level_90: 2,
+  level_180: 3,
+  level_270: 2,
+  spot: spot
+  )
 
 difficulty_level = DifficultyLevel.create(
   offshore_direction: "N",
