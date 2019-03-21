@@ -6,6 +6,7 @@ const newWeatherView = (anIndex) => {
     const showMatch = document.querySelector('.showMatch');
     const userLevel = parseInt(document.querySelector('.userLevel').innerHTML)
     let currentLevel = allDiffLevels.innerHTML.split(',')[Math.floor(anIndex)]
+    console.log(currentLevel, anIndex, userLevel)
     let newMatch = Math.floor((userLevel / parseInt(currentLevel)) * 100)
     if (newMatch > 100) { newMatch = 100}
     if (parseInt(currentLevel) === 0) {
@@ -35,7 +36,7 @@ const matchScroll = () => {
     const numberofdiv = document.querySelectorAll('.per-hour');
     newWeatherView(0);
     weatherScroll.addEventListener("scroll", (event) => {
-      newWeatherView(weatherScroll.scrollLeft / (weatherScroll.scrollWidth/104));
+      newWeatherView(Math.floor(weatherScroll.scrollLeft / (weatherScroll.scrollWidth/104)));
     })
   }
 }
