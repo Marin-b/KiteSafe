@@ -1,7 +1,7 @@
 <div class="marker-card">
   <h2 class="spotfirstname"> <%= spot.name %> </h2>
     <div>
-      <p class="description-popup"> <%= spot.description %> </p>
+      <p class="description-popup"> <%= spot.description.truncate(50) %> </p>
     </div>
 
     <div class="content-icons">
