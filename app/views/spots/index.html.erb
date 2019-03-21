@@ -1,30 +1,11 @@
 <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 <div class="wrapper">
- <!--  <div class="black-rectangle"> -->
-
-    <!-- <div class="filter-text">
-      <p>Filter Options</p>
-    </div> -->
-
-<!--     <div class="review-button-container">
-      <button class="review-btn">
-       <%= link_to "Skill Level" %>
-      </button>
-    </div>
-
-    <div class="review-button-container">
-      <button class="review-btn">
-       <%= link_to "Location" %>
-      </button>
-    </div>
-
-
-    <div class="review-button-container">
-      <button class="review-btn">
-       <%= link_to "Wave Type" %>
-      </button>
-    </div> -->
-  <!-- </div> -->
+  <div class="black-rectangle">
+    <h2>Kite<span class="red">Safe</span></h2>
+    <%= form_with url:"spots", method: "get" do %>
+      <%= select_tag :date, options_for_select(@spots.first.weather_conditions.map { |x| x.date }),{ onchange: 'this.form.submit()', method: "get" } %>
+    <% end %>
+  </div>
 
   <% @spots.each do |spot| %>
     <hr>
@@ -41,9 +22,19 @@
         <ul class="list-inline percent-result">
           <li class="list-inline-item percent-num">
             <h4 class="green">
-                <% match_percentage = ((@level.to_f / spot.weather_conditions.first.level.to_f) * 100).to_i %>
-                <%= match_percentage > 100 ? 100 : match_percentage %>
-
+               <% if params[:date] %>
+                  <% w_condition = spot.weather_conditions.where(date: params[:date]).first %>
+                <% else %>
+                  <% w_condition = spot.weather_conditions.first %>
+                <% end %>
+                <% unless w_condition.nil? %>
+                  <% if w_condition.level.to_i == 0 %>
+                    <%= 0 %>
+                  <% else %>
+                    <% match_percentage = ((@level.to_f / w_condition.level.to_f) * 100).to_i %>
+                    <%= match_percentage > 100 ? 100 : match_percentage %>
+                  <% end %>
+                <% end %>
             </h4>
           </li>
 
@@ -91,8 +82,8 @@
 
     <div class="image-description">
       <ul class="list-inline conditions">
-        <li class="list-inline-item"><h5 class="knots-number"><%= spot.weather_conditions.first.wind_speed.to_i.ceil  unless nil %></h5> <p class="knots-text">kts</p></li>
-        <li class="list-inline-item" class="weather-arrow-best"><i class="fas fa-long-arrow-alt-down" data-fa-transform="rotate-<%= spot.weather_conditions.first.wind_direction.to_i.ceil %>"></i> <p class="wind-direction-best"> <%= spot.weather_conditions.first.wind_direction.to_i.ceil unless nil %> °</p> </li>
+        <li class="list-inline-item"><h5 class="knots-number"><%= w_condition.wind_speed.to_i.ceil  unless nil %></h5> <p class="knots-text">kts</p></li>
+        <li class="list-inline-item" class="weather-arrow-best"><i class="fas fa-long-arrow-alt-down" data-fa-transform="rotate-<%= spot.weather_conditions.first.wind_direction.to_i.ceil %>"></i> <p class="wind-direction-best"> <%= w_condition.wind_direction.to_i.ceil unless nil %> °</p> </li>
         <% if spot.spot_type == "Wavey" %>
         <li class="list-inline-item wave-icons-best"><%= image_tag("SVG/big-wave.svg", size: "26x26", alt: "map icon") %></li><p class="type-of-wave">Wavey</p>
         <% elsif spot.spot_type == "Choppy" %>
