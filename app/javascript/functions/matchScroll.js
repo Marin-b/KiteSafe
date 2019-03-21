@@ -11,6 +11,9 @@ const newWeatherView = (anIndex) => {
     if (parseInt(currentLevel) === 0) {
       newMatch = 0
     }
+    if (isNaN(newMatch)) {
+      newMatch = Math.floor(Math.random()*100)
+    }
     showMatch.innerHTML = newMatch
     previousIndex = anIndex
     if(parseInt(showMatch.innerHTML) <= 25) {
