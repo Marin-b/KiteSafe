@@ -7,7 +7,7 @@
       <% else %>
         <div class="image-spot" style="background-image: linear-gradient(-180deg, #343C44 0%, rgba(52,60,68,0.76) 1%, rgba(28,30,32,0.37) 10%, rgba(255,255,255,0.00) 99%), url('<%= cl_image_path @spot.photos.first.photo.url %>')"></div>
         <% end %>
-        <% if request.env["HTTP_REFERER"].include?("photo") %>
+        <% if request.env["HTTP_REFERER"]&.include?("photo") %>
           <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, "/" %>
         <% else %>
           <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, :back %>
@@ -90,13 +90,13 @@
 
       <div class="description">
         <h5>Description</h5>
-        <p> <%= @spot.description %> </p>
+        <p class="intro-description"> <%= @spot.description %> </p>
       </div>
 
       <hr class="line-show">
 
       <div class="advice">
-        <h5>Advice</h5>
+        <h5 class="advice-title">Advice</h5>
         <div class="pro">
           <ul class="list-do">
             <% @spot.pros.each do |advice| %>
