@@ -7,10 +7,10 @@
                 required: true, wrapper_html: {class: "around"}, label: "Longitude of the spot:" %>
 
     <%= f.input :name,
-                  required: true, label: "Spot Name:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
+                  required: false, label: "Spot Name:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
 
     <%= f.input :description,
-                  required: true, label: "Detailed description:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
+                  required: false, label: "Detailed description:", input_html: {class: "textarea"}, wrapper_html: {class: "around"} %>
     <div class="wave-title-box">
     <%= f.label "Wave Type:", class: "wave-type" %>
     </div>
