@@ -87,15 +87,26 @@
     <% else %>
 
     <div class="image-description">
-      <ul class="list-inline conditions">
-        <li class="list-inline-item"><h5 class="knots-number"><%= w_condition.wind_speed.to_i.ceil  unless nil %></h5> <p class="knots-text">kts</p></li>
-        <li class="list-inline-item" class="weather-arrow-best"><i class="fas fa-long-arrow-alt-down" data-fa-transform="rotate-<%= spot.weather_conditions.first.wind_direction.to_i.ceil %>"></i> <p class="wind-direction-best"> <%= w_condition.wind_direction.to_i.ceil unless nil %> °</p> </li>
+      <ul class="conditions">
+        <li class="list-inline-item"><h5 class="knots-number"><%= w_condition.wind_speed.to_i.ceil  unless nil %></h5> </li>
+        <li class="list-inline-item" class="weather-arrow-best"><i class="fas fa-long-arrow-alt-down" data-fa-transform="rotate-<%= spot.weather_conditions.first.wind_direction.to_i.ceil %>"></i></li>
         <% if spot.spot_type == "Wavey" %>
-        <li class="list-inline-item wave-icons-best"><%= image_tag("SVG/big-wave.svg", size: "26x26", alt: "map icon") %></li><p class="type-of-wave">Wavey</p>
+          <li class="list-inline-item wave-icons-best"><%= image_tag("SVG/big-wave.svg", size: "26x26", alt: "map icon") %></li>
         <% elsif spot.spot_type == "Choppy" %>
-        <li class="list-inline-item wave-icons-best"><%= image_tag("SVG/wave-icon.svg", size: "26x26", alt: "map icon") %></li><p class="type-of-wave">Choppy</p>
+          <li class="list-inline-item wave-icons-best"><%= image_tag("SVG/wave-icon.svg", size: "26x26", alt: "map icon") %></li>
         <% else spot.spot_type == "Flat" %>
-        <li class="list-inline-item wave-icons-best"><%= image_tag("SVG/wave-flat.svg", size: "26x26", alt: "map icon") %></li><p class="type-of-wave">Flat</p>
+          <li class="list-inline-item wave-icons-best"><%= image_tag("SVG/wave-flat.svg", size: "26x26", alt: "map icon") %></li>
+        <% end %>
+      </ul>
+      <ul class="conditions">
+        <li class="list-inline-item"><p>kts</p></li>
+        <li class="list-inline-item"><p> <%= w_condition.wind_direction.to_i.ceil unless nil %> °</p></li>
+        <% if spot.spot_type == "Wavey" %>
+          <li class="list-inline-item"><p>Wavey</p></li>
+        <% elsif spot.spot_type == "Choppy" %>
+          <li class="list-inline-item"><p>Choppy</p></li>
+        <% else %>
+          <li class="list-inline-item"><p>Flat</p></li>
         <% end %>
       </ul>
     </div>

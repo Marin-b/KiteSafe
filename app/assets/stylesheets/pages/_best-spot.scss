@@ -57,9 +57,15 @@ align-items: center;
 
 .conditions {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 0px 0px 0px 40px;
+  margin: 0px;
+  li {
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+    padding: 0px;
+  }
 }
 
 .percent-result{
@@ -97,7 +103,7 @@ align-items: center;
 
 .image-description{
   position: absolute;
-  right: 21px;
+  right: 10px;
   top: 10px;
   width: 50%;
 }
