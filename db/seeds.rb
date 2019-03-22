@@ -39,7 +39,7 @@ user_four = User.create(email: "marin@marin.com", password: "123456", level: 5, 
 #New User
 user_five = User.create(email: "ellyn@ellyn.com", password: "123456", level: 4, age: "21", description: "I am one with my board and kite :o. Much Zen!", username: "BonjourGal", remote_avatar_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553177283/ellyn.jpg" )
 #Leaves Review - Spot Three
-user_six = User.create(email: "mate@mate.com", password: "123456", level: 2, age: "18", description: "Started kite surfing last year. Like explore new spots mate!", username: "Mate", remote_avatar_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553177281/avalon.jpg" )
+user_six = User.create(email: "mate@mate.com", password: "123456", level: 2, age: "18", description: "Started kite surfing last year. Like explore new spots mate!", username: "Mate", remote_avatar_url: "https://res.cloudinary.com/dwg18rj8x/image/upload/v1553177281/augustin.jpg" )
 
 
 
@@ -626,6 +626,14 @@ review_six = Review.create(
 puts "Reviews created"
 
 #Difficulty_levels
+difficulty_level = DifficultyLevel.create(
+  offshore_direction: "N",
+  level_0: 4,
+  level_90: 2,
+  level_180: 3,
+  level_270: 2,
+  spot: spot
+  )
 
 difficulty_level = DifficultyLevel.create(
   offshore_direction: "N",

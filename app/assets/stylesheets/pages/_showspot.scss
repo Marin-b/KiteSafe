@@ -31,7 +31,9 @@ h5 {
 }
 
 .spotname {
+  padding: 5px 20px;
   position: absolute;
+  width: 100%;
   top: 100px;
   left: 20px;
   color: $red;
@@ -291,8 +293,16 @@ h5 {
 
 .review-avatar {
   position: absolute;
-  top: 10px;
-  left: 0;
+  border: 1px solid white;
+  width: 50px;
+  height: 50px;
+  background-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  top: 15px;
+  left: 15px;
 }
 
 .review-date {
@@ -313,7 +323,7 @@ h5 {
 
 .review-rating {
   position: absolute;
-  right: 10px;
+  right: 12px;
   top: 5px;
 }
 
@@ -324,7 +334,7 @@ h5 {
 }
 
 
-.review-btn{
+.review-btn:last-child{
   width: 100px;
   height: 40px;
   border: solid 1px $red;
@@ -362,12 +372,13 @@ h5 {
   z-index: 3;
 }
 
+.review-box {
+  width: 237px;
 
+}
 
-
-
-
-
-
+.allDiffLevels {
+  font-size: 0px;
+}
 
 

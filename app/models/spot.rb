@@ -19,10 +19,6 @@ class Spot < ApplicationRecord
     sum = 1
   end
 
-  def api_call
-    AfterCreateSpotJob.perform_later(self.id)
-  end
-
   def pros
     self.advices.where(kind: true)
   end

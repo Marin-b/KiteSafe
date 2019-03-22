@@ -6,18 +6,21 @@
 .black-rectangle{
     height: auto;
     background-color: black;
-    display: flex;
-    justify-content: space-between;
     padding-right: 30px;
     padding-left: 30px;
-    flex-direction: column;
-    flex-flow: wrap;
-    align-items: center;
     padding-bottom: 18px;
     padding-top: 10px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    select {
+      background-color: $lightblue;
+      border-radius: 5px;
+      height: 50%;
+      color: white;
+    }
 }
-
-
 
 .spot-title-container{
 background: #233142;
@@ -55,9 +58,15 @@ border-top: 2px solid $red;
 
 .conditions {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 0px 0px 0px 40px;
+  margin: 0px;
+  li {
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+    padding: 0px;
+  }
 }
 
 .percent-result{
@@ -95,7 +104,7 @@ border-top: 2px solid $red;
 
 .image-description{
   position: absolute;
-  right: 21px;
+  right: 10px;
   top: 10px;
   width: 50%;
 }
@@ -187,7 +196,7 @@ border-top: 2px solid $red;
 
 
 .index-arrow {
-  color: white;
+  color: #ccc;
   font-size: 1.5em;
 
 }
@@ -195,10 +204,9 @@ border-top: 2px solid $red;
 .arrow {
     text-align: center;
     animation: pulse 3s infinite;
-    color: white;
     position: absolute;
     left: 187px;
-    top: 485px;
+    top: 73%;
 }
 
 .bounce {

@@ -132,7 +132,7 @@
                     <div class="review-avatar" style="background-image: url('<%= cl_image_path User.find(review.user_id).avatar.url %>')"></div>
                   <% else %>
                     <div class="review-avatar">
-                      <img src= 'https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' class="avatar-user"/>
+                      <img src='https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' class="avatar-user"/>
                     </div>
                   <% end %>
 
@@ -140,7 +140,7 @@
                     <p><small class="date-text"> <%= Date.parse(review.created_at.to_s).strftime("%b %d, %Y") %> </small></p>
                   </div>
                   <div class="review-description">
-                    <p><%= review.description.truncate(60) %></p>
+                    <p class="review-box"><%= review.description.truncate(60) %></p>
                   </div>
 
                   <div class="review-rating">
