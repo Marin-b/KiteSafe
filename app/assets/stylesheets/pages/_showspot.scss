@@ -7,7 +7,6 @@ h5 {
 }
 
 
-
 .line-show{
   border-top: 2px solid #455C7A !important;
   margin-left: 10px;
@@ -27,12 +26,14 @@ h5 {
 .photobanner {
   position: relative;
   background-size: cover;
-  height: 560px;
+  height: 480px;
   position: relative;
 }
 
 .spotname {
+  padding: 5px 20px;
   position: absolute;
+  width: 100%;
   top: 100px;
   left: 20px;
   color: $red;
@@ -51,7 +52,7 @@ h5 {
   position: absolute;
   right: 0px;
   left: 0px;
-  top: 75%;
+  top: 460px;
 }
 
 .spot-info-h2{
@@ -309,7 +310,7 @@ h5 {
   left: 80px;
   top: 12px;
 }
-small {
+.small {
   color: #939fa9;
   font-weight: 600;
 }
@@ -333,7 +334,7 @@ small {
 }
 
 
-.review-btn{
+.review-btn:last-child{
   width: 100px;
   height: 40px;
   border: solid 1px $red;
@@ -367,7 +368,7 @@ small {
 }
 
 .map-container-show {
-  // height: 640px;
+  height: 640px;
   z-index: 3;
 }
 

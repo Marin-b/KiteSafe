@@ -13,6 +13,12 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    border-bottom-style: solid;
+    border-bottom-color: #e2e2e2;
+    border-bottom-width: 1.5px;
 
     select {
       background-color: $lightblue;
@@ -24,7 +30,7 @@
 
 .spot-title-container{
 background: #233142;
-height: 60px;
+height: 80px;
 width: 100%;
 display: flex;
 justify-content: space-between;
@@ -95,7 +101,7 @@ align-items: center;
 .image-spot {
   height: 100%;
   width: 100%;
-  min-height: 473px;
+  min-height: 390px;
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -195,7 +201,7 @@ align-items: center;
 
 
 .index-arrow {
-  color: white;
+  color: #ccc;
   font-size: 1.5em;
 
 }
@@ -203,10 +209,9 @@ align-items: center;
 .arrow {
     text-align: center;
     animation: pulse 3s infinite;
-    color: white;
     position: absolute;
     left: 187px;
-    top: 485px;
+    top: 73%;
 }
 
 .bounce {
