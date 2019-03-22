@@ -4,7 +4,7 @@
   <div class="black-rectangle">
     <h2>Kite<span class="red">Safe</span></h2>
     <%= form_with url:"spots", method: "get" do %>
-      <%= select_tag :date, options_for_select(@spots.first.weather_conditions.map { |x| x.date }), { onchange: 'this.form.submit()', method: "get" } %>
+      <%= select_tag :date, options_for_select(@spots.first.weather_conditions.map { |x| x.date }), { onchange: 'this.form.submit()', method: "get", prompt: "Filter by date" } %>
     <% end %>
   </div>
 
