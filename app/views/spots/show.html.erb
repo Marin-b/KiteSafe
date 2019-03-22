@@ -20,6 +20,7 @@
       <i class="fas fa-chevron-down"></i>
       <h2 class="spot-info-h2">Spot Info</h2>
 
+
       <div class="ratingmatch">
         <div class="rating">
           <div class="starsavg">
@@ -52,7 +53,9 @@
         </div>
       </div>
 
+
       <hr class="line-show">
+
       <% theLevels = @spot.weather_conditions.all.map { |x| x = x.level}.to_s %>
       <p class="userLevel hidden"><%= @level %></p>
       <p class="allDiffLevels hidden"><%= theLevels.gsub(/\[|\]/, '') %></p>
