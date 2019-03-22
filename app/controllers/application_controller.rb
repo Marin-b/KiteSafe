@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
   def after_sign_up_path_for(resource)
     level_path
   end
-  
+
+  def default_url_options
+  { host: ENV["HOST"] || "localhost:3000" }
+  end
+
   def configure_permitted_parameters
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :level, :avatar, :age, :description])
