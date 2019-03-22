@@ -9,8 +9,7 @@ class UpdateSpotService
     false
   end
 
-  def get_level(direction, spotid, wind_speed)
-    return 0 if wind_speed.to_i < 10
+  def get_level(direction, spotid)
     off_direction = Spot.find(spotid).difficulty_level.offshore_direction
     off_degree_range = WindValue.new(direction).convert(off_direction)
     x = 0
@@ -28,9 +27,9 @@ class UpdateSpotService
     api_answer = JSON.parse(json_answer)
     api_answer["forecast"].each_with_index do |forecast, index|
       if index < 72
-        WeatherCondition.create(wind_direction: forecast["windDirection_10m"], wind_speed: forecast["windSpeed_10m"], date: DateTime.strptime(forecast["timestamp"]["unix"].to_s,'%s'), spot_id: spot.id, level: get_level(forecast["windDirection_10m"], spot.id, forecast["windSpeed_10m"]))
+        WeatherCondition.create(wind_direction: forecast["windDirection_10m"], wind_speed: forecast["windSpeed_10m"], date: DateTime.strptime(forecast["timestamp"]["unix"].to_s,'%s'), spot_id: spot.id, level: get_level(forecast["windDirection_10m"], spot.id))
       elsif (index + 1) % 3 == 0
-        WeatherCondition.create(wind_direction: forecast["windDirection_10m"], wind_speed: forecast["windSpeed_10m"], date: DateTime.strptime(forecast["timestamp"]["unix"].to_s,'%s'), spot_id: spot.id, level: get_level(forecast["windDirection_10m"], spot.id, forecast["windSpeed_10m"]))
+        WeatherCondition.create(wind_direction: forecast["windDirection_10m"], wind_speed: forecast["windSpeed_10m"], date: DateTime.strptime(forecast["timestamp"]["unix"].to_s,'%s'), spot_id: spot.id, level: get_level(forecast["windDirection_10m"], spot.id))
       end
     end
     sleep 1
