@@ -334,7 +334,7 @@ h5 {
 }
 
 
-.review-btn:last-child{
+.review-btn{
   width: 100px;
   height: 40px;
   border: solid 1px $red;
@@ -367,9 +367,12 @@ h5 {
   opacity: 0;
 }
 
-.map-container-show {
-  height: 640px;
+.map-container-show-now {
+  height: 510px;
+  margin-bottom: 0px;
   z-index: 3;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .review-box {
@@ -381,4 +384,15 @@ h5 {
   font-size: 0px;
 }
 
+.location-info{
+
+  margin-left: 20px;
+}
+
+.location-box {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  z-index: 5;
+}
 
