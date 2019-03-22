@@ -40,6 +40,7 @@ h5 {
   text-shadow: 1px 1px rgba(50, 50, 50, 0.3);
   font-size: 3rem;
   font-weight: bold;
+  max-width: min-content;
 }
 
 // spot info with the rating and the match in %
@@ -349,6 +350,7 @@ h5 {
   a {
     color: white;
     text-decoration: none;
+    font-size: 1rem !important;
   }
 }
 
