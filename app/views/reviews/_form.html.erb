@@ -2,10 +2,13 @@
 <%= simple_form_for [@spot, @review] do |f| %>
 <%= f.error_notification %>
   <div class="form-inputs" id="review-form">
+    <h2 class="review-title-form">Reviews</h2>
     <%= f.input :description, label: "Describe your spot", id: "labelfont" %>
     <%= f.input :rating, collection: [*1..5], label: false, prompt: "Pick a rating <i class='fas fa-sort-down'></i>".html_safe %>
      <br>
-    <%= f.submit "Submit review", class: "btn secondary-btn btn-center" %>
+     <div class="button-center-review">
+    <%= f.submit "Submit review", class: "main-btn centered-btn-continue", id: "button-review" %>
+  </div>
     <br>
     <br>
     <br>

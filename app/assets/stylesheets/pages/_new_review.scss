@@ -6,8 +6,9 @@
 
 .container-reviews {
   margin-top: -20px;
-  background-color: #ccc;
+  background-color: $darkblue;
   text-align: left;
+  height: 100vh;
 }
 #review-form label {
   font-size: 1.5em;
@@ -18,4 +19,23 @@
 }
 .form-wrap h1 {
   margin-left: 30px;
+}
+
+.review-title-form {
+  color: $darkblue;
+}
+
+.form-wrap {
+  background-color: transparent;
+}
+
+#button-review {
+  padding-right: 45px;
+  padding-left: 45px;
+}
+
+.button-center-review {
+  align-items: center;
+  display: -webkit-inline-box;
+  width: 200px;
 }
