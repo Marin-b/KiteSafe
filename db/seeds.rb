@@ -52,8 +52,8 @@ spot = Spot.create(
   description: "This spot really had a great vibe from the start the waves were perfect and the wind wasn't too strong. It was just right!",
   name: "Rodrigues Island",
   spot_type: "Wavey",
-  latitude: -19.7166638,
-  longitude: 63.416665,
+  latitude: -19.7394581,
+  longitude: 63.4634496,
   user: user
   )
 
