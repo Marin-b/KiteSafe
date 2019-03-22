@@ -90,13 +90,7 @@
       <ul class="conditions">
         <li class="list-inline-item"><h5 class="knots-number"><%= w_condition.wind_speed.to_i.ceil  unless nil %></h5> </li>
         <li class="list-inline-item" class="weather-arrow-best"><i class="fas fa-long-arrow-alt-down" data-fa-transform="rotate-<%= spot.weather_conditions.first.wind_direction.to_i.ceil %>"></i></li>
-        <% if spot.spot_type == "Wavey" %>
-          <li class="list-inline-item wave-icons-best"><%= image_tag("SVG/big-wave.svg", size: "26x26", alt: "map icon") %></li>
-        <% elsif spot.spot_type == "Choppy" %>
-          <li class="list-inline-item wave-icons-best"><%= image_tag("SVG/wave-icon.svg", size: "26x26", alt: "map icon") %></li>
-        <% else spot.spot_type == "Flat" %>
-          <li class="list-inline-item wave-icons-best"><%= image_tag("SVG/wave-flat.svg", size: "26x26", alt: "map icon") %></li>
-        <% end %>
+        <li class="list-inline-item wave-icons-best"><%= image_tag("SVG/wave-icon.svg", size: "26x26", alt: "map icon") %></li>
       </ul>
       <ul class="conditions">
         <li class="list-inline-item"><p>kts</p></li>
