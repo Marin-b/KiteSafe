@@ -21,6 +21,8 @@
 
 
   <div class="description-user">
+    <i class="fas fa-chevron-down"></i>
+    <h4 class="tagline">Tagline</h4>
     <p><%= @user.description%></p>
     <div class="edit-profile">
       <%= link_to "edit profile", edit_user_registration_path(@user) %>
@@ -28,7 +30,12 @@
     </div>
 
 
-    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "sign-out" %></li>
+
+
+
+
+
+    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "main-btn centered-btn-continue profile-btn" %></li>
   </div>
 </div>
 
