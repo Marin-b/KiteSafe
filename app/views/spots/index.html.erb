@@ -41,11 +41,7 @@
       <div class="percentage-result-box">
         <ul class="list-inline percent-result">
           <li class="list-inline-item percent-num">
-            <h4 class="green">
-                <% match_percentage = ((@level.to_f / spot.weather_conditions.first.level.to_f) * 100).to_i %>
-                <%= match_percentage > 100 ? 100 : match_percentage %>
 
-            </h4>
           </li>
 
           <li class="list-inline-item percent-sign">
