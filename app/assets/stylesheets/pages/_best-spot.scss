@@ -24,11 +24,12 @@
 
 .spot-title-container{
 background: #233142;
-height: 60px;
+height: 80px;
 width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
+border-top: 2px solid $red;
 }
 
 .spot-name {
@@ -95,7 +96,7 @@ align-items: center;
 .image-spot {
   height: 100%;
   width: 100%;
-  min-height: 411px;
+  min-height: 180px;
   width: 100%;
   background-size: cover;
   background-position: center;
