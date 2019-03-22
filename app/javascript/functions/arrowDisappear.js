@@ -4,7 +4,6 @@ const arrowDisappear = () => {
   if (indexArrow) {
     document.addEventListener("scroll", (event) => {
       indexArrow.style.display = "none"
-      console.log(indexArrow.style)
     })
   }
 }

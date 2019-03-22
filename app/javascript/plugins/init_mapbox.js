@@ -62,7 +62,7 @@ const initMapbox = () => {
       container: 'mapShow',
       style: 'mapbox://styles/mapbox/streets-v10',
       center: [long, lat],
-      zoom: 15
+      zoom: 12
     });
     const marker = JSON.parse(mapShow.dataset.markers);
     new mapboxgl.Marker()
