@@ -13,6 +13,12 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    border-bottom-style: solid;
+    border-bottom-color: #e2e2e2;
+    border-bottom-width: 1.5px;
 
     select {
       background-color: $lightblue;
@@ -29,7 +35,6 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
-border-top: 2px solid $red;
 }
 
 .spot-name {
@@ -96,7 +101,7 @@ border-top: 2px solid $red;
 .image-spot {
   height: 100%;
   width: 100%;
-  min-height: 180px;
+  min-height: 390px;
   width: 100%;
   background-size: cover;
   background-position: center;
