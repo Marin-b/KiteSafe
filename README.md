@@ -1,1 +1,2 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+<h1>Kitesafe</h1>
+<h2>Helping beginner kitesurfers locate the best spots tailored to their skill level</h2>
